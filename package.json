@@ -5,18 +5,17 @@
   "version": "1.0.0",
   "author": "Steven | http://wangwen1220.github.io",
   "keywords": [
-    "AMUI",
+    "mofw",
+    "web",
+    "webapp",
     "Amaze UI",
     "AllMobile",
     "css",
+    "stylus",
     "js",
-    "less",
+    "coffeescript",
     "mobile-first",
-    "responsive",
-    "front-end",
-    "framework",
-    "web",
-    "web-components"
+    "responsive"
   ],
   "repository": {
     "type": "git",
