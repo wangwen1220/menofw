@@ -1,9 +1,9 @@
 /*
-名称：基础样式模块
-简介：可通用所有项目，包含样式重设和常用样式，参考自 Alice CSS
-特色：简洁明了、适应中文、兼容主流浏览器
-作者：王文 wangwen1220#139.com
-更新：2014-8-1
+名称: 移动版基础样式模块
+简介: 可通用所有项目，包含样式重设和常用样式，参考自 Alice and normalize
+特色: 简洁明了、适应中文、兼容主流手机浏览器
+作者: 王文 wangwen1220#139.com
+更新: 2014-11-20
 */
 
 /* Mixin
@@ -28,39 +28,118 @@ arrow(direction = top, n = 5px, color = #666)
 
 /* 样式重设
 ----------------------------------------------------------------------------- */
-/* 清除内外边距，内外边距通常让各个浏览器样式的表现位置不同 */
-body,h1,h2,h3,h4,h5,h6,hr,div,p,blockquote, /* structural elements 结构元素 */
-dl,dt,dd,ul,ol,li, /* list elements 列表元素 */
-pre,code, /* text formatting elements 文本格式元素 */
-form,fieldset,legend,input,textarea,button, /* form elements 表单元素 */
-th,td, /* table elements 表格元素 */
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section /* HTML5 elements HTML5 元素
+/* Set default font family to sans-serif */
+html
+  font-family sans-serif;
+  -webkit-text-size-adjust 100%
+  -ms-text-size-adjust 100%
+
+/* 清除标签内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, div, p, blockquote,  /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li,  /* list elements 列表元素 */
+pre, code,  /* text formatting elements 文本格式元素 */
+form, fieldset, legend, input, textarea, button,  /* form elements 表单元素 */
+th, td,  /* table elements 表格元素 */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section /* HTML5 elements HTML5 元素
 */
   margin 0
   padding 0
 
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体？ */
-html
-  color #000
-  background #fff
-  -webkit-text-size-adjust none
-  -ms-text-size-adjust none
-
-/* 要注意表单元素并不继承父级 font 的问题 */
-body,button,input,select,textarea
-  font 16px/1.5 fonts
-
-/* 重设 HTML5 标签，IE 需要在 js 中 createElement(TAG) */
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section
+/* 重设 HTML5 标签 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary
   display block
 
-/* HTML5 媒体文件跟 img 保持一致 */
-audio,canvas,video
+/* Correct `inline-block` display not defined in IE 8/9 */
+audio,
+canvas,
+progress,
+video
   display inline-block
+  vertical-align baseline
 
-/* 使表单元素在 IE 下能继承字体大小 */
-input,select,textarea
-  font-size 100%
+audio:not([controls])
+  display none
+  height 0
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+
+dfn {
+  font-style: italic;
+}
 
 /* Allow only vertical resizing of textareas */
 textarea

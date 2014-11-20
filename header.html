@@ -20,31 +20,11 @@
 
 <body>
   <header id="header">
-    <!-- lights -->
-    <?php if (preg_match('/\blights news-list\b/', $class)) : ?>
-    <h1 class="position"><a href="subsite.php">OFweek半导体照明网</a> <i>&gt;</i> <a href="#">新闻列表</a></h1>
-    <?php elseif (preg_match('/\blights\b/', $class)) : ?>
-    <h1 class="logo"><a class="dropmenu-trigger" href="#"><img src="img/logo-lights.png" alt="OFweek半导体照明网"></a></h1>
-
-    <?php elseif (preg_match('/\bnews-center\b/', $class)) : ?>
-    <h1 class="position"><a href="/">OFweek新闻中心</a></h1>
-    <?php elseif (preg_match('/\bnews-list\b/', $class)) : ?>
-    <h1 class="position"><a href="/">OFweek</a> <i>&gt;</i> <a href="#">新闻列表</a></h1>
-    <?php elseif (preg_match('/\bsearch-result\b/', $class)) : ?>
-    <h1 class="position"><a href="/">OFweek</a> <i>&gt;</i> <a href="#">搜索结果</a></h1>
-    <?php elseif (preg_match('/\bapp-list\b/', $class)) : ?>
-    <h1 class="position"><a href="/">OFweek</a> <i>&gt;</i> <a href="#">技术与应用列表</a></h1>
-    <?php elseif (preg_match('/\barticle\b/', $class)) : ?>
-    <h1 class="position"><a href="/">OFweek</a> <i>&gt;</i> <a href="#">文章</a></h1>
-    <?php elseif (preg_match('/\blogin\b/', $class)) : ?>
-    <h1 class="logo"><a href="/"><img src="img/logo.png" alt="OFweek手机版"></a> <strong>登录</strong></h1>
-    <?php elseif (preg_match('/\bfind-password\b/', $class)) : ?>
-    <h1 class="logo"><a href="/"><img src="img/logo.png" alt="OFweek手机版"></a> <strong>找回密码</strong></h1>
-    <?php elseif (preg_match('/\bcenter\b/', $class)) : ?>
-    <h1 class="logo"><a href="/"><img src="img/logo.png" alt="OFweek手机版"></a> <strong>个人中心</strong></h1>
-    <?php else : ?>
-    <h1 class="logo"><a href="/"><img src="img/logo.png" alt="OFweek手机版"></a></h1>
-    <?php endif ?>
+    <a class="logo" href="/">OFweek Industrial B2B</a>
+    <menu>
+      <a href="#" class="cart"></a>
+      <a href="#" class="login"></a>
+    </menu>
   </header>
 
   <div id="search">
@@ -58,6 +38,13 @@
         <button type="submit"></button>
       </fieldset>
     </form>
+    <ul class="search-hot">
+      <li><a href="#">Solar lamp</a></li>
+      <li><a href="#">LED tube</a></li>
+      <li><a href="#">Mobile Phone</a></li>
+      <li><a href="#">Metalworking</a></li>
+      <li><a href="#">LED Street</a></li>
+    </ul>
     <div class="search-keylist">
       <ul class="keylist">
         <li><strong>d</strong>resses</li>
