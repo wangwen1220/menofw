@@ -1,14 +1,4 @@
-@charset 'utf-8'
-
-/* =============================================================================
-Main Style
-
-@author Steven
-@link http://wenwang.org/
-@version 1.0
-@tags html5, css3, stylus, 跨终端, 模块化, 高性能
-@update 2014-8-1
-============================================================================= */
+/*! Main Style by Steven 2014-8-1 */
 
 /* Var
 ============================================================================= */
@@ -25,48 +15,89 @@ green = #379A00
 
 @import 'nib'
 @import 'base.styl'
-@import 'gmu.styl'
+// @import 'gmu.styl'
 
 /* Reset
 ============================================================================= */
+*,
+*:before,
+*:after
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  box-sizing border-box
+
+html
+  font-size 10px
+  -webkit-tap-highlight-color rgba(0, 0, 0, 0)
+  background #EBEBEB
+
 body
-  min-width 320px
-  color #000
-  user-select none
-  background #fff
+  font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
+  font-size 1.4rem
+  line-height 1.428571429
+  color #333333
+  // min-width 320px
+  // user-select none
+  background-color #ffffff
 
-html.account body
-  background #F8F8F8
+a
+  color #337ab7
+  text-decoration none
 
-a, a:visited
-  color inherit
+a:hover,
+a:focus
+  color #23527c
+  text-decoration underline
 
-a:hover
-  color inherit
+a:focus
+  outline thin dotted
+  outline 5px auto -webkit-focus-ring-color
+  outline-offset -2px
+
+img
+  vertical-align middle
+
+.img-responsive
+  display block
+  height auto
+  max-width 100%
+
+.img-rounded
+  border-radius 6px
+
+.img-thumbnail
+  display inline-block
+  height auto
+  max-width 100%
+  padding 4px
+  line-height 1.42857143
+  background-color #fff
+  border 1px solid #ddd
+  border-radius 4px
+  -webkit-transition all 0.2s ease-in-out
+  transition all 0.2s ease-in-out
+
+.img-circle
+  border-radius 50%
+
+hr,
+.hr
+  clear both
+  margin 10px 0
+  // padding 0
+  // height 0
+  border 0
+  border-top 1px solid #eee
+
+mark
+  color #333
+  background #ffa
+
+textarea
+  resize vertical
 
 /* Helper
 ========================================================================== */
-/* 分割线 */
-.hr
-  clear both
-  margin 5px 0
-  height 0
-  line-height 0
-  overflow hidden
-  border-bottom 1px dotted #ddd
-  font-size 0
-
-/* 遮罩层 */
-.w-mask
-  display none
-  fixed top left bottom right
-  z-index 111
-  background rgba(0,0,0,.4)
-
-/* js placeholder style */
-.placeholder
-  color #A6A6A6 !important
-
 /* 排版 */
 .highlight
   color red !important
@@ -83,7 +114,23 @@ a:hover
 .fn-tj
   text-align justify !important
 
-.fn-dn, .js-hide
+.fn-nowrap
+  white-space nowrap !important
+
+.fn-brk
+  word-wrap break-word !important
+
+.fn-lowercase
+  fn-transform lowercase !important
+
+.fn-uppercase
+  fn-transform uppercase !important
+
+.fn-capitalize
+  text-transform capitalize !important
+
+.fn-dn,
+.js-hide
   display none !important
 
 .fn-di
@@ -101,12 +148,6 @@ a:hover
 .fn-auto
   margin-left auto !important
   margin-right auto !important
-
-.fn-nowrap
-  white-space nowrap !important
-
-.fn-brk
-  word-wrap break-word !important
 
 .f0
   font-size 0 !important
@@ -138,6 +179,17 @@ a:hover
 
 .ad img
   width 100%
+
+/* 遮罩层 */
+.fn-mask
+  display none
+  fixed top left bottom right
+  z-index 111
+  background rgba(0,0,0,.4)
+
+/* js placeholder style */
+.placeholder
+  color #A6A6A6 !important
 
 /* Plugin
 ========================================================================== */
@@ -1503,115 +1555,3 @@ html.iot
     border-color #034DAD
     & .title
       color #0459B8
-
-/* 新能源汽车 */
-html.nev
-  #header
-    border-color #0E61AB
-  .pagenav li
-    border-color #0E61AB
-    background #1170BB
-    & a
-      border-color #0E61AB
-  .w-box-hd
-    border-color #0E61AB
-    & .title
-      color #1170BB
-
-/* 锂电网 */
-html.libattery
-  #header
-    border-color #ED242F
-  .pagenav li
-    border-color #ED242F
-    background #E20000
-    & a
-      border-color #ED242F
-  .w-box-hd
-    border-color #ED242F
-    & .title
-      color #E20000
-
-/* 节能环保 */
-html.ecep
-  #header
-    border-color #2B862D
-  .pagenav li
-    border-color #2B862D
-    background #34A637
-    & a
-      border-color #2B862D
-  .w-box-hd
-    border-color #2B862D
-    & .title
-      color #34A637
-
-/* 可穿戴设备 */
-html.wearable
-  #header
-    border-color #E15500
-  .pagenav li
-    border-color #E15500
-    background #F15C00
-    & a
-      border-color #E15500
-  .w-box-hd
-    border-color #E15500
-    & .title
-      color #F15C00
-
-/* 智能家居 */
-html.smarthome
-  #header
-    border-color #018FA9
-  .pagenav li
-    border-color #018FA9
-    background #019BB5
-    & a
-      border-color #018FA9
-  .w-box-hd
-    border-color #018FA9
-    & .title
-      color #019BB5
-
-/* 机器人 */
-html.robot
-  #header
-    border-color #0A5869
-  .pagenav li
-    border-color #0A5869
-    background #0A6375
-    & a
-      border-color #0A5869
-  .w-box-hd
-    border-color #0A5869
-    & .title
-      color #0A6375
-
-/* 电子工程 */
-html.ee
-  & #header
-    border-color #0F4784
-  & .pagenav li
-    border-color #0F4784
-    background #07237A
-    & a
-      border-color #0F4784
-  & .w-box-hd
-    border-color #0F4784
-    & .title
-      color #07237A
-
-/* 3D打印 */
-html.threedprint
-  & #header
-    border-color #A82B2B
-  & .pagenav li
-    border-color #A82B2B
-    background #C60000
-    & a
-      border-color #A82B2B
-  & .w-box-hd
-    border-color #A82B2B
-    & .title
-      color #C60000

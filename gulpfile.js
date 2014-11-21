@@ -3,8 +3,11 @@ var gulp = require('gulp');
 
 // 引入组件
 var nib = require('nib');
+// var btStylus = require('bootstrap-stylus');
 var stylus = require('gulp-stylus');
 // var cssmin = require('gulp-cssmin');
+// var seajs = require('gulp-seajs');
+// var CMDTrans = require('gulp-cmd-transport');
 var coffee = require('gulp-coffee');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
