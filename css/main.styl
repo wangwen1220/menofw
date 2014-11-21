@@ -37,6 +37,7 @@ body
   line-height 1.428571429
   color #333333
   // min-width 320px
+  // max-width 100%
   // user-select none
   background-color #ffffff
 
@@ -53,6 +54,12 @@ a:focus
   outline thin dotted
   outline 5px auto -webkit-focus-ring-color
   outline-offset -2px
+
+ul,
+ol
+  margin 0
+  padding 0
+  list-style none
 
 img
   vertical-align middle
@@ -298,6 +305,53 @@ textarea
 
 /* TPL
 ========================================================================== */
+// w-recommend 模块
+.w-recommend
+  margin 1rem 0
+  & .w-recommend-hd
+    & > .title
+      padding 0 1rem
+      color #696969
+      text-align center
+      background #fff
+      &:before
+        content ''
+        display inline-block
+        margin-right .5rem
+        width 12px
+        height 12px
+        background url(../img/icon-arrow-circle.png) 50% 50% no-repeat
+        background-size contain
+
+// w-piclist 模块
+.w-piclist
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+  & > .item
+    // flex 1 25%
+    flex 1 60px
+    max-width 100px
+    padding 0 10px
+    background #ccc
+    & > .pic
+      display block
+      text-align center
+      & > img
+        display inline-block
+        height auto
+        max-width 100%
+    & > .name
+      margin-top 1rem
+      height 32px
+      line-height 16px
+      overflow hidden
+      color #50739E
+      & > a
+        color inherit
+
+
+
 /*
 @name w-btn
 @overview 通用按钮模块
@@ -445,7 +499,7 @@ textarea
 */
 .w-viewmore
   display block
-  margin 0 0 1em
+  margin 1.5rem 0
   padding .3rem 0
   text-align center
   font-size .8rem
@@ -855,442 +909,106 @@ textarea
 /** Header **/
 #header
   position relative
-  z-index 11
-  padding 10px 0 10px
-  border-bottom 2px red solid
-  background #fff
-
-html.account #header
-  border-bottom none
-  background #F8F8F8
-
-#header .logo
-  margin 0 10px
-  height 22px
-  line-height 22px
-
-#header .logo a
-  display inline-block
-  height 100%
-  & img
+  height 56px
+  border-bottom 1px #D54646 solid
+  background #C00
+  & .logo
+    display block
     height 100%
-  &.dropmenu-trigger:after
-    content ''
-    display inline-block
-    margin-left 5px
-    width 9px
-    height 5px
-    vertical-align -2px
-    background url(../img/arrow-down-gray.png) 0 50% no-repeat
-    background-size contain
-  &.dropmenu-trigger.on:after
-    vertical-align 1px
-    background-image url(../img/arrow-up-gray.png)
-
-#header .logo strong
-  font-weight bold
-  color red
-  font-size .95rem
-  line-height 1
-  vertical-align bottom
-  &:before
-    content ''
-    display inline-block
-    margin 0 5px
-    height 1em
-    width .2rem
-    border-left 1px #999 solid
-    vertical-align bottom
-
-#header .position
-  @extend #header .logo
-  & a
-    // display inline-block
-    font-size .9em
-    color blue
-    vertical-align middle
-  & a:first-child:before
-    content ''
-    display inline-block
-    margin-right 8px
-    width 20px
-    height 22px
-    background url(../img/icon-home.png) 0 50% no-repeat
-    background-size 20px
-    vertical-align bottom
-    // vertical-align -3px
-  & i
-    display inline-block
-    margin 0 2px
-    width 5px
     text-indent -9999px
-    background url(../img/arrow-rt-gray.png) 0 50% no-repeat
-    background-size contain
-    vertical-align middle
-    // color #A1A1A1
-    // font-family Serif
-    // vertical-align -2px
-
-#header .sitenav
-  position absolute
-  right 10px
-  bottom 10px
-  text-align right
-  // background #ccc
-
-  & a
-    display inline-block
-    margin-left 1em
-    width 20px
-    height 0
-    padding-top 22px
-    overflow hidden
-    background-position 50% 100%
-    background-repeat no-repeat
-    background-size contain
-    vertical-align middle
-
-  // & a.login
-    // image '../img/icon-login.png'
-    // background-image url(../img/icon-login.png)
-
-  & a.dropmenu-trigger
-    // image '../img/dropmenu-trigger.png'
-    background-image url(../img/dropmenu-trigger.png)
-
-/** Dropmenu **/
-#dropmenu nav
-  display none
-  // height 0
-  // overflow hidden
-  position absolute
-  z-index 11
-  left 0
-  right 0
-  // margin-top 11px
-  padding 0 10px
-  background #fff
-
-  & > h2
-    // margin-bottom 5px
-    margin-bottom 4px
-    // padding 13px 0 7px
-    padding 13px 0 3px
-    // border-bottom 1px #DEDEDE solid
-    font-size .95rem
-    // color #AA0202
-
-  & .chanel
-    margin-bottom 5px
-
-    & > li
-      display flex
-      justify-content space-between
-      // display box
-      // box-pack justify
-      margin 8px 0
-
-    & > li a
-      // display block
-      padding 0 10px
-      height 24px
-      line-height 24px
-      overflow hidden
-      border 1px #CCC solid
-      text-align center
-      // font-size 1.1rem
-      font-size 1rem
-      color #666
-
-  & .nav
-    // display flex
-    // flex-wrap wrap
-    // justify-content space-between
-    // align-content flex-start
-    margin-bottom 20px
-    // text-align justify
-    // font-size 0
-    line-height 0
-
-    & > a
-      @extend #dropmenu nav .chanel > li a
-      flex none
-      display inline-block
-      width auto
-      margin 4px 0
-      // margin-right .5rem
-
-  /* 登录框 */
-  & .form-login
-    display flex
-    justify-content space-between
-    margin 0
-
-    & .w-form-item
-      flex 2
-      margin 10px 5px 5px 0
-
-      &:last-child
-        flex 0 58px
-        margin-right 0
-
-      & .input
-        padding 0 5px
-        height 33px
-        line-height 33px
-
-      & label.icon
-        width 16px
-
-      & input[type='text'],
-      & input[type='email'],
-      & input[type='password']
-        margin 6px 0 6px 5px
-        height 21px
-        line-height 21px
-        font-size .95rem
-
-      & button
-        margin-top 0
-        height 35px
-        line-height 35px
-        font-size 1rem
-        letter-spacing normal
-
-  /* 用户信息 */
-  & .user-info
-    display flex
-    margin-bottom 5px
-    padding 10px 0
-    border-bottom 1px #CCC solid
-    font-size .95rem
-    color #666
-
-    & .avatar img
-      width 24px
-      height 24px
-
-    & .name
-      margin-left 5px
-      vertical-align middle
-
-    & .center
-      margin-left 10px
-      color blue
-      vertical-align middle
-
-    & .logout
-      flex 1
-      text-align right
-      vertical-align middle
-
-#dropmenu .w-mask
-  z-index 10
-
-#dropmenu-subsite
-  & nav
-    display none
+    background url(../img/logo.png) 14px 10px no-repeat
+  & menu
     position absolute
-    z-index 11
-    left 0
-    right 0
-    margin-top -44px
-    padding 0 10px 25px
-    color #333
-    background #FCFCFA
-    & h2
-      margin 10px 0
-      font-weight bold
-      font-size .8em
-    & ul
-      border 1px #C0C0C0 solid
-      border-radius 6px
-      background #fff
-    & li
-      display flex
-    & li a
-      flex 1
-      display block
-      padding .5em 0
-      border-right 1px #C0C0C0 solid
-      border-bottom 1px #C0C0C0 solid
-      text-align center
-    & li a:last-child
-      border-right 0
-    & li:last-child a
-      border-bottom 0
-    & li a em
-      color blue
-    & header
-      margin 0 -10px
-      padding 0 10px
-      height 44px
-      line-height 44px
-      overflow hidden
-      background red
-    & header a
+    right 10px
+    top 50%
+    margin-top -16px
+    font-size 0
+    & a
       display inline-block
-      margin-right 5px
-      padding 0 5px
-      height 18px
-      line-height 18px
-      color #fff
-      font-size .66em
-      background yellow
-    & header span
-      font-size .88em
-      color #fff
-  & .w-mask
-    // display block
-    z-index 10
+      margin-left 14px
+      width 32px
+      height 32px
+      background-size contain
+      background-repeat no-repeat
+    & a.cart
+      background-image url(../img/icon-cart.png)
+    & a.login
+      background-image url(../img/icon-login.png)
+
+/** Search **/
+#search
+  padding 10px
+  background #EBEBEB
+  & .search-cancel
+    float right
+  & .search-form
+    background #fff
+    & .panel
+      // box-sizing content-box
+      position relative
+      height 34px
+      border 1px #DBDBDB solid
+      padding 6px 0 6px 34px
+      background #fff url(../img/icon-search) 7px 50% no-repeat
+      & input
+        // width 100%
+        height 20px
+        border 0
+  & .search-hot
+    margin-top 5px
+    // margin-right -1.5em
+    height 16px
+    line-height 16px
+    overflow hidden
+    & li
+      float left
+      margin-right 1.5em
+      & > a
+        color: #A4A4A4
 
 /** Footer **/
 #footer
-  margin-top 20px
-  border-top 1px solid #DADADB
-  background #F3F3F3
-
-#footer nav
-  margin 0 10px
-
-#footer nav h5
-  margin 10px 0 5px
-  color #444
-  font-size .88em
-
-#footer nav li
-  display inline-block
-  margin-bottom .5em
-  font-size 1em
-  color #222
-
-#footer .copyright
-  margin .7em 0 1.5em
+  margin-top 30px
+  padding 15px 0 30px
   text-align center
-  font-size .88em
-  color #666
+  background #eee
+  & nav ul
+    height 14px
+    line-height 14px
+    & li
+      display inline-block
+      padding 0 10px
+      border-left 1px #E3E3E3 solid
+      & a
+        color: #C00
+    & li:first-child
+      border-left none
+    &.sublinks li a
+      color: #999
+  & nav hr
+    border-color #E1E1E1
+    margin 15px 0 20px
 
-#footer .help
-  height 35px
-  line-height 35px
-  overflow hidden
-  color #f0f0f0
-  font-size .9em
-  text-align center
-  background #D40000
-  display flex
-
-#footer .help a
-  width 37%
-  height 100%
-  display block
-  cursor pointer
-  &:before
-    content ''
-    display inline-block
-    margin-right 5px
-    width 14px
-    height 100%
-    background-repeat no-repeat
-    background-position 0 50%
-    background-size contain
-    vertical-align middle
-  &.feedback:before
-    width 11px
-    background-image url(../img/icon-feedback.png)
-    background-size contain
-  &.gopc:before
-    background-image url(../img/icon-gopc.png)
-  & span
-    vertical-align middle
-  &.gotop
-    width 26%
-    background-color #FE8900
-  &.gotop:before
-    content normal
-  &.gotop:after
-    content ''
-    arrow bottom 4px #fff
-    margin-left 4px
-    vertical-align 1px
-    // @extend #footer .help a:before
-    // margin-right 0
-    // margin-left 4px
-    // width 6px
-    // image '../img/arrow-up-white.png'
-    // background-position 100% 50%
-
-// #footer .help a span
-//   display inline-block
-//   padding-left 18px
-//   background-repeat no-repeat
-//   background-position 0 50%
-//   background-size 14px auto
-
-// #footer .help a.feedback span
-//   image '../img/icon-feedback.png'
-//   background-size 11px auto
-
-// #footer .help a.gopc span
-//   image '../img/icon-gopc.png'
-
-// #footer .help a.gotop
-//   width 26%
-//   background-color #FE8900
-
-// #footer .help a.gotop span
-//   padding-left 0
-//   padding-right 10px
-//   image '../img/arrow-up-white.png'
-//   background-position 100% 50%
-//   background-size 6px auto
+  & .copyright
+    margin 5px 0
+    color: #777
 
 /** Main **/
-.pagenav li
-  display flex
-  border-top 1px #D97975 solid
-  background-color #D00
-  &:first-child
-    margin-top -1px
-    border none
-  & a
-    flex 1
-    // width 20% // for 操蛋的猎犳
-    height 28px
-    line-height 28px
-    overflow hidden
-    // box-sizing border-box
-    border-left 1px #D97975 solid
-    // margin-left -1px
-    text-align center
-    font-size .95em
-    color #fff
-  & a:first-child
-    border none
-  & a.more:after
-    content ''
-    arrow top 4px #fff
-    margin-left 4px
-    vertical-align -1px
-  & a.more.fold:after
-    arrow bottom 4px #fff
-    vertical-align 2px
+#main
+  background #fff
 
-.w-cnt-news
-  & h2.title
-    display inline-block
-    margin 1rem 0 0
-    // padding .1em .4em
-    padding 0 .4rem
-    font-size .88rem
+#categories
+  & > .viewmore
+    display block
+    margin 20px 10px
+    padding 0
+    height 38px
+    border-radius 5px
     color #fff
-    background-color #d00
-  & h3.title
-    margin .5rem 0
-    color blue
-    text-align right
-  & .w-search
-    margin 0 0 1rem
+    font 1.6rem/38px 'Microsoft YaHei'
+    text-align center
+    background linear-gradient(top, #D70303, #CC0000)
+    box-shadow 1px 1px rgba(0, 0, 0, .38)
 
 /* 注册页 */
 .form-login
@@ -1308,7 +1026,7 @@ html.account #header
     & a
       color green
 
-/* 注册页 */
+/* 404 */
 .cnt-404
   margin 5rem 10px
   & p

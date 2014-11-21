@@ -45,31 +45,31 @@ include 'header.html';
           <a class="nav next"></a>
         </div>
       </div>
+      <a class="w-viewmore viewmore">All Categories</a>
     </div>
-    <a class="w-viewmore">All Categories</a>
-  </div>
 
-  <div class="w-recommend">
-    <div class="w-recommend-hd"><h3>You May Like</h3></div>
-    <div class="w-recommend-bd">
-      <ul class="w-pic-list">
-        <li class="w-pic-list-item">
-          <a href="#" class="pic"><img src="imgxxx" alt=""></a>
-          <h4 class="name"><a href="#">MS111 Best Co2 Case Detector</a></h4>
-        </li>
-        <li class="w-pic-list-item">
-          <a href="#" class="pic"><img src="imgxxx" alt=""></a>
-          <h4 class="name"><a href="#">Welding Cable $1 weding Wire</a></h4>
-        </li>
-        <li class="w-pic-list-item">
-          <a href="#" class="pic"><img src="imgxxx" alt=""></a>
-          <h4 class="name"><a href="#">Product Name Opic Patch</a></h4>
-        </li>
-        <li class="w-pic-list-item">
-          <a href="#" class="pic"><img src="imgxxx" alt=""></a>
-          <h4 class="name"><a href="#">Detector ansceiver</a></h4>
-        </li>
-      </ul>
+    <div class="w-recommend">
+      <div class="w-recommend-hd"><h3 class="title">You May Like</h3></div>
+      <div class="w-recommend-bd">
+        <ul class="w-piclist fn-clear">
+          <li class="item">
+            <a href="#" class="pic"><img src="imgxxx" alt=""></a>
+            <h4 class="name"><a href="#">MS111 Best Co2 Case Detector</a></h4>
+          </li>
+          <li class="item">
+            <a href="#" class="pic"><img src="imgxxx" alt=""></a>
+            <h4 class="name"><a href="#">Welding Cable $1 weding Wire</a></h4>
+          </li>
+          <li class="item">
+            <a href="#" class="pic"><img src="imgxxx" alt=""></a>
+            <h4 class="name"><a href="#">Product Name Opic Patch</a></h4>
+          </li>
+          <li class="item">
+            <a href="#" class="pic"><img src="imgxxx" alt=""></a>
+            <h4 class="name"><a href="#">Detector ansceiver</a></h4>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 

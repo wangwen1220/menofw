@@ -28,15 +28,13 @@
   </header>
 
   <div id="search">
-    <a class="search-cancel js-search-cancel">Cancel</a>
+    <a class="search-cancel js-hide js-search-cancel">Cancel</a>
     <form action="search.php" class="search-form" autocomplete="off">
-      <fieldset class="searchbar">
-        <div class="wrap">
-          <input type="text" name="key" class="js-searchtxt" placeholder="I'm shopping for…">
-          <a class="clear js-hide js-searchtxt-clear">X</a>
-        </div>
-        <button type="submit"></button>
-      </fieldset>
+      <div class="panel">
+        <input type="text" name="key" class="js-searchtxt" placeholder="I'm shopping for…">
+        <a class="clear js-hide js-searchtxt-clear">X</a>
+      </div>
+      <button type="submit" class="js-hide"></button>
     </form>
     <ul class="search-hot">
       <li><a href="#">Solar lamp</a></li>
@@ -45,7 +43,7 @@
       <li><a href="#">Metalworking</a></li>
       <li><a href="#">LED Street</a></li>
     </ul>
-    <div class="search-keylist">
+    <div class="search-keylist js-hide">
       <ul class="keylist">
         <li><strong>d</strong>resses</li>
         <li><strong>d</strong>ress</li>
