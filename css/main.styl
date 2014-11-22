@@ -3,12 +3,14 @@
 /* Var
 ============================================================================= */
 support-for-ie = false
-fonts = 'Microsoft Yahei','helvetica','arial'
-red = #D40000
+fonts = 'Microsoft Yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif
+dark-red = #c00
+light-gray = #eee
+dark-gray = #ebebeb
+
 red-light = #CC0
 blue = #1A4991
 blue-dark = #243851
-gray-light = #1F1F1F
 gray-dark = #444
 yellow = #FE8900
 green = #379A00
@@ -29,37 +31,48 @@ green = #379A00
 html
   font-size 10px
   -webkit-tap-highlight-color rgba(0, 0, 0, 0)
-  background #EBEBEB
+  background dark-gray
 
 body
-  font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
-  font-size 1.4rem
+  font-family fonts
+  font-size 1.2rem
   line-height 1.428571429
-  color #333333
+  color #333
   // min-width 320px
   // max-width 100%
   // user-select none
-  background-color #ffffff
+  background-color #fff
 
-a
-  color #337ab7
-  text-decoration none
-
-a:hover,
-a:focus
-  color #23527c
-  text-decoration underline
-
-a:focus
-  outline thin dotted
-  outline 5px auto -webkit-focus-ring-color
-  outline-offset -2px
+h1,
+h1,
+h3,
+h4,
+h5,
+h6
+  margin 0
+  font: inherit;
+  // font-family: inherit;
+  // font-weight: 500;
+  // line-height: 1.1;
 
 ul,
 ol
   margin 0
   padding 0
   list-style none
+
+a
+  color inherit
+  text-decoration none
+
+a:hover
+  color inherit
+  // text-decoration underline
+
+a:focus
+  outline thin dotted
+  outline 5px auto -webkit-focus-ring-color
+  outline-offset -2px
 
 img
   vertical-align middle
@@ -308,49 +321,79 @@ textarea
 // w-recommend 模块
 .w-recommend
   margin 1rem 0
+
   & .w-recommend-hd
+    position relative
+    text-align center
+
+    &:after
+      content ''
+      position absolute
+      left 0
+      right 0
+      top 50%
+      margin-top -1px
+      display block
+      border-top 1px #D5D5D5 solid
+
     & > .title
-      padding 0 1rem
-      color #696969
-      text-align center
+      position relative
+      z-index 1
+      display inline-block
+      padding 0 10px
+      color #545454
+      font-size 1.2rem
       background #fff
+
       &:before
         content ''
         display inline-block
-        margin-right .5rem
-        width 12px
-        height 12px
+        margin-right 5px
+        width 13px
+        height 13px
         background url(../img/icon-arrow-circle.png) 50% 50% no-repeat
         background-size contain
+        vertical-align middle
 
 // w-piclist 模块
 .w-piclist
   display flex
   flex-wrap wrap
   justify-content space-between
+  margin 15px 0
+
   & > .item
-    // flex 1 25%
     flex 1 60px
     max-width 100px
     padding 0 10px
-    background #ccc
+    // background #ccc
+
     & > .pic
       display block
+      min-height 60px
+      border 1px #eee solid
       text-align center
+      // background #ccc
+      // line-height 60px
+
       & > img
-        display inline-block
+        width 100%
         height auto
-        max-width 100%
+        // max-width 100%
+
+      &:after
+        content ''
+        line-height 60px
+        vertical-align middle
+
     & > .name
-      margin-top 1rem
-      height 32px
-      line-height 16px
+      margin-top 5px
+      height 26px
+      line-height 13px
       overflow hidden
       color #50739E
-      & > a
-        color inherit
-
-
+      font-size 1rem
+      font-family Arial
 
 /*
 @name w-btn
@@ -911,12 +954,15 @@ textarea
   position relative
   height 56px
   border-bottom 1px #D54646 solid
-  background #C00
+  background dark-red
   & .logo
-    display block
-    height 100%
+    display inline-block
+    margin 14px 0 0 10px
+    width 191px
+    height 22px
     text-indent -9999px
-    background url(../img/logo.png) 14px 10px no-repeat
+    background url(../img/logo.png) 0 0 no-repeat
+    background-size contain
   & menu
     position absolute
     right 10px
@@ -937,70 +983,156 @@ textarea
 
 /** Search **/
 #search
-  padding 10px
-  background #EBEBEB
+  padding 10px 10px 5px
+  background dark-gray
   & .search-cancel
     float right
   & .search-form
     background #fff
     & .panel
-      // box-sizing content-box
+      display flex
       position relative
       height 34px
       border 1px #DBDBDB solid
       padding 6px 0 6px 34px
-      background #fff url(../img/icon-search) 7px 50% no-repeat
+      background #fff url(../img/icon-search.png) 7px 50% no-repeat
+      background-size 17px
       & input
         // width 100%
+        flex 1
         height 20px
         border 0
+        // background #ccc
+      & input:focus
+        outline none
   & .search-hot
     margin-top 5px
-    // margin-right -1.5em
     height 16px
     line-height 16px
     overflow hidden
     & li
       float left
-      margin-right 1.5em
-      & > a
-        color: #A4A4A4
+      margin-left 1.5rem
+      color #a4a4a4
+    & li:first-child
+      margin-left 0
 
 /** Footer **/
 #footer
   margin-top 30px
   padding 15px 0 30px
   text-align center
-  background #eee
+  background light-gray
   & nav ul
     height 14px
     line-height 14px
+    font-size 0
     & li
       display inline-block
       padding 0 10px
-      border-left 1px #E3E3E3 solid
-      & a
-        color: #C00
+      border-left 1px #ccc solid
+      font-size 1.2rem
+      color: dark-red
     & li:first-child
       border-left none
-    &.sublinks li a
-      color: #999
+    &.sublinks
+      margin-top 10px
+      & li
+        padding 0 8px
+        color: #999
   & nav hr
-    border-color #E1E1E1
-    margin 15px 0 20px
+    border-color #D5D5D5
+    margin 12px 0 15px
 
   & .copyright
     margin 5px 0
-    color: #777
+    color: #666
 
 /** Main **/
 #main
   background #fff
 
 #categories
+  & .category
+    padding 10px
+    border-top 1px #ddd solid
+    overflow hidden
+    font-size 1rem
+    font-family Arial
+    color #000
+
+    & > .pic
+      float left
+      width 82px
+      margin-right 15px
+
+      & > span
+        display block
+        max-height 24px
+        line-height 12px
+        overflow hidden
+
+      & > img
+        margin-top 5px
+        width 100%
+        height auto
+
+    & > .slider
+      position relative
+      overflow hidden
+      padding-right 20px
+
+      & > .list
+        width 9999px
+
+        & > .item
+          float left
+          width 200px
+
+          & > .wrap
+            overflow hidden
+
+          & > .wrap a
+            position relative
+            float left
+            margin-bottom 10px
+            width 50%
+            padding 0 20px 0 7px
+            color #000
+
+            &:before
+              content ''
+              position absolute
+              left 0
+              top 7px
+              width 2px
+              height 2px
+              background #838383
+
+      & > .nav
+        position absolute
+        right 0
+        top 0
+        // margin-top -14px
+        width 20px
+        height 100%
+        background-position 100% 50%
+        background-repeat no-repeat
+        background-size 7px
+        background-color #fff
+
+        &.next
+          background-image url(../img/btn-next.png)
+
+        &.prev
+          background-image url(../img/btn-prev.png)
+
+    &:first-child
+      border-top 0
+
   & > .viewmore
     display block
-    margin 20px 10px
+    margin 0 10px 20px
     padding 0
     height 38px
     border-radius 5px
@@ -1009,6 +1141,17 @@ textarea
     text-align center
     background linear-gradient(top, #D70303, #CC0000)
     box-shadow 1px 1px rgba(0, 0, 0, .38)
+
+    &:after
+      content ''
+      display inline-block
+      margin -4px 0 0 8px
+      width 8px
+      height 8px
+      border 1px #f7f7f7 solid
+      border-width 0 1px 1px 0
+      transform rotate(45deg)
+      vertical-align middle
 
 /* 注册页 */
 .form-login
