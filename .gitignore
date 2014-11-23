@@ -1,6 +1,8 @@
 node_modules/
 .svn/
 .idea/
+up-rewrite.conf
+u.php
 .project
 .build
 .cache
