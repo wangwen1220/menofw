@@ -16,39 +16,29 @@ include 'header.html';
           <span>LED & Lighting</span>
           <img src="/upload/pic/pic-cat1.png" alt="">
         </a>
-        <div class="slider">
-          <ul class="list fn-clear">
-            <li class="item">
-              <div class="wrap">
-                <a href="#">LED Bulbs</a>
+        <div class="slider-wrap">
+          <div class="slider">
+            <ul class="list fn-clear">
+              <li class="item">
+                <a href="#">1LED Bulbs</a>
                 <a href="#">Indoor LED Lighting</a>
-              </div>
-              <div class="wrap">
                 <a href="#">Led Street Lighting</a>
                 <a href="#">Outdoor LED Lighting</a>
-              </div>
-            </li>
-            <li class="item">
-              <div class="wrap">
-                <a href="#">MS11 Bulbs</a>
+              </li>
+              <li class="item">
+                <a href="#">2MS11 Bulbs</a>
                 <a href="#">Indoor Indoor</a>
-              </div>
-              <div class="wrap">
                 <a href="#">Led Street</a>
                 <a href="#">Outdoor LED Lighting</a>
-              </div>
-            </li>
-            <li class="item">
-              <div class="wrap">
-                <a href="#">Mobile Bulbs</a>
+              </li>
+              <li class="item">
+                <a href="#">3Mobile Bulbs</a>
                 <a href="#">Indoor Blackberry Mobile Phone Case</a>
-              </div>
-              <div class="wrap">
                 <a href="#">iPhone Lighting</a>
                 <a href="#">Outdoor LED Lighting</a>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
           <a class="nav next"></a>
         </div>
       </div>
@@ -57,39 +47,29 @@ include 'header.html';
           <span>Machinery</span>
           <img src="/upload/pic/pic-cat2.png" alt="">
         </a>
-        <div class="slider">
-          <ul class="list fn-clear">
-            <li class="item">
-              <div class="wrap">
-                <a href="#">LED Bulbs</a>
+        <div class="slider-wrap">
+          <div class="slider">
+            <ul class="list fn-clear">
+              <li class="item">
+                <a href="#">1LED Bulbs</a>
                 <a href="#">Indoor LED Lighting</a>
-              </div>
-              <div class="wrap">
                 <a href="#">Led Street Lighting</a>
                 <a href="#">Outdoor LED Lighting</a>
-              </div>
-            </li>
-            <li class="item">
-              <div class="wrap">
+              </li>
+              <li class="item">
                 <a href="#">MS11 Bulbs</a>
                 <a href="#">Indoor Indoor</a>
-              </div>
-              <div class="wrap">
                 <a href="#">Led Street</a>
                 <a href="#">Outdoor LED Lighting</a>
-              </div>
-            </li>
-            <li class="item">
-              <div class="wrap">
+              </li>
+              <li class="item">
                 <a href="#">Mobile Bulbs</a>
                 <a href="#">Indoor Blackberry Mobile Phone Case</a>
-              </div>
-              <div class="wrap">
                 <a href="#">iPhone Lighting</a>
                 <a href="#">Outdoor LED Lighting</a>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
           <a class="nav next"></a>
         </div>
       </div>
@@ -98,39 +78,29 @@ include 'header.html';
           <span>Electronic Components</span>
           <img src="/upload/pic/pic-cat3.png" alt="">
         </a>
-        <div class="slider">
-          <ul class="list fn-clear">
-            <li class="item">
-              <div class="wrap">
+        <div class="slider-wrap">
+          <div class="slider">
+            <ul class="list fn-clear">
+              <li class="item">
                 <a href="#">LED Bulbs</a>
                 <a href="#">Indoor LED Lighting</a>
-              </div>
-              <div class="wrap">
                 <a href="#">Led Street Lighting</a>
                 <a href="#">Outdoor LED Lighting</a>
-              </div>
-            </li>
-            <li class="item">
-              <div class="wrap">
+              </li>
+              <li class="item">
                 <a href="#">MS11 Bulbs</a>
                 <a href="#">Indoor Indoor</a>
-              </div>
-              <div class="wrap">
                 <a href="#">Led Street</a>
                 <a href="#">Outdoor LED Lighting</a>
-              </div>
-            </li>
-            <li class="item">
-              <div class="wrap">
+              </li>
+              <li class="item">
                 <a href="#">Mobile Bulbs</a>
                 <a href="#">Indoor Blackberry Mobile Phone Case</a>
-              </div>
-              <div class="wrap">
                 <a href="#">iPhone Lighting</a>
                 <a href="#">Outdoor LED Lighting</a>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
           <a class="nav next"></a>
         </div>
       </div>
@@ -139,39 +109,29 @@ include 'header.html';
           <span>Consumer Electronics</span>
           <img src="/upload/pic/pic-cat4.png" alt="">
         </a>
-        <div class="slider">
-          <ul class="list fn-clear">
-            <li class="item">
-              <div class="wrap">
+        <div class="slider-wrap">
+          <div class="slider">
+            <ul class="list fn-clear">
+              <li class="item">
                 <a href="#">LED Bulbs</a>
                 <a href="#">Indoor LED Lighting</a>
-              </div>
-              <div class="wrap">
                 <a href="#">Led Street Lighting</a>
                 <a href="#">Outdoor LED Lighting</a>
-              </div>
-            </li>
-            <li class="item">
-              <div class="wrap">
+              </li>
+              <li class="item">
                 <a href="#">MS11 Bulbs</a>
                 <a href="#">Indoor Indoor</a>
-              </div>
-              <div class="wrap">
                 <a href="#">Leds</a>
                 <a href="#">Outdoor LED Lighting</a>
-              </div>
-            </li>
-            <li class="item">
-              <div class="wrap">
+              </li>
+              <li class="item">
                 <a href="#">Mobile Bulbs</a>
                 <a href="#">Indoor Blackberry Mobile Phone Case</a>
-              </div>
-              <div class="wrap">
                 <a href="#">iPhone Lighting</a>
                 <a href="#">Outdoor LED Lighting</a>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
           <a class="nav next"></a>
         </div>
       </div>
@@ -180,39 +140,122 @@ include 'header.html';
           <span>Automation</span>
           <img src="/upload/pic/pic-cat5.png" alt="">
         </a>
-        <div class="slider">
-          <ul class="list fn-clear">
-            <li class="item">
-              <div class="wrap">
+        <div class="slider-wrap">
+          <div class="slider">
+            <ul class="list fn-clear">
+              <li class="item">
                 <a href="#">Cable</a>
                 <a href="#">Indoor LED Lighting</a>
-              </div>
-              <div class="wrap">
                 <a href="#">Led Street Lighting</a>
                 <a href="#">Outdoor LED Lighting</a>
-              </div>
-            </li>
-            <li class="item">
-              <div class="wrap">
+              </li>
+              <li class="item">
                 <a href="#">MS11 Bulbs</a>
                 <a href="#">Indoor Indoor</a>
-              </div>
-              <div class="wrap">
                 <a href="#">Led Street</a>
                 <a href="#">Outdoor LED Lighting</a>
-              </div>
-            </li>
-            <li class="item">
-              <div class="wrap">
+              </li>
+              <li class="item">
                 <a href="#">Mobile Bulbs</a>
                 <a href="#">Indoor Blackberry Mobile Phone Case</a>
-              </div>
-              <div class="wrap">
                 <a href="#">iPhone Lighting</a>
                 <a href="#">Outdoor LED Lighting</a>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
+          <a class="nav next"></a>
+        </div>
+      </div>
+      <div class="category hidden">
+        <a href="#" class="pic">
+          <span>Hidden1</span>
+          <img src="/upload/pic/pic-cat5.png" alt="">
+        </a>
+        <div class="slider-wrap">
+          <div class="slider">
+            <ul class="list fn-clear">
+              <li class="item">
+                <a href="#">Cable</a>
+                <a href="#">Indoor LED Lighting</a>
+                <a href="#">Led Street Lighting</a>
+                <a href="#">Outdoor LED Lighting</a>
+              </li>
+              <li class="item">
+                <a href="#">MS11 Bulbs</a>
+                <a href="#">Indoor Indoor</a>
+                <a href="#">Led Street</a>
+                <a href="#">Outdoor LED Lighting</a>
+              </li>
+              <li class="item">
+                <a href="#">Mobile Bulbs</a>
+                <a href="#">Indoor Blackberry Mobile Phone Case</a>
+                <a href="#">iPhone Lighting</a>
+                <a href="#">Outdoor LED Lighting</a>
+              </li>
+            </ul>
+          </div>
+          <a class="nav next"></a>
+        </div>
+      </div>
+      <div class="category hidden">
+        <a href="#" class="pic">
+          <span>Hidden2</span>
+          <img src="/upload/pic/pic-cat5.png" alt="">
+        </a>
+        <div class="slider-wrap">
+          <div class="slider">
+            <ul class="list fn-clear">
+              <li class="item">
+                <a href="#">Cable</a>
+                <a href="#">Indoor LED Lighting</a>
+                <a href="#">Led Street Lighting</a>
+                <a href="#">Outdoor LED Lighting</a>
+              </li>
+              <li class="item">
+                <a href="#">MS11 Bulbs</a>
+                <a href="#">Indoor Indoor</a>
+                <a href="#">Led Street</a>
+                <a href="#">Outdoor LED Lighting</a>
+              </li>
+              <li class="item">
+                <a href="#">Mobile Bulbs</a>
+                <a href="#">Indoor Blackberry Mobile Phone Case</a>
+                <a href="#">iPhone Lighting</a>
+                <a href="#">Outdoor LED Lighting</a>
+              </li>
+            </ul>
+          </div>
+          <a class="nav next"></a>
+        </div>
+      </div>
+      <div class="category hidden">
+        <a href="#" class="pic">
+          <span>Hidden3</span>
+          <img src="/upload/pic/pic-cat5.png" alt="">
+        </a>
+        <div class="slider-wrap">
+          <div class="slider">
+            <ul class="list fn-clear">
+              <li class="item">
+                <a href="#">Cable</a>
+                <a href="#">Indoor LED Lighting</a>
+                <a href="#">Led Street Lighting</a>
+                <a href="#">Outdoor LED Lighting</a>
+              </li>
+              <li class="item">
+                <a href="#">MS11 Bulbs</a>
+                <a href="#">Indoor Indoor</a>
+                <a href="#">Led Street</a>
+                <a href="#">Outdoor LED Lighting</a>
+              </li>
+              <li class="item">
+                <a href="#">Mobile Bulbs</a>
+                <a href="#">Indoor Blackberry Mobile Phone Case</a>
+                <a href="#">iPhone Lighting</a>
+                <a href="#">Outdoor LED Lighting</a>
+              </li>
+            </ul>
+          </div>
           <a class="nav next"></a>
         </div>
       </div>
