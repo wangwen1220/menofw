@@ -265,24 +265,64 @@ include 'header.html';
     <div class="w-recommend">
       <div class="w-recommend-hd"><h3 class="title">You May Like</h3></div>
       <div class="w-recommend-bd">
-        <ul class="w-piclist fn-clear">
-          <li class="item">
-            <a href="#" class="pic"><img src="/upload/pic/pic-cat1.png" alt=""></a>
-            <h4 class="name"><a href="#">MS111 Best Co2 Case Detector</a></h4>
-          </li>
-          <li class="item">
-            <a href="#" class="pic"><img src="/upload/pic/pic-cat2.png" alt=""></a>
-            <h4 class="name"><a href="#">Welding Cable $1 weding Wire</a></h4>
-          </li>
-          <li class="item">
-            <a href="#" class="pic"><img src="/upload/pic/pic-cat3.png" alt=""></a>
-            <h4 class="name"><a href="#">Product Name Opic Patch</a></h4>
-          </li>
-          <li class="item">
-            <a href="#" class="pic"><img src="/upload/pic/pic-cat4.png" alt=""></a>
-            <h4 class="name"><a href="#">Detector ansceiver</a></h4>
-          </li>
-        </ul>
+        <div class="w-slider js-slider">
+          <div class="slider-cnt">
+            <ul class="slider-item w-piclist fn-clear">
+              <li class="item">
+                <a href="#" class="pic"><img src="/upload/pic/pic-cat1.png" alt=""></a>
+                <h4 class="name"><a href="#">MS111 Best Co2 Case Detector</a></h4>
+              </li>
+              <li class="item">
+                <a href="#" class="pic"><img src="/upload/pic/pic-cat2.png" alt=""></a>
+                <h4 class="name"><a href="#">Welding Cable $1 weding Wire</a></h4>
+              </li>
+              <li class="item">
+                <a href="#" class="pic"><img src="/upload/pic/pic-cat3.png" alt=""></a>
+                <h4 class="name"><a href="#">Product Name Opic Patch</a></h4>
+              </li>
+              <li class="item">
+                <a href="#" class="pic"><img src="/upload/pic/pic-cat4.png" alt=""></a>
+                <h4 class="name"><a href="#">Detector ansceiver</a></h4>
+              </li>
+            </ul>
+            <ul class="slider-item w-piclist fn-clear">
+              <li class="item">
+                <a href="#" class="pic"><img src="/upload/pic/pic-cat3.png" alt=""></a>
+                <h4 class="name"><a href="#">Product Name Opic Patch</a></h4>
+              </li>
+              <li class="item">
+                <a href="#" class="pic"><img src="/upload/pic/pic-cat5.png" alt=""></a>
+                <h4 class="name"><a href="#">MS111 Best Co2 Case Detector</a></h4>
+              </li>
+              <li class="item">
+                <a href="#" class="pic"><img src="/upload/pic/pic-cat2.png" alt=""></a>
+                <h4 class="name"><a href="#">Welding Cable $1 weding Wire</a></h4>
+              </li>
+              <li class="item">
+                <a href="#" class="pic"><img src="/upload/pic/pic-cat4.png" alt=""></a>
+                <h4 class="name"><a href="#">Detector ansceiver</a></h4>
+              </li>
+            </ul>
+            <ul class="slider-item w-piclist fn-clear">
+              <li class="item">
+                <a href="#" class="pic"><img src="/upload/pic/pic-cat1.png" alt=""></a>
+                <h4 class="name"><a href="#">MS111 Best Co2 Case Detector</a></h4>
+              </li>
+              <li class="item">
+                <a href="#" class="pic"><img src="/upload/pic/pic-cat3.png" alt=""></a>
+                <h4 class="name"><a href="#">Product Name Opic Patch</a></h4>
+              </li>
+              <li class="item">
+                <a href="#" class="pic"><img src="/upload/pic/pic-cat2.png" alt=""></a>
+                <h4 class="name"><a href="#">Welding Cable $1 weding Wire</a></h4>
+              </li>
+              <li class="item">
+                <a href="#" class="pic"><img src="/upload/pic/pic-cat4.png" alt=""></a>
+                <h4 class="name"><a href="#">Detector ansceiver</a></h4>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>

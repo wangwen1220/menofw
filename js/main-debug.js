@@ -74,6 +74,18 @@
       $(this).hide().siblings('.hidden').removeClass('hidden');
     });
 
+    // 推荐产品 Slider
+    $main.find('.js-slider').swipe({
+      // startSlide: 2,
+      // speed: 400,
+      auto: 3000
+      // continuous: false,
+      // disableScroll: false,
+      // stopPropagation: false,
+      // callback: function(index, elem) {},
+      // transitionEnd: function(index, elem) {}
+    });
+
     // 设置文章字体大小
     // $('#js-setfont').on('tap', function(event) {
     //   event.preventDefault();
