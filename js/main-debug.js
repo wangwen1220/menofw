@@ -29,6 +29,7 @@
     // 通用变量
     var $html = $('html');
     var $header = $('#header');
+    var $search = $('#search');
     var $main = $('#main');
     var $mask = $('#mask');
     var $cats = $('#categories');
@@ -38,6 +39,12 @@
     if (typeof FastClick !== 'undefined' && typeof document.body !== 'undefined') {
       FastClick.attach(document.body);
     }
+
+    // 搜索
+    $search.on('click', '.js-searchtxt', function(e) {
+      // $(e.delegateTarget).siblings().hide();
+      $search.siblings().hide();
+    });
 
     // 产品分类 Slider
     $cats.find('.slider').swipe({
@@ -72,6 +79,12 @@
     // 显示全部分类
     $cats.children('.viewmore').on('click', function() {
       $(this).hide().siblings('.hidden').removeClass('hidden');
+    });
+
+    // 购物车
+    $('#inquiries').on('click', '.js-close', function(e) {
+      $(this.parentNode).remove();
+      return false;
     });
 
     // 推荐产品 Slider

@@ -1,8 +1,12 @@
 /*! Main Style by Steven 2014-8-1 */
 
+support-for-ie = false
+
+@import 'nib'
+@import 'wcss'
+
 /* Var
 ============================================================================= */
-support-for-ie = false
 fonts = 'Microsoft Yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif
 dark-red = #c00
 light-gray = #eee
@@ -15,17 +19,11 @@ gray-dark = #444
 yellow = #FE8900
 green = #379A00
 
-@import 'nib'
-@import 'wcss'
-// @import 'gmu.styl'
-
 /* Reset
 ============================================================================= */
 *,
 *:before,
 *:after
-  -webkit-box-sizing border-box
-  -moz-box-sizing border-box
   box-sizing border-box
 
 html
@@ -517,16 +515,6 @@ textarea
       max-height 48px
       color blue-dark
       overflow hidden
-      // display box
-      // box-orient vertical
-      // overflow hidden
-      // -webkit-line-clamp 2
-      // -moz-line-clamp 2
-      // line-clamp 2
-      // text-overflow ellipsis
-      // text-overflow -o-ellipsis-lastline
-      // max-height 48px
-      // color blue-dark
 
       & a
         display block
@@ -861,7 +849,7 @@ textarea
 
 /* Layout
 ========================================================================== */
-/** Header **/
+// Header
 #header
   // position fixed
   // z-index 1
@@ -871,6 +859,7 @@ textarea
   height 56px
   border-bottom 1px #D54646 solid
   background dark-red
+
   & .logo
     display inline-block
     margin 14px 0 0 10px
@@ -879,12 +868,14 @@ textarea
     text-indent -9999px
     background url(../img/logo.png) 0 0 no-repeat
     background-size contain
+
   & menu
     position absolute
     right 10px
     top 50%
     margin-top -16px
     font-size 0
+
     & a
       display inline-block
       margin-left 14px
@@ -892,20 +883,25 @@ textarea
       height 32px
       background-size contain
       background-repeat no-repeat
+
     & a.search
       background-image url(../img/icon-search.png)
+
     & a.login
       background-image url(../img/icon-login.png)
 
-/** Search **/
+// Search
 #search
   // margin-top 56px
   padding 10px 10px 5px
   background dark-gray
+
   & .search-cancel
     float right
+
   & .search-form
     background #fff
+
     & .panel
       display flex
       position relative
@@ -914,6 +910,7 @@ textarea
       padding 6px 0 6px 34px
       background #fff url(../img/icon-search-small.png) 7px 50% no-repeat
       background-size 17px
+
       & input
         // width 100%
         flex 1
@@ -921,43 +918,53 @@ textarea
         border 0
         font-size 1.4rem
         // background #ccc
+
       & input:focus
         outline none
+
   & .search-hot
     margin-top 5px
     height 16px
     line-height 16px
     overflow hidden
+
     & li
       float left
       margin-left 1.5rem
       color #a4a4a4
+
     & li:first-child
       margin-left 0
 
-/** Footer **/
+// Footer
 #footer
   margin-top 30px
   padding 15px 0 30px
   text-align center
   background light-gray
+
   & nav ul
     height 14px
     line-height 14px
     font-size 0
+
     & li
       display inline-block
       padding 0 10px
       border-left 1px #ccc solid
       font-size 1.2rem
       color: dark-red
+
     & li:first-child
       border-left none
+
     &.sublinks
       margin-top 10px
+
       & li
         padding 0 8px
         color: #999
+
   & nav hr
     border-color #D5D5D5
     margin 12px 0 15px
@@ -966,7 +973,7 @@ textarea
     margin 5px 0
     color: #666
 
-/** Main **/
+// Main
 #main
   background #fff
 
@@ -1089,7 +1096,67 @@ textarea
       transform rotate(45deg)
       vertical-align middle
 
-/* 注册页 */
+// Inquiries
+#inquiries
+  position fixed
+  z-index 1
+  bottom 0
+  width 100%
+  height 55px
+  line-height 55px
+  text-align center
+  background #404040
+
+  & > i
+    absolute left 0 top 0
+    z-index 1
+    size 22px
+    line-height 22px
+    background #000
+
+    &:before,
+    &:after
+      content ''
+      display block
+      position absolute
+      left 50%
+      top 50%
+      margin-left -6px
+      width 12px
+      height 2px
+      background #fff
+      transform rotate(45deg)
+
+    &:after
+      transform rotate(135deg)
+
+  & > .content
+    position relative
+    display inline-block
+    height 100%
+    padding-left 45px
+    font-size 16px
+    font-family Arial
+    color #fff
+    background url(../img/icon-cart.png) 0 50% no-repeat
+    background-size 31px
+
+    & > strong
+      position absolute
+      top 18px
+      left 30px
+      min-height 18px
+      min-width 18px
+      border-radius 9px
+      color #fff
+      font-size 14px
+      font-weight normal
+      line-height 1
+      padding 2px
+      background #D50203
+      transform translate(-50%, -50%)
+
+// 注册页
 .form-login
   margin-bottom 5rem
   & .forget-password
@@ -1105,7 +1172,7 @@ textarea
     & a
       color green
 
-/* 404 */
+// 404
 .cnt-404
   margin 5rem 10px
   & p
@@ -1118,237 +1185,3 @@ textarea
       font-size .95rem
       color blue
       text-decoration underline
-
-/* 个人中心 */
-.cnt-center
-  margin-bottom 2rem
-  border-top 1px #CCC solid
-  & .mycomment
-    position relative
-    display block
-    margin-bottom 4rem
-    padding 0 10px
-    height 34px
-    line-height 34px
-    border-top 1px #ccc solid
-    border-bottom 1px #ccc solid
-    font-size .9rem
-    color blue
-    background #fff
-    &:after
-      position absolute
-      right 10px
-      top 50%
-      margin-top -4px
-      content ''
-      arrow left 4px blue
-  & .comment-list
-    padding 0 10px
-    & .comment-title
-      margin-top 10px
-      font-size .9rem
-      color blue
-      &:after
-        content ''
-        arrow top 4px blue
-        margin-left 5px
-        vertical-align -1px
-    & .w-art
-      margin 0
-
-/* 文章页 */
-.cnt-news
-  .news-content
-    margin 15px 0
-    padding 0 10px
-    & h1
-      font-weight bold
-      font-size 1.25rem
-      line-height 1.3
-      color #000
-    & .from
-      position relative
-      margin-top 10px
-      font-size .75rem
-      color #666
-      & time
-        margin-left 1.2em
-      & .setfont
-        position absolute
-        right 0
-        width 30px
-        border 1px solid #d7d7d7
-        border-radius 1px
-        text-align center
-        color blue
-    & article
-      & p
-        margin 1rem 0
-        color #111
-        // font-weight bold
-      & .art-pic
-        margin 1rem 0
-        text-align center
-        & .pic
-          display block
-          max-height 600px
-          overflow hidden
-        & .des
-          margin 5px 0 0
-  & .news-related .from
-    margin 1rem 0
-    text-align right
-    font-size .68rem
-    color #666
-    & span
-      margin-left 1rem
-  & .news-comment
-    margin 20px 0
-    padding 0 10px
-    & > h3
-      margin 10px 0
-      font-size .9rem
-      font-weight bold
-      color #000
-    & .comment-reply
-      display flex
-      // display box
-      & .avatar
-        display block
-        margin-right 5px
-        width 50px
-        overflow hidden
-        text-align center
-        & img
-          width 100%
-          height 50px
-        & span
-          display block
-          height 18px
-          line-height 18px
-          overflow hidden
-          font-size .68rem
-          color blue
-      & .tarea
-        display flex
-        // display box
-        flex 1
-        position relative
-        & textarea
-          flex 1
-          display block
-          box-flex 1
-          padding .1rem .2rem
-          height 62px
-          border 1px #D1D1D1 solid
-          border-radius 3px
-          font-size .8em
-          color #444
-          background-color #F8F8F8
-        & .tips
-          position absolute
-          left 10%
-          right 10%
-          top 50%
-          margin-top -10px
-          height 20px
-          line-height 20px
-          overflow hidden
-          text-align center
-          font-size .88rem
-          background #EBC2C2
-    & .comment-bar
-      margin 10px 0
-      padding-bottom 3px
-      border-bottom 1px #DEDEDE solid
-      text-align right
-      & label
-        font-size .8rem
-        color #444
-        vertical-align middle
-        & input
-          width 10px
-          height 10px
-          border 1px #8E8F8F solid
-          vertical-align 1px
-      & button
-        margin-left 10px
-        padding 0 8px
-        height 22px
-        // line-height 18px
-        border 0
-        border-radius 0
-        color #fff
-        text-align center
-        font-size .8rem
-        background red
-    & .comment-hot
-      & > h3
-        margin 10px 0 15px
-        border-left 2px red solid
-        padding-left 5px
-        line-height 1
-        font-size .9rem
-      & .comment-list li
-        display flex
-        padding-bottom 10px
-        margin-bottom 20px
-        border-bottom 1px #DEDEDE solid
-        &:last-child
-          border none
-        & .avatar
-          display block
-          margin-right 10px
-          width 40px
-          overflow hidden
-          & img
-            width 100%
-            height 40px
-        & .cnt
-          flex 1
-          & > h4
-            display flex
-            font-size .68rem
-            & a
-              flex 1
-              color blue
-            & time
-              flex 1
-              text-align right
-              color #666
-          & > p
-            margin-top 2px
-            font-size .8rem
-  & .pagenav-ft
-    margin-top 2rem
-    padding 0 10px
-    & h3
-      font-size .88rem
-    & li
-      border-color #CDCDCD
-    & li:first-child
-      margin-top 0
-      border-top 1px solid #CDCDCD
-    & a
-      color blue
-      border-color #CDCDCD
-      background-color #F3F3F3
-    & a.more:after
-      border-top-color blue
-    & a.more.fold:after
-      border-bottom-color blue
-
-/** 子站配色 **/
-/* 物联网 */
-html.iot
-  #header
-    border-color #034DAD
-  .pagenav li
-    border-color #034DAD
-    background #0459B8
-    & a
-      border-color #034DAD
-  .w-box-hd
-    border-color #034DAD
-    & .title
-      color #0459B8
