@@ -4,4 +4,4 @@ echo Start weinre
 weinre -httpPort 8080 -boundHost 192.168.2.213
 
 echo Start gulp
-gulp
+::gulp

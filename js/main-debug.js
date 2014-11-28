@@ -1,8 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // 名称: 主程序
 // 作者: Steven
-// 链接: http://wenwang.org/
-// 说明: Require jQuery
+// 说明: Require Zepto
 // 更新: 2014-8-1
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -41,10 +40,46 @@
     }
 
     // 搜索
-    $search.on('click', '.js-searchtxt', function(e) {
-      // $(e.delegateTarget).siblings().hide();
-      $search.siblings().hide();
-    });
+    $search.data('$hidden', $search.find('.js-hide'))
+      .on('focusin click', '.js-key', function() {
+        if ($main.hasClass('js-hide')) {
+          return;
+        }
+
+        this.focus();
+        this.value = '';
+        $search.siblings().addClass('js-hide');
+        $search.data('$hidden').removeClass('js-hide');
+        $search.find('.search-hot').hide();
+      })
+      .on('click', '.js-cancel', function() {
+        $search.find('.js-key').val('');
+        $search.find('.js-keylist').empty();
+        $search.siblings().removeClass('js-hide');
+        $search.data('$hidden').addClass('js-hide');
+        $search.find('.search-hot').show();
+      })
+      .on('click', '.js-clear', function() {
+        $search.find('.js-key').val('').focus();
+        $search.find('.js-keylist').empty();
+      }).on('keyup', '.js-key', function() {
+        var url = $search.children('form').attr('action');
+        var key = $.trim($search.find('.js-key').val());
+        var $keylist = $search.find('.js-keylist');
+
+        if (!key) {
+          $search.find('.js-keylist').empty();
+          return;
+        }
+
+        $.get(url, {key: key}, function(data) {
+          var html = $.map(data, function(item, index) {
+            return item.suggestion;
+          }).join('');
+
+          $keylist.html(html);
+        }, 'json');
+      });
 
     // 产品分类 Slider
     $cats.find('.slider').swipe({
@@ -83,7 +118,8 @@
 
     // 购物车
     $('#inquiries').on('click', '.js-close', function(e) {
-      $(this.parentNode).remove();
+      // $(this.parentNode).remove();
+      $(this.parentNode.parentNode).remove();
       return false;
     });
 
