@@ -21,8 +21,8 @@ green = #379A00
 
 /* Reset
 ============================================================================= */
-*,
-*:before,
+*
+*:before
 *:after
   box-sizing border-box
 
@@ -37,15 +37,15 @@ body
   line-height 1.428571429
   color #333
   // min-width 320px
-  // max-width 100%
+  max-width 640px
   // user-select none
   background-color #fff
 
-h1,
-h1,
-h3,
-h4,
-h5,
+h1
+h1
+h3
+h4
+h5
 h6
   margin 0
   font: inherit;
@@ -53,7 +53,7 @@ h6
   // font-weight: 500;
   // line-height: 1.1;
 
-ul,
+ul
 ol
   margin 0
   padding 0
@@ -98,7 +98,7 @@ img
 .img-circle
   border-radius 50%
 
-hr,
+hr
 .hr
   clear both
   margin 10px 0
@@ -147,7 +147,7 @@ textarea
 .fn-capitalize
   text-transform capitalize !important
 
-.fn-dn,
+.fn-dn
 .js-hide
   display none !important
 
@@ -217,11 +217,11 @@ textarea
   overflow hidden
   visibility hidden
 
-  & > .slider-cnt
+  > .slider-cnt
     position relative
     overflow hidden
 
-    & > .slider-item
+    > .slider-item
       position relative
       float left
       width 100%
@@ -232,7 +232,7 @@ textarea
 .w-recommend
   margin 1rem 0
 
-  & .w-recommend-hd
+  .w-recommend-hd
     position relative
     text-align center
 
@@ -246,7 +246,7 @@ textarea
       display block
       border-top 1px #D5D5D5 solid
 
-    & > .title
+    > .title
       position relative
       z-index 1
       display inline-block
@@ -272,13 +272,13 @@ textarea
   justify-content space-between
   margin 15px 0
 
-  & > .item
+  > .item
     flex 1 60px
     max-width 100px
     padding 0 10px
     // background #ccc
 
-    & > .pic
+    > .pic
       display block
       min-height 60px
       border 1px #eee solid
@@ -286,7 +286,7 @@ textarea
       // background #ccc
       // line-height 60px
 
-      & > img
+      > img
         width 100%
         height auto
         // max-width 100%
@@ -296,243 +296,34 @@ textarea
         line-height 60px
         vertical-align middle
 
-    & > .name
+    > .name
       margin-top 5px
       height 26px
       line-height 13px
       overflow hidden
       color #50739E
-      font-size 1rem
+      font-size 1.2rem
       font-family Arial
 
-/*
-@name w-btn
-@overview 通用按钮模块
-@require null
-*/
-.w-btn, a.w-btn
-  display inline-block
-  padding .5em 1em
-  border 1px solid rgba(0,0,0,.25)
-  border-radius 0.3em
-  background-image none
-  box-shadow 0 1px rgba(0,0,0,.15), inset 0 1px rgba(255,255,255,.15)
-  color #fff
-  text-align center
-  text-decoration none
-  text-shadow 1px 1px rgba(0,0,0,.1)
-  font-size 100%
-  font-family inherit
-  font-weight inherit
-  white-space nowrap
-  user-select none
-  overflow visible
-  cursor pointer
-
-.w-btn:hover, .w-btn:focus
-  text-decoration none
-  background-image linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.1))
-
-.w-btn:focus
-  outline thin dotted
-  // outline 5px auto -webkit-focus-ring-color
-  outline-offset -2px
-
-.w-btn:active
-  box-shadow 0 1px rgba(0,0,0,.2), inset 0 1px rgba(0,0,0,.05)
-  outline none
-
-.w-btn-blue, a.w-btn-blue
-  background linear-gradient(#4EA6D5, #4395CA)
-
-.w-btn-blue:focus, .w-btn-blue:hover, a.w-btn-blue:hover
-  background-color #4EA6D5
-
-.w-btn-yellow, a.w-btn-yellow
-  background linear-gradient(#FFFB81, #FFD147)
-
-.w-btn-yellow:focus, .w-btn-yellow:hover, a.w-btn-yellow:hover
-  background #FFE35F
-
-/*
-@name w-pager
-@overview 分页模块
-@require null
-*/
-.w-pager
-  text-align right
-  color #000
-  font-size 12px
-  font-family Arial
-  white-space nowrap
-
-.w-pager a
-  display inline-block
-  margin 0 3px
-  width 25px
-  height 24px
-  line-height 24px
-  overflow hidden
-  color #000
-  text-align center
-  vertical-align middle
-
-.w-pager a.prev, .w-pager a.next
-  width auto
-
-.w-pager a:hover
-  color #E82D2C
-
-.w-pager a.current
-  color #fff
-  font-weight bold
-  background-color #E82D2C
-  text-decoration none
-  cursor default
-
-.w-pager a i
-  font-family sans-serif
-  /*-webkit-transform scale(0.5)*/
-
-/*
-@name w-cnt
-@overview 通用内容块样式
-@require null
-*/
-.w-cnt
-  padding 0 10px
-
-.w-cnt-hd
-  margin-left -10px
-  margin-right -10px
-  height 30px
-  line-height 30px
-  overflow hidden
-  border-bottom 2px solid #DBDBDB
-
-// .w-cnt-bd
-//   padding 0 10px
-
-/*
-@name w-box
-@overview 通用盒模块
-@require null
-*/
-.w-box
-  margin 10px auto
-
-.w-box-hd
-  display flex
-  height 38px
-  line-height 38px
-  border-top 2px solid red
-  background #F3F3F3
-
-.w-box-hd .title
-  padding 0 .5em
-  overflow hidden
-  font-size 1.1em
-  font-weight bold
-  color red
-
-.w-box-hd .more
-  flex 1
-  text-align right
-
-.w-box-hd .more a
-  margin-right .5em
-
-.w-box-bd
-  padding 0 10px
-
-/*
-@name w-viewmore
-@overview 通用查看更多模块
-@require null
-*/
-.w-viewmore
-  display block
-  margin 1.5rem 0
-  padding .3rem 0
-  text-align center
-  font-size .8rem
-  color #444
-  background #f3f3f3
-  &:after
-    content ''
-    arrow top 4px #444
-    margin-left 4px
-    vertical-align -1px
-  &.loading:after
-    content none
-  // &.loading:before
-  //   content ''
-  //   display inline-block
-  //   margin-right 5px
-  //   width 18px
-  //   height 18px
-  //   background #444 url(../img/loading.gif) 0 50% no-repeat
-  //   box-sizing 18px
-  //   vertical-align top
-  &.mod2
-    border 1px solid #d6d6d6
-    border-radius 1px
-    color #666
-    background-color #fff
-    &:after
-      border-top-color #666
-  & .ui-refresh-icon
-    display none
-
-/* 上拉加载页 */
-.scroll-refresh .w-viewmore
-  opacity 0
-  // margin-top -10px
-  margin-left 10px
-  margin-right 10px
-  transition .25s ease-in
-  &.loading
-    opacity 1
-
-/*
-@name w-art
-@overview 通用图文模块
-@require null
-*/
+// w-art 通用图文模块
 .w-art
-  // margin 10px 0
   padding 10px 0
   clearfix()
 
-  & .pic
+  .pic
     float left
     margin-right 10px
 
-  & .txt
+  .txt
     overflow hidden
 
-    & h3
+    h3
       max-height 48px
       color blue-dark
       overflow hidden
 
-      & a
+      a
         display block
-
-/* 带边框 */
-.w-art-hr
-  margin 10px 0 0
-  padding 0 0 10px
-  border-bottom 1px #DEDEDE solid
-  & .txt h3
-    color #000
-  & .txt p
-    margin-top 5px
-    font-size .75rem
-    color #999
-    vertical-align bottom
-    & time
-      margin-left 1.5rem
 
 // 横屏
 @media only screen and (min-width 321px) and (orientation landscape)
@@ -541,40 +332,10 @@ textarea
     flex-wrap wrap
     justify-content space-between
 
-    & .w-art
+    .w-art
       width 49%
 
-/*
-@name w-headline
-@overview 通用新闻头条模块
-@require null
-*/
-.w-headline
-  margin-top 10px
-  text-align center
-  & h2
-    height 25px
-    line-height 25px
-    overflow hidden
-    font-weight bold
-    font-size 1.1rem
-    color #1A4991
-  & p
-    height 24px
-    line-height 24px
-    overflow hidden
-    color blue-dark
-    font-size .88em
-    & i
-      color #999
-      font-family Serif
-      vertical-align middle
-
-/*
-@name w-list
-@overview 通用列表模块
-@require null
-*/
+// w-list 通用列表模块
 .w-list-item
   height 40px
   line-height 40px
@@ -582,22 +343,17 @@ textarea
   word-wrap break-word
   border-bottom 1px #DEDEDE solid
 
-  & a
+  a
     display block
     color blue-dark
     overflow ellipsis
 
-  & a strong
+  a strong
     font-weight bold
     color blue
 
-  & a em
+  a em
     color blue
-
-/* headline */
-.w-list.headline .w-list-item
-  font-size 1.1rem
-  text-align center
 
 // 横屏
 @media only screen and (min-width 321px) and (orientation landscape)
@@ -612,241 +368,6 @@ textarea
     // width 50%
     flex 1 50%
 
-/*
-@name w-search
-@overview 搜索模块
-@require null
-*/
-.w-search
-  display flex
-  margin 20px 0
-  height 36px
-  border 1px #D1D1D1 solid
-  border-radius .3rem
-  overflow hidden
-
-.w-search input
-  display block
-  padding 10px 5px
-  flex 1
-  // width 480px
-  height 16px
-  border none
-  outline none
-  font-size 20px
-
-.w-search button
-  display block
-  padding 0 1rem
-  // width 100px
-  height 100%
-  border none
-  border-left 1px #D1D1D1 solid
-  text-align center
-  color #666
-  font-size 1rem
-  // letter-spacing .2em
-  background #F9F9F8
-
-/*
-@name w-cats
-@overview 分类模块
-@require null
-*/
-.w-cats
-  margin 10px 0
-  background #F3F3F3
-
-.w-cats-hd
-  height 21px
-  line-height 21px
-  background #CDCDCD
-  & .title
-    position relative
-    display inline-block
-    padding 0 1em
-    color #fff
-    font-size .8em
-    vertical-align bottom
-    background yellow
-  & .title:after
-    position absolute
-    bottom -10px
-    left 50%
-    margin-left -2px
-    content ''
-    arrow top 5px yellow
-  & .title.red
-    background red
-  & .title.red:after
-    arrow top 5px red
-
-.w-cats-bd
-  padding 0 1em 1em 0
-  & li
-    display inline-block
-    margin 1em 0 0 1em
-    font-size .8em
-    text-decoration underline
-
-/*
-@name w-form
-@overview 表单模块
-@require null
-*/
-.w-form
-  margin 10px
-  & .error-msg
-    margin 15px 0
-    text-align center
-    font-size 1rem
-    color red
-
-.w-form-item
-  margin 15px 0
-  &.readonly
-    margin-bottom -5px
-    font-size .88rem
-    color #888
-    & em
-      color blue
-  & .input
-    display flex
-    position relative
-    padding 0 10px
-    height 40px
-    line-height 40px
-    border 1px solid #ccc
-    border-radius 3px
-    box-shadow 0 2px 3px rgba(0,0,0,.08) inset
-    white-space nowrap
-    background #fff
-  & label
-    display inline-block
-    color #888
-    font-weight bold
-  & label.icon
-    text-indent -9999px
-    width 18px
-    // height 18px
-    vertical-align middle
-    background url(../img/icon-login.png) 50% 50% no-repeat
-    background-size contain
-  // & label.userid
-  //   background-image url(../img/icon-login.png)
-  & label.password
-    background-image url(../img/icon-password.png)
-  & label.email
-    background-image url(../img/icon-email.png)
-  & input[type='text'],
-  & input[type='email'],
-  & input[type='password']
-    flex 1
-    display block
-    margin 8px 0 8px 15px
-    height 24px
-    line-height 24px
-    font-size 1rem
-    // color blue
-    border none
-    outline none
-    background #fff
-  & button
-    display block
-    margin-top 20px
-    width 100%
-    height 40px
-    line-height 40px
-    text-align center
-    color #fff
-    font-size 1.1rem
-    letter-spacing .5rem
-    border none
-    border-radius 3px
-    background linear-gradient(top, #D60000, #C20000)
-
-/*
-@name w-card
-@overview 名片模块
-@require null
-*/
-.w-card
-  display flex
-  margin-bottom 15px
-  padding 10px
-  border-bottom 1px #ccc solid
-  background #fff
-  & .avatar
-    width 64px
-    height 64px
-    overflow hidden
-    border 1px #ccc solid
-    border-radius 5px
-    & img
-      display block
-      width 100%
-      height 100%
-  & .info
-    flex 1
-    padding-left 1rem
-    & h3
-      font-size .95rem
-      font-weight bold
-      color #666
-    & li
-      margin-top 3px
-      font-size .66rem
-      color #999
-
-/*
-@name w-dialog
-@overview 弹窗模块
-@require null
-*/
-.w-dialog
-  background #fff
-  & .ui-dialog-title
-    height 32px
-    line-height 32px
-    padding 0 10px
-    border-radius 0
-    text-align left
-    font-size 1rem
-    font-weight bold
-    color red
-    background none
-  & .ui-dialog-close
-    top 0
-    right 10px
-    padding 0
-    margin 0
-    border-radius 0
-    & .ui-icon
-      width 22px
-      height 22px
-      background #999 url(../img/gmu/icon-dialog-close.png) no-repeat
-      background-size contain
-  & .ui-dialog-content
-    padding 10px
-
-/* 登录弹窗 */
-.w-dialog-login
-  .w-form
-    margin -10px 0 0
-    & .w-form-item button
-      margin-top 0
-      height 35px
-      line-height 35px
-      font-size 1rem
-    & .reg-now
-      float left
-      margin .5rem 0 1rem
-      font-size .8rem
-    & .forget-password
-      float right
-      margin .5rem 0 1rem
-      font-size .8rem
-
 /* Layout
 ========================================================================== */
 // Header
@@ -860,7 +381,7 @@ textarea
   border-bottom 1px #D54646 solid
   background dark-red
 
-  & .logo
+  .logo
     display inline-block
     margin 14px 0 0 10px
     width 191px
@@ -869,14 +390,14 @@ textarea
     background url(../img/logo.png) 0 0 no-repeat
     background-size contain
 
-  & menu
+  menu
     position absolute
     right 10px
     top 50%
     margin-top -16px
     font-size 0
 
-    & a
+    a
       display inline-block
       margin-left 14px
       width 32px
@@ -884,27 +405,28 @@ textarea
       background-size contain
       background-repeat no-repeat
 
-    & a.search
+    a.search
       background-image url(../img/icon-search.png)
 
-    & a.login
+    a.login
       background-image url(../img/icon-login.png)
 
 // Search
 #search
+#search-footer
   // margin-top 56px
   padding 10px 10px 5px
   background dark-gray
 
-  & .search-cancel
+  .search-cancel
     float right
     margin-left .8rem
     line-height 34px
     color dark-red
     font-size 1.3rem
 
-  & .search-form
-    & .panel
+  .search-form
+    .panel
       display flex
       position relative
       height 34px
@@ -913,7 +435,7 @@ textarea
       background #fff url(../img/icon-search-small.png) 7px 50% no-repeat
       background-size 17px
 
-      & input
+      input
         // width 100%
         flex 1
         height 20px
@@ -923,17 +445,17 @@ textarea
         color #000
         // background #ccc
 
-      & input:focus
+      input:focus
         outline none
 
-      & .clear
+      .clear
         absolute right 7px top 50%
         transform translateY(-50%)
         size 16px
         border-radius 8px
         background #9F9F9F
 
-        &:before,
+        &:before
         &:after
           content ''
           position absolute
@@ -948,30 +470,30 @@ textarea
         &:after
           transform rotate(135deg)
 
-  & .search-hot
+  .search-hot
     margin-top 5px
     height 16px
     line-height 16px
     overflow hidden
 
-    & li
+    li
       float left
       margin-left 1.5rem
       color #a4a4a4
 
-    & li:first-child
+    li:first-child
       margin-left 0
 
-  & .search-keylist
+  .search-keylist
     margin 12px -10px -5px
     background #fff
 
-    & .keylist li
+    .keylist li
       padding 10px 14px
       border-bottom 1px #F0F0F0 solid
       color #000
 
-      & strong
+      strong
         font-weight normal
         color dark-red
 
@@ -983,33 +505,33 @@ textarea
   text-align center
   background light-gray
 
-  & nav ul
+  nav ul
     height 14px
     line-height 14px
     font-size 0
 
-    & li
+    li
       display inline-block
       padding 0 10px
       border-left 1px #ccc solid
       font-size 1.2rem
       color: dark-red
 
-    & li:first-child
+    li:first-child
       border-left none
 
     &.sublinks
       margin-top 10px
 
-      & li
+      li
         padding 0 8px
         color: #999
 
-  & nav hr
+  nav hr
     border-color #D5D5D5
     margin 12px 0 15px
 
-  & .copyright
+  .copyright
     margin 5px 0
     color: #666
 
@@ -1018,59 +540,61 @@ textarea
   background #fff
 
 #categories
-  & .category
+  .category
     position relative
     padding 10px 0 10px 10px
     // padding 10px
     border-top 1px #ddd solid
     overflow hidden
-    font-size 1rem
+    font-size 1.2rem
     font-family Arial
     color #000
 
-    & > .pic
+    > .pic
       float left
       width 82px
-      margin-right 15px
+      margin-right 10px
+      color dark-red
 
-      & > span
+      > span
         display block
-        max-height 24px
-        line-height 12px
+        max-height 28px
+        line-height 14px
         overflow hidden
+        // word-wrap break-word
 
-      & > img
-        margin-top 5px
+      > img
+        margin-top 7px
         width 100%
-        height auto
+        // max-height 55px
 
-    & > .slider-wrap
+    > .slider-wrap
       position relative
       overflow hidden
       padding-right 10px
 
-      & > .slider
+      > .slider
         position relative
         overflow hidden
         visibility hidden
         // padding-right 20px
 
-        & > .list
+        > .list
           position relative
           overflow hidden
           // width 9999px
 
-          & > .item
+          > .item
             position relative
             float left
             width 100%
             // width 200px
 
-            & > a
+            > a
               position relative
               float left
               margin-bottom 10px
-              padding 0 15px 0 7px
+              padding 0 7px 0 7px
               height 30px
               line-height 15px
               overflow hidden
@@ -1086,14 +610,15 @@ textarea
                 height 2px
                 background #838383
 
-      & > .nav
+      > .nav
         position absolute
+        z-index 1
         right 0
         top 0
-        // margin-top -14px
-        // width 20px
-        width 25px
+        // bottom 0
+        width 17px
         height 100%
+        background-position left center
         background-position right 10px center
         background-repeat no-repeat
         background-size 7px
@@ -1113,14 +638,14 @@ textarea
       left -9999px
       width 100%
 
-  & > .viewmore
+  > .viewmore
     display block
     margin 0 10px 20px
     padding 0
     height 38px
     border-radius 5px
     color #fff
-    font 1.6rem/38px 'Microsoft YaHei'
+    font 1.6rem/38px 'Microsoft YaHei', 'Helvetica Neue'
     text-align center
     background linear-gradient(top, #D70303, #CC0000)
     box-shadow 1px 1px rgba(0, 0, 0, .38)
@@ -1151,14 +676,14 @@ textarea
   text-align center
   background #404040
 
-  & > i
+  > i
     absolute left top
     z-index 1
     size 22px
     border-radius 0 0 22px 0
     background #000
 
-    &:before,
+    &:before
     &:after
       content ''
       position absolute
@@ -1175,7 +700,7 @@ textarea
     &:after
       transform rotate(135deg)
 
-  & > .content
+  > .content
     position relative
     display inline-block
     height 100%
@@ -1186,7 +711,7 @@ textarea
     background url(../img/icon-cart.png) 0 50% no-repeat
     background-size 31px
 
-    & > .count
+    > .count
       position absolute
       top 18px
       left 40px
@@ -1206,29 +731,29 @@ textarea
 // 注册页
 .form-login
   margin-bottom 5rem
-  & .forget-password
+  .forget-password
     margin-top 10px
     text-align right
-    & a
+    a
       color blue
-  & .reg-now
+  .reg-now
     margin-top 2rem
     text-align center
     color #999
     font-size .95rem
-    & a
+    a
       color green
 
 // 404
 .cnt-404
   margin 5rem 10px
-  & p
+  p
     margin 1.5rem 0
     text-align center
-    & strong
+    strong
       font-size .9rem
       color red
-    & a
+    a
       font-size .95rem
       color blue
       text-decoration underline

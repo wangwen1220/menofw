@@ -12,7 +12,7 @@ include 'header.html';
   <div id="main">
     <div id="categories">
       <div class="category">
-        <a href="#" class="pic">
+        <a href="categories.php" class="pic">
           <span>LED & Lighting</span>
           <img src="/upload/pic/pic-cat1.png" alt="">
         </a>
@@ -43,7 +43,7 @@ include 'header.html';
         </div>
       </div>
       <div class="category">
-        <a href="#" class="pic">
+        <a href="categories.php" class="pic">
           <span>Machinery</span>
           <img src="/upload/pic/pic-cat2.png" alt="">
         </a>
@@ -74,7 +74,7 @@ include 'header.html';
         </div>
       </div>
       <div class="category">
-        <a href="#" class="pic">
+        <a href="categories.php" class="pic">
           <span>Electronic Components</span>
           <img src="/upload/pic/pic-cat3.png" alt="">
         </a>
@@ -105,7 +105,7 @@ include 'header.html';
         </div>
       </div>
       <div class="category">
-        <a href="#" class="pic">
+        <a href="categories.php" class="pic">
           <span>Consumer Electronics</span>
           <img src="/upload/pic/pic-cat4.png" alt="">
         </a>
@@ -136,7 +136,7 @@ include 'header.html';
         </div>
       </div>
       <div class="category">
-        <a href="#" class="pic">
+        <a href="categories.php" class="pic">
           <span>Automation</span>
           <img src="/upload/pic/pic-cat5.png" alt="">
         </a>
@@ -167,7 +167,7 @@ include 'header.html';
         </div>
       </div>
       <div class="category hidden">
-        <a href="#" class="pic">
+        <a href="categories.php" class="pic">
           <span>Hidden1</span>
           <img src="/upload/pic/pic-cat5.png" alt="">
         </a>
@@ -198,7 +198,7 @@ include 'header.html';
         </div>
       </div>
       <div class="category hidden">
-        <a href="#" class="pic">
+        <a href="categories.php" class="pic">
           <span>Hidden2</span>
           <img src="/upload/pic/pic-cat5.png" alt="">
         </a>
@@ -229,7 +229,7 @@ include 'header.html';
         </div>
       </div>
       <div class="category hidden">
-        <a href="#" class="pic">
+        <a href="categories.php" class="pic">
           <span>Hidden3</span>
           <img src="/upload/pic/pic-cat5.png" alt="">
         </a>
@@ -269,55 +269,55 @@ include 'header.html';
           <div class="slider-cnt">
             <ul class="slider-item w-piclist fn-clear">
               <li class="item">
-                <a href="#" class="pic"><img src="/upload/pic/pic-cat1.png" alt=""></a>
+                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat1.png" alt=""></a>
                 <h4 class="name"><a href="#">MS111 Best Co2 Case Detector</a></h4>
               </li>
               <li class="item">
-                <a href="#" class="pic"><img src="/upload/pic/pic-cat2.png" alt=""></a>
+                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat2.png" alt=""></a>
                 <h4 class="name"><a href="#">Welding Cable $1 weding Wire</a></h4>
               </li>
               <li class="item">
-                <a href="#" class="pic"><img src="/upload/pic/pic-cat3.png" alt=""></a>
+                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat3.png" alt=""></a>
                 <h4 class="name"><a href="#">Product Name Opic Patch</a></h4>
               </li>
               <li class="item">
-                <a href="#" class="pic"><img src="/upload/pic/pic-cat4.png" alt=""></a>
+                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat4.png" alt=""></a>
                 <h4 class="name"><a href="#">Detector ansceiver</a></h4>
               </li>
             </ul>
             <ul class="slider-item w-piclist fn-clear">
               <li class="item">
-                <a href="#" class="pic"><img src="/upload/pic/pic-cat3.png" alt=""></a>
+                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat3.png" alt=""></a>
                 <h4 class="name"><a href="#">Product Name Opic Patch</a></h4>
               </li>
               <li class="item">
-                <a href="#" class="pic"><img src="/upload/pic/pic-cat5.png" alt=""></a>
+                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat5.png" alt=""></a>
                 <h4 class="name"><a href="#">MS111 Best Co2 Case Detector</a></h4>
               </li>
               <li class="item">
-                <a href="#" class="pic"><img src="/upload/pic/pic-cat2.png" alt=""></a>
+                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat2.png" alt=""></a>
                 <h4 class="name"><a href="#">Welding Cable $1 weding Wire</a></h4>
               </li>
               <li class="item">
-                <a href="#" class="pic"><img src="/upload/pic/pic-cat4.png" alt=""></a>
+                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat4.png" alt=""></a>
                 <h4 class="name"><a href="#">Detector ansceiver</a></h4>
               </li>
             </ul>
             <ul class="slider-item w-piclist fn-clear">
               <li class="item">
-                <a href="#" class="pic"><img src="/upload/pic/pic-cat1.png" alt=""></a>
+                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat1.png" alt=""></a>
                 <h4 class="name"><a href="#">MS111 Best Co2 Case Detector</a></h4>
               </li>
               <li class="item">
-                <a href="#" class="pic"><img src="/upload/pic/pic-cat3.png" alt=""></a>
+                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat3.png" alt=""></a>
                 <h4 class="name"><a href="#">Product Name Opic Patch</a></h4>
               </li>
               <li class="item">
-                <a href="#" class="pic"><img src="/upload/pic/pic-cat2.png" alt=""></a>
+                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat2.png" alt=""></a>
                 <h4 class="name"><a href="#">Welding Cable $1 weding Wire</a></h4>
               </li>
               <li class="item">
-                <a href="#" class="pic"><img src="/upload/pic/pic-cat4.png" alt=""></a>
+                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat4.png" alt=""></a>
                 <h4 class="name"><a href="#">Detector ansceiver</a></h4>
               </li>
             </ul>
