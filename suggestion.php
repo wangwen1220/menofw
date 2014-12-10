@@ -1,6 +1,5 @@
 <?php
-header('Content-Type: application/json');
-sleep(1);
+header('Content-Type: application/json;charset=utf-8');
 
 $key = $_GET['key'];
 

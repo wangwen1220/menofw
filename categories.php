@@ -1,328 +1,218 @@
 <?php
 require_once 'config.php';
 
-$class = 'home';
-$title = '首页';
-$keywords = '首页';
-$description = '首页';
+$class = 'subcats';
+$title = '一级分类页';
+$keywords = '一级分类页';
+$description = '一级分类页';
 
 include 'header.html';
 ?>
 
   <div id="main">
-    <div id="categories">
-      <div class="category">
-        <a href="categories.php" class="pic">
-          <span>LED & Lighting</span>
-          <img src="/upload/pic/pic-cat1.png" alt="">
-        </a>
-        <div class="slider-wrap">
-          <div class="slider">
-            <ul class="list fn-clear">
-              <li class="item">
-                <a href="#">1LED Bulbs</a>
-                <a href="#">Indoor LED Lighting</a>
-                <a href="#">Led Street Lighting</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-              <li class="item">
-                <a href="#">2MS11 Bulbs</a>
-                <a href="#">Indoor Indoor</a>
-                <a href="#">Led Street</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-              <li class="item">
-                <a href="#">3Mobile Bulbs</a>
-                <a href="#">Indoor Blackberry Mobile Phone Case</a>
-                <a href="#">iPhone Lighting</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-            </ul>
-          </div>
-          <a class="nav next"></a>
-        </div>
-      </div>
-      <div class="category">
-        <a href="categories.php" class="pic">
-          <span>Machinery</span>
-          <img src="/upload/pic/pic-cat2.png" alt="">
-        </a>
-        <div class="slider-wrap">
-          <div class="slider">
-            <ul class="list fn-clear">
-              <li class="item">
-                <a href="#">1LED Bulbs</a>
-                <a href="#">Indoor LED Lighting</a>
-                <a href="#">Led Street Lighting</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-              <li class="item">
-                <a href="#">MS11 Bulbs</a>
-                <a href="#">Indoor Indoor</a>
-                <a href="#">Led Street</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-              <li class="item">
-                <a href="#">Mobile Bulbs</a>
-                <a href="#">Indoor Blackberry Mobile Phone Case</a>
-                <a href="#">iPhone Lighting</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-            </ul>
-          </div>
-          <a class="nav next"></a>
-        </div>
-      </div>
-      <div class="category">
-        <a href="categories.php" class="pic">
-          <span>Electronic Components</span>
-          <img src="/upload/pic/pic-cat3.png" alt="">
-        </a>
-        <div class="slider-wrap">
-          <div class="slider">
-            <ul class="list fn-clear">
-              <li class="item">
-                <a href="#">LED Bulbs</a>
-                <a href="#">Indoor LED Lighting</a>
-                <a href="#">Led Street Lighting</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-              <li class="item">
-                <a href="#">MS11 Bulbs</a>
-                <a href="#">Indoor Indoor</a>
-                <a href="#">Led Street</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-              <li class="item">
-                <a href="#">Mobile Bulbs</a>
-                <a href="#">Indoor Blackberry Mobile Phone Case</a>
-                <a href="#">iPhone Lighting</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-            </ul>
-          </div>
-          <a class="nav next"></a>
-        </div>
-      </div>
-      <div class="category">
-        <a href="categories.php" class="pic">
-          <span>Consumer Electronics</span>
-          <img src="/upload/pic/pic-cat4.png" alt="">
-        </a>
-        <div class="slider-wrap">
-          <div class="slider">
-            <ul class="list fn-clear">
-              <li class="item">
-                <a href="#">LED Bulbs</a>
-                <a href="#">Indoor LED Lighting</a>
-                <a href="#">Led Street Lighting</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-              <li class="item">
-                <a href="#">MS11 Bulbs</a>
-                <a href="#">Indoor Indoor</a>
-                <a href="#">Leds</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-              <li class="item">
-                <a href="#">Mobile Bulbs</a>
-                <a href="#">Indoor Blackberry Mobile Phone Case</a>
-                <a href="#">iPhone Lighting</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-            </ul>
-          </div>
-          <a class="nav next"></a>
-        </div>
-      </div>
-      <div class="category">
-        <a href="categories.php" class="pic">
-          <span>Automation</span>
-          <img src="/upload/pic/pic-cat5.png" alt="">
-        </a>
-        <div class="slider-wrap">
-          <div class="slider">
-            <ul class="list fn-clear">
-              <li class="item">
-                <a href="#">Cable</a>
-                <a href="#">Indoor LED Lighting</a>
-                <a href="#">Led Street Lighting</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-              <li class="item">
-                <a href="#">MS11 Bulbs</a>
-                <a href="#">Indoor Indoor</a>
-                <a href="#">Led Street</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-              <li class="item">
-                <a href="#">Mobile Bulbs</a>
-                <a href="#">Indoor Blackberry Mobile Phone Case</a>
-                <a href="#">iPhone Lighting</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-            </ul>
-          </div>
-          <a class="nav next"></a>
-        </div>
-      </div>
-      <div class="category hidden">
-        <a href="categories.php" class="pic">
-          <span>Hidden1</span>
-          <img src="/upload/pic/pic-cat5.png" alt="">
-        </a>
-        <div class="slider-wrap">
-          <div class="slider">
-            <ul class="list fn-clear">
-              <li class="item">
-                <a href="#">Cable</a>
-                <a href="#">Indoor LED Lighting</a>
-                <a href="#">Led Street Lighting</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-              <li class="item">
-                <a href="#">MS11 Bulbs</a>
-                <a href="#">Indoor Indoor</a>
-                <a href="#">Led Street</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-              <li class="item">
-                <a href="#">Mobile Bulbs</a>
-                <a href="#">Indoor Blackberry Mobile Phone Case</a>
-                <a href="#">iPhone Lighting</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-            </ul>
-          </div>
-          <a class="nav next"></a>
-        </div>
-      </div>
-      <div class="category hidden">
-        <a href="categories.php" class="pic">
-          <span>Hidden2</span>
-          <img src="/upload/pic/pic-cat5.png" alt="">
-        </a>
-        <div class="slider-wrap">
-          <div class="slider">
-            <ul class="list fn-clear">
-              <li class="item">
-                <a href="#">Cable</a>
-                <a href="#">Indoor LED Lighting</a>
-                <a href="#">Led Street Lighting</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-              <li class="item">
-                <a href="#">MS11 Bulbs</a>
-                <a href="#">Indoor Indoor</a>
-                <a href="#">Led Street</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-              <li class="item">
-                <a href="#">Mobile Bulbs</a>
-                <a href="#">Indoor Blackberry Mobile Phone Case</a>
-                <a href="#">iPhone Lighting</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-            </ul>
-          </div>
-          <a class="nav next"></a>
-        </div>
-      </div>
-      <div class="category hidden">
-        <a href="categories.php" class="pic">
-          <span>Hidden3</span>
-          <img src="/upload/pic/pic-cat5.png" alt="">
-        </a>
-        <div class="slider-wrap">
-          <div class="slider">
-            <ul class="list fn-clear">
-              <li class="item">
-                <a href="#">Cable</a>
-                <a href="#">Indoor LED Lighting</a>
-                <a href="#">Led Street Lighting</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-              <li class="item">
-                <a href="#">MS11 Bulbs</a>
-                <a href="#">Indoor Indoor</a>
-                <a href="#">Led Street</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-              <li class="item">
-                <a href="#">Mobile Bulbs</a>
-                <a href="#">Indoor Blackberry Mobile Phone Case</a>
-                <a href="#">iPhone Lighting</a>
-                <a href="#">Outdoor LED Lighting</a>
-              </li>
-            </ul>
-          </div>
-          <a class="nav next"></a>
-        </div>
-      </div>
-      <a class="w-viewmore viewmore">All Categories</a>
-    </div>
+    <div class="subcats">
+      <h2 class="w-title arrow">LED & Lighting</h2>
 
-    <div class="w-recommend">
-      <div class="w-recommend-hd"><h3 class="title">You May Like</h3></div>
-      <div class="w-recommend-bd">
-        <div class="w-slider js-slider">
-          <div class="slider-cnt">
-            <ul class="slider-item w-piclist fn-clear">
-              <li class="item">
-                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat1.png" alt=""></a>
-                <h4 class="name"><a href="#">MS111 Best Co2 Case Detector</a></h4>
-              </li>
-              <li class="item">
-                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat2.png" alt=""></a>
-                <h4 class="name"><a href="#">Welding Cable $1 weding Wire</a></h4>
-              </li>
-              <li class="item">
-                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat3.png" alt=""></a>
-                <h4 class="name"><a href="#">Product Name Opic Patch</a></h4>
-              </li>
-              <li class="item">
-                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat4.png" alt=""></a>
-                <h4 class="name"><a href="#">Detector ansceiver</a></h4>
-              </li>
-            </ul>
-            <ul class="slider-item w-piclist fn-clear">
-              <li class="item">
-                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat3.png" alt=""></a>
-                <h4 class="name"><a href="#">Product Name Opic Patch</a></h4>
-              </li>
-              <li class="item">
-                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat5.png" alt=""></a>
-                <h4 class="name"><a href="#">MS111 Best Co2 Case Detector</a></h4>
-              </li>
-              <li class="item">
-                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat2.png" alt=""></a>
-                <h4 class="name"><a href="#">Welding Cable $1 weding Wire</a></h4>
-              </li>
-              <li class="item">
-                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat4.png" alt=""></a>
-                <h4 class="name"><a href="#">Detector ansceiver</a></h4>
-              </li>
-            </ul>
-            <ul class="slider-item w-piclist fn-clear">
-              <li class="item">
-                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat1.png" alt=""></a>
-                <h4 class="name"><a href="#">MS111 Best Co2 Case Detector</a></h4>
-              </li>
-              <li class="item">
-                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat3.png" alt=""></a>
-                <h4 class="name"><a href="#">Product Name Opic Patch</a></h4>
-              </li>
-              <li class="item">
-                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat2.png" alt=""></a>
-                <h4 class="name"><a href="#">Welding Cable $1 weding Wire</a></h4>
-              </li>
-              <li class="item">
-                <a href="categories.php" class="pic"><img src="/upload/pic/pic-cat4.png" alt=""></a>
-                <h4 class="name"><a href="#">Detector ansceiver</a></h4>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <div class="cat">
+        <a href="search.php"><img src="/upload/pic/pic-cat1.png" alt=""></a>
+        <dl>
+          <dt><a href="#">Automotive Lighting <span>(914)</span></a></dt>
+          <dd><a href="#">Business Services <span>(914)</span></a></dd>
+          <dd><a href="#">Chemicals <span>(914)</span></a></dd>
+          <dd><a href="#">Computer Hardware & Software <span>(914)</span></a></dd>
+          <dd><a href="#">Beauty & Personal Care <span>(914)</span></a></dd>
+          <dd><a href="#">Construction & Real Estate <span>(914)</span></a></dd>
+          <dd><a href="#">Consumer Electronics <span>(914)</span></a></dd>
+          <dd><a href="#">Electrical Equipment & Supplies <span>(914)</span></a></dd>
+        </dl>
+      </div>
+      <div class="cat">
+        <a href="search.php"><img src="/upload/pic/pic-cat2.png" alt=""></a>
+        <dl>
+          <dt><a href="#">Indoor LED Lighting <span>(11914)</span></a></dt>
+          <dd><a href="#">Agriculture <span>(914)</span></a></dd>
+          <dd><a href="#">Apparel <span>(914)</span></a></dd>
+          <dd><a href="#">Automobiles & Motorcycles <span>(914)</span></a></dd>
+          <dd><a href="#">Business Services <span>(914)</span></a></dd>
+          <dd><a href="#">Chemicals <span>(914)</span></a></dd>
+          <dd><a href="#">Computer Hardware & Software <span>(914)</span></a></dd>
+          <dd><a href="#">Beauty & Personal Care <span>(914)</span></a></dd>
+          <dd><a href="#">Construction & Real Estate <span>(914)</span></a></dd>
+          <dd><a href="#">Consumer Electronics <span>(914)</span></a></dd>
+          <dd><a href="#">Electrical Equipment & Supplies <span>(914)</span></a></dd>
+          <dd><a href="#">Electronic Components & Supplies <span>(914)</span></a></dd>
+          <dd><a href="#">Energy <span>(914)</span></a></dd>
+          <dd><a href="#">Environment <span>(914)</span></a></dd>
+          <dd><a href="#">Excess Inventory <span>(914)</span></a></dd>
+          <dd><a href="#">Fashion Accessories <span>(914)</span></a></dd>
+          <dd><a href="#">Food & Beverage <span>(914)</span></a></dd>
+          <dd><a href="#">Furniture <span>(914)</span></a></dd>
+          <dd><a href="#">Gifts & Crafts <span>(914)</span></a></dd>
+          <dd><a href="#">Hardware <span>(914)</span></a></dd>
+          <dd><a href="#">Health & Medical <span>(914)</span></a></dd>
+          <dd><a href="#">Home & Garden <span>(914)</span></a></dd>
+          <dd><a href="#">Home Appliances <span>(914)</span></a></dd>
+          <dd><a href="#">Lights & Lighting <span>(914)</span></a></dd>
+          <dd><a href="#">Luggage, Bags & Cases <span>(914)</span></a></dd>
+          <dd><a href="#">Measurement & Analysis Instruments <span>(914)</span></a></dd>
+          <dd><a href="#">Minerals & Metallurgy <span>(914)</span></a></dd>
+          <dd><a href="#">Rubber & Plastics <span>(914)</span></a></dd>
+          <dd><a href="#">Security & Protection <span>(914)</span></a></dd>
+          <dd><a href="#">Service Equipment <span>(914)</span></a></dd>
+          <dd><a href="#">Shoes & Accessories <span>(914)</span></a></dd>
+          <dd><a href="#">Sports & Entertainment <span>(914)</span></a></dd>
+          <dd><a href="#">Textiles & Leather Products <span>(914)</span></a></dd>
+          <dd><a href="#">Tools <span>(914)</span></a></dd>
+          <dd><a href="#">Transportation <span>(914)</span></a></dd>
+          <dd><a href="#">Machinery <span>(914)</span></a></dd>
+          <dd><a href="#">Others <span>(9124)</span></a></dd>
+        </dl>
+      </div>
+      <div class="cat">
+        <a href="search.php"><img src="/upload/pic/pic-cat3.png" alt=""></a>
+        <dl>
+          <dt><a href="#">Automotive Lighting <span>(914)</span></a></dt>
+          <dd><a href="#">Textiles & Leather Products <span>(914)</span></a></dd>
+          <dd><a href="#">Tools <span>(914)</span></a></dd>
+          <dd><a href="#">Transportation <span>(914)</span></a></dd>
+          <dd><a href="#">Machinery <span>(914)</span></a></dd>
+          <dd><a href="#">Mechanical Parts & Fabrication Services <span>(914)</span></a></dd>
+          <dd><a href="#">Others <span>(9114)</span></a></dd>
+        </dl>
+      </div>
+      <div class="cat">
+        <a href="search.php"><img src="/upload/pic/pic-cat4.png" alt=""></a>
+        <dl>
+          <dt><a href="#">Automotive Lighting <span>(914)</span></a></dt>
+          <dd><a href="#">Business Services <span>(914)</span></a></dd>
+          <dd><a href="#">Chemicals <span>(914)</span></a></dd>
+          <dd><a href="#">Computer Hardware & Software <span>(914)</span></a></dd>
+          <dd><a href="#">Beauty & Personal Care <span>(914)</span></a></dd>
+          <dd><a href="#">Construction & Real Estate <span>(914)</span></a></dd>
+          <dd><a href="#">Consumer Electronics <span>(914)</span></a></dd>
+          <dd><a href="#">Electrical Equipment & Supplies <span>(914)</span></a></dd>
+        </dl>
+      </div>
+      <div class="cat">
+        <a href="search.php"><img src="/upload/pic/pic-cat5.png" alt=""></a>
+        <dl>
+          <dt><a href="#">Indoor LED Lighting <span>(11914)</span></a></dt>
+          <dd><a href="#">Agriculture <span>(914)</span></a></dd>
+          <dd><a href="#">Apparel <span>(914)</span></a></dd>
+          <dd><a href="#">Automobiles & Motorcycles <span>(914)</span></a></dd>
+          <dd><a href="#">Business Services <span>(914)</span></a></dd>
+          <dd><a href="#">Chemicals <span>(914)</span></a></dd>
+          <dd><a href="#">Computer Hardware & Software <span>(914)</span></a></dd>
+          <dd><a href="#">Beauty & Personal Care <span>(914)</span></a></dd>
+          <dd><a href="#">Construction & Real Estate <span>(914)</span></a></dd>
+          <dd><a href="#">Consumer Electronics <span>(914)</span></a></dd>
+          <dd><a href="#">Electrical Equipment & Supplies <span>(914)</span></a></dd>
+          <dd><a href="#">Electronic Components & Supplies <span>(914)</span></a></dd>
+          <dd><a href="#">Energy <span>(914)</span></a></dd>
+          <dd><a href="#">Environment <span>(914)</span></a></dd>
+          <dd><a href="#">Excess Inventory <span>(914)</span></a></dd>
+          <dd><a href="#">Fashion Accessories <span>(914)</span></a></dd>
+          <dd><a href="#">Food & Beverage <span>(914)</span></a></dd>
+          <dd><a href="#">Furniture <span>(914)</span></a></dd>
+          <dd><a href="#">Gifts & Crafts <span>(914)</span></a></dd>
+          <dd><a href="#">Hardware <span>(914)</span></a></dd>
+          <dd><a href="#">Health & Medical <span>(914)</span></a></dd>
+          <dd><a href="#">Home & Garden <span>(914)</span></a></dd>
+          <dd><a href="#">Home Appliances <span>(914)</span></a></dd>
+          <dd><a href="#">Lights & Lighting <span>(914)</span></a></dd>
+          <dd><a href="#">Luggage, Bags & Cases <span>(914)</span></a></dd>
+          <dd><a href="#">Measurement & Analysis Instruments <span>(914)</span></a></dd>
+          <dd><a href="#">Minerals & Metallurgy <span>(914)</span></a></dd>
+          <dd><a href="#">Rubber & Plastics <span>(914)</span></a></dd>
+          <dd><a href="#">Security & Protection <span>(914)</span></a></dd>
+          <dd><a href="#">Service Equipment <span>(914)</span></a></dd>
+          <dd><a href="#">Shoes & Accessories <span>(914)</span></a></dd>
+          <dd><a href="#">Sports & Entertainment <span>(914)</span></a></dd>
+          <dd><a href="#">Textiles & Leather Products <span>(914)</span></a></dd>
+          <dd><a href="#">Tools <span>(914)</span></a></dd>
+          <dd><a href="#">Transportation <span>(914)</span></a></dd>
+          <dd><a href="#">Machinery <span>(914)</span></a></dd>
+          <dd><a href="#">Others <span>(9124)</span></a></dd>
+        </dl>
+      </div>
+      <div class="cat">
+        <a href="search.php"><img src="/upload/pic/pic-cat2.png" alt=""></a>
+        <dl>
+          <dt><a href="#">Automotive Lighting <span>(914)</span></a></dt>
+          <dd><a href="#">Textiles & Leather Products <span>(914)</span></a></dd>
+          <dd><a href="#">Tools <span>(914)</span></a></dd>
+          <dd><a href="#">Transportation <span>(914)</span></a></dd>
+          <dd><a href="#">Machinery <span>(914)</span></a></dd>
+          <dd><a href="#">Mechanical Parts & Fabrication Services <span>(914)</span></a></dd>
+          <dd><a href="#">Others <span>(9114)</span></a></dd>
+        </dl>
+      </div>
+      <div class="cat">
+        <a href="search.php"><img src="/upload/pic/pic-cat3.png" alt=""></a>
+        <dl>
+          <dt><a href="#">Automotive Lighting <span>(914)</span></a></dt>
+          <dd><a href="#">Business Services <span>(914)</span></a></dd>
+          <dd><a href="#">Chemicals <span>(914)</span></a></dd>
+          <dd><a href="#">Computer Hardware & Software <span>(914)</span></a></dd>
+          <dd><a href="#">Beauty & Personal Care <span>(914)</span></a></dd>
+          <dd><a href="#">Construction & Real Estate <span>(914)</span></a></dd>
+          <dd><a href="#">Consumer Electronics <span>(914)</span></a></dd>
+          <dd><a href="#">Electrical Equipment & Supplies <span>(914)</span></a></dd>
+        </dl>
+      </div>
+      <div class="cat">
+        <a href="search.php"><img src="/upload/pic/pic-cat2.png" alt=""></a>
+        <dl>
+          <dt><a href="#">Indoor LED Lighting <span>(11914)</span></a></dt>
+          <dd><a href="#">Agriculture <span>(914)</span></a></dd>
+          <dd><a href="#">Apparel <span>(914)</span></a></dd>
+          <dd><a href="#">Automobiles & Motorcycles <span>(914)</span></a></dd>
+          <dd><a href="#">Business Services <span>(914)</span></a></dd>
+          <dd><a href="#">Chemicals <span>(914)</span></a></dd>
+          <dd><a href="#">Computer Hardware & Software <span>(914)</span></a></dd>
+          <dd><a href="#">Beauty & Personal Care <span>(914)</span></a></dd>
+          <dd><a href="#">Construction & Real Estate <span>(914)</span></a></dd>
+          <dd><a href="#">Consumer Electronics <span>(914)</span></a></dd>
+          <dd><a href="#">Electrical Equipment & Supplies <span>(914)</span></a></dd>
+          <dd><a href="#">Electronic Components & Supplies <span>(914)</span></a></dd>
+          <dd><a href="#">Energy <span>(914)</span></a></dd>
+          <dd><a href="#">Environment <span>(914)</span></a></dd>
+          <dd><a href="#">Excess Inventory <span>(914)</span></a></dd>
+          <dd><a href="#">Fashion Accessories <span>(914)</span></a></dd>
+          <dd><a href="#">Food & Beverage <span>(914)</span></a></dd>
+          <dd><a href="#">Furniture <span>(914)</span></a></dd>
+          <dd><a href="#">Gifts & Crafts <span>(914)</span></a></dd>
+          <dd><a href="#">Hardware <span>(914)</span></a></dd>
+          <dd><a href="#">Health & Medical <span>(914)</span></a></dd>
+          <dd><a href="#">Home & Garden <span>(914)</span></a></dd>
+          <dd><a href="#">Home Appliances <span>(914)</span></a></dd>
+          <dd><a href="#">Lights & Lighting <span>(914)</span></a></dd>
+          <dd><a href="#">Luggage, Bags & Cases <span>(914)</span></a></dd>
+          <dd><a href="#">Measurement & Analysis Instruments <span>(914)</span></a></dd>
+          <dd><a href="#">Minerals & Metallurgy <span>(914)</span></a></dd>
+          <dd><a href="#">Rubber & Plastics <span>(914)</span></a></dd>
+          <dd><a href="#">Security & Protection <span>(914)</span></a></dd>
+          <dd><a href="#">Service Equipment <span>(914)</span></a></dd>
+          <dd><a href="#">Shoes & Accessories <span>(914)</span></a></dd>
+          <dd><a href="#">Sports & Entertainment <span>(914)</span></a></dd>
+          <dd><a href="#">Textiles & Leather Products <span>(914)</span></a></dd>
+          <dd><a href="#">Tools <span>(914)</span></a></dd>
+          <dd><a href="#">Transportation <span>(914)</span></a></dd>
+          <dd><a href="#">Machinery <span>(914)</span></a></dd>
+          <dd><a href="#">Others <span>(9124)</span></a></dd>
+        </dl>
+      </div>
+      <div class="cat">
+        <a href="search.php"><img src="/upload/pic/pic-cat1.png" alt=""></a>
+        <dl>
+          <dt><a href="#">Automotive Lighting <span>(914)</span></a></dt>
+          <dd><a href="#">Textiles & Leather Products <span>(914)</span></a></dd>
+          <dd><a href="#">Tools <span>(914)</span></a></dd>
+          <dd><a href="#">Transportation <span>(914)</span></a></dd>
+          <dd><a href="#">Machinery <span>(914)</span></a></dd>
+          <dd><a href="#">Mechanical Parts & Fabrication Services <span>(914)</span></a></dd>
+          <dd><a href="#">Others <span>(9114)</span></a></dd>
+        </dl>
       </div>
     </div>
   </div>

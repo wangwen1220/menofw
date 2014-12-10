@@ -1,6 +1,8 @@
+  <!-- 这是要判断一下，哪些页面需要加载这个底部搜索 -->
+  <?php if (!preg_match('/\bhome\b/', $class)) : ?>
   <div id="search-footer">
     <div class="search-keywords">
-      <h4>Popular Searches</h4>
+      <h4 class="w-title-linethrough"><span class="inner">Popular Searches</span></h4>
       <p>
         <a href="#">Led spotight</a>
         <a href="#">led tube</a>
@@ -25,6 +27,7 @@
       <li><a href="#">LED Street</a></li>
     </ul>
   </div>
+  <?php endif ?>
 
   <footer id="footer">
     <nav>
@@ -43,22 +46,26 @@
         <li><a href="#">Contact Us</a></li>
       </ul>
     </nav>
-    <p class="copyright">&copy; 2014 OFweek.com</p>
+    <p class="copyright">&copy; 2014 en.OFweek.com</p>
   </footer>
 
-  <div class="inquiries-wrap">
-    <a id="inquiries" href="#">
-      <i class="closer js-close"></i>
-      <span class="content"><strong class="count">2</strong>Inquiries</span>
-    </a>
-  </div>
+  <!-- <div class="cart-wrap"> -->
+  <a id="cart" class="fold" href="#">
+    <i class="closer js-close"></i>
+    <span class="content"><strong class="counter">2</strong>Inquiries</span>
+  </a>
+  <!-- </div> -->
 
   <div id="mask" class="w-mask"></div>
 
-  <script src="js/zepto.js"></script>
   <!-- // <script src="js/jquery.js"></script> -->
+  <script src="js/zepto.js"></script>
   <script src="js/fastclick.js"></script>
   <script src="js/swipe.js"></script>
+  <!-- // <script src="js/amazeui.js"></script> -->
+  <!-- // <script src="js/jquery-inviewport.js"></script> -->
+  <script src="js/template.js"></script>
+  <script src="js/spin.js"></script>
   <script src="js/main-debug.js"></script>
 </body>
 </html>
