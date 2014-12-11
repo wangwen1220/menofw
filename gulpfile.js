@@ -13,16 +13,20 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var jshint = require('gulp-jshint');
 // var concat = require('gulp-concat');
-// var imagemin = require('gulp-imagemin');
-var watch = require('gulp-watch');
-// var livereload = require('gulp-livereload');
-var clean = require('gulp-clean');
+// var concat = require('gulp-concat');
+// var clean = require('gulp-clean');
+// var clean = require('gulp-rimraf');
+var del = require('del');
 var copy = require('gulp-copy');
 var zip = require('gulp-zip');
+// var imagemin = require('gulp-imagemin');
+// var changed = require('gulp-changed');
+// var watch = require('gulp-watch');
+// var livereload = require('gulp-livereload');
 
 var app = {
   src: './**',
-  destfile: [
+  destfiles: [
     './*.htm?',
     './*.php',
     './favicon.*',
@@ -38,7 +42,7 @@ var app = {
     '!./**/*-debug.*',
     '!./**/*-bak.*'
   ],
-  zip: ['./dist/**'],
+  zipfiles: ['./dist/**'],
   // 没搞懂怎样压缩和排除目录
   // zip: [
   //   './*.php',
@@ -72,7 +76,7 @@ var app = {
     debug: 'js/*-debug.js',
     src: 'js/*.js',
     dest: 'js',
-    watch: 'js/*.js'
+    watch: 'js/*-debug.js'
   },
 
   img: {
@@ -82,22 +86,27 @@ var app = {
   }
 };
 
-// 清空目标文件夹
+// 删除目标文件夹
 gulp.task('clean', function(cb) {
-  return gulp.src(app.dest, {read: false})
-    .pipe(clean());
+  // return gulp.src(app.dest, {read: false})
+  //   .pipe(clean());
+  del(app.dest, callback);
 });
 
 // 复制文件到目标文件夹
-gulp.task('copy', function() {
-  return gulp.src(app.destfile)
+// gulp.task('copy', ['clean'], function() {
+//   return gulp.src(app.destfiles)
+//     .pipe(gulp.dest(app.dest));
+// });
+gulp.task('copy', ['clean'], function() {
+  return gulp.src(app.destfiles)
     .pipe(copy(app.dest));
 });
 
-// 压缩文件
-gulp.task('zip', function() {
-  gulp.src(app.zip)
-    .pipe(zip('app.zip'))
+// 压缩目标文件夹中的文件
+gulp.task('zip', ['copy'], function() {
+  gulp.src(app.zipfiles)
+    .pipe(zip('app.nw'))
     .pipe(gulp.dest(app.dest));
 });
 
@@ -124,7 +133,7 @@ gulp.task('coffee', function() {
 // 合并压缩 JS
 gulp.task('jsmin', function() {
   gulp.src(app.js.debug)
-    .pipe(watch())
+    // .pipe(watch())
     // .pipe(concat('all.js'))
     // .pipe(rename({suffix: '-min'}))
     .pipe(rename(function(path) {
@@ -135,7 +144,7 @@ gulp.task('jsmin', function() {
 });
 
 // 检查脚本
-gulp.task('lint', function() {
+gulp.task('jshint', function() {
   gulp.src(app.js.debug)
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
@@ -161,7 +170,7 @@ gulp.task('lint', function() {
 gulp.task('watch', function() {
   gulp.watch(app.stylus.watch, ['stylus']);
   // gulp.watch(app.coffee.watch, ['coffee']);
-  gulp.watch(app.js.debug, ['jsmin']);
+  gulp.watch(app.js.watch, ['jsmin']);
   // gulp.watch(app.img.src, ['img']);
 });
 
@@ -173,7 +182,7 @@ gulp.task('watch', function() {
 
 // The default task (called when you run `gulp` from cli)
 // gulp.task('default', ['stylus', 'coffee', 'jsmin', 'watch']);
-gulp.task('default', ['stylus', 'jsmin', 'watch']);
+gulp.task('default', ['stylus', 'jshint', 'jsmin', 'watch']);
 
 // 打包文件
 gulp.task('build', ['clean', 'copy', 'zip']);
