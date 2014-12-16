@@ -216,6 +216,43 @@ hr
       float left
       width 100%
 
+      // &.inview
+      //   z-index 1
+
+// w-scroller 模块
+.w-scroller
+  position relative
+  margin 0 auto
+  width 320px
+  height 200px
+  overflow hidden
+
+  > .list
+    // box-sizing content-box
+    position absolute
+    // z-index 1
+    padding-left 48px
+    // width 880px
+    width 928px
+    height 200px
+    overflow hidden
+    transform translateZ(0)
+    // touch-callout none
+    // user-select none
+    background-color #444
+
+    > .item
+      position relative
+      float left
+      padding 0 10px
+      width 220px
+      height 200px
+      overflow hidden
+
+      > img
+        width 100%
+        height 100%
+
 /* TPL
 ========================================================================== */
 // w-recommend 模块
@@ -350,6 +387,7 @@ hr
   margin-top 15px
   display block
   text-align center
+  font-size 1.3em
 
   > i
     position relative
@@ -1093,6 +1131,11 @@ hr
     font-size 1.3rem
     color dred
     background #FFF4E5
+
+// 详情页
+#main > .proshow
+  margin-top 15px
+
 
 // 注册页
 .form-login

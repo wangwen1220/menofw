@@ -13,3 +13,4 @@ $description = '描述';
 // 重定向
 // header('Location: template/default/');
 // exit;
+?>

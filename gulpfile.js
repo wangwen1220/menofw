@@ -33,17 +33,17 @@ var app = {
     './css/**',
     './js/**',
     './img/**',
-    '!./**/bak/*',
-    '!./**/bower_components/*',
-    '!./**/spm_modules/*',
+    '!./**/*-debug.*',
     '!./**/*.styl',
     '!./**/*.coffee',
     '!./**/*.psd',
-    '!./**/*-debug.*',
+    '!./**/bower_components/**',
+    '!./**/spm_modules/**',
+    '!./**/bak/**',
     '!./**/*-bak.*'
   ],
   zipfiles: ['./dist/**'],
-  // 没搞懂怎样压缩和排除目录
+  // 没搞懂怎样排除目录
   // zip: [
   //   './*.php',
   //   './*.htm?',
@@ -87,7 +87,7 @@ var app = {
 };
 
 // 删除目标文件夹
-gulp.task('clean', function(cb) {
+gulp.task('clean', function(callback) {
   // return gulp.src(app.dest, {read: false})
   //   .pipe(clean());
   del(app.dest, callback);
@@ -106,7 +106,7 @@ gulp.task('copy', ['clean'], function() {
 // 压缩目标文件夹中的文件
 gulp.task('zip', ['copy'], function() {
   gulp.src(app.zipfiles)
-    .pipe(zip('app.nw'))
+    .pipe(zip('app.zip'))
     .pipe(gulp.dest(app.dest));
 });
 
@@ -159,18 +159,11 @@ gulp.task('jshint', function() {
 //     .pipe(gulp.dest('build/img'));
 // });
 
-// 打包文件
-// gulp.task('zip', function() {
-//   gulp.src(app.zip)
-//     .pipe(zip('app.zip'))
-//     .pipe(gulp.dest(app.dest));
-// });
-
 // Rerun the task when a file changes
 gulp.task('watch', function() {
   gulp.watch(app.stylus.watch, ['stylus']);
   // gulp.watch(app.coffee.watch, ['coffee']);
-  gulp.watch(app.js.watch, ['jsmin']);
+  gulp.watch(app.js.watch, ['jshint', 'jsmin']);
   // gulp.watch(app.img.src, ['img']);
 });
 

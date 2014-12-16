@@ -23,7 +23,7 @@
   var visibleY = function(el) {
     var top = el.getBoundingClientRect().top;
     var rect;
-    var el = el.parentNode;
+    el = el.parentNode;
 
     do {
       rect = el.getBoundingClientRect();
@@ -38,10 +38,10 @@
 
   // 更好的解决方案
   var getViewportSize = function(w) {
-    var w = w || window;
+    w = w || window;
     var d = w.document;
 
-    if (w.innerWidth != null) return {
+    if (w.innerWidth !== null) return {
       w: w.innerWidth,
       h: w.innerHeight
     };
@@ -199,12 +199,50 @@
       // startSlide: 2,
       // speed: 400,
       auto: 3000
-        // continuous: false,
-        // disableScroll: false,
-        // stopPropagation: false,
-        // callback: function(index, elem) {},
-        // transitionEnd: function(index, elem) {}
+      // continuous: false,
+      // disableScroll: false,
+      // stopPropagation: false,
+      // callback: function(index, elem) {},
+      // transitionEnd: function(index, elem) {}
     });
+
+    // Details: 产品图片 Slider
+    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    new IScroll('#js-scroller', {
+      scrollX: true,
+      scrollY: false,
+      momentum: false,
+      snap: true,
+      scrollerWidth: 200,
+      snapSpeed: 400
+      // keyBindings: true,
+      // indicators: {
+      //   el: document.getElementById('indicator'),
+      //   resize: false
+      // }
+    });
+    // $main.find('.js-slider-pics').swipe({
+    //   // startSlide: 2,
+    //   slideWidth: 220,
+    //   // speed: 400,
+    //   // auto: 3000
+    //   continuous: false,
+    //   // disableScroll: false,
+    //   // stopPropagation: false,
+    //   init: function(index, elem) {
+    //     var $elem = $(elem);
+    //     $elem.addClass('inview').siblings().removeClass('inview');
+    //     $elem.next().addClass('inview');
+    //     $elem.prev().addClass('inview');
+    //   },
+    //   callback: function(index, elem) {
+    //     var $elem = $(elem);
+    //     $elem.addClass('inview').siblings().removeClass('inview');
+    //     $elem.next().addClass('inview');
+    //     $elem.prev().addClass('inview');
+    //   }
+    //   // transitionEnd: function(index, elem) {}
+    // });
 
     // Search result: 展开/折叠联系信息
     $main.on('click', '.search-result .actions .fold', function() {
@@ -268,7 +306,7 @@
       $(window).on('DOMContentLoaded load resize scroll', function() {
         var url = $loading.data('url');
         var page = $loading.data('page') || 1;
-        var loading = $loading.data('loading') || false;;
+        var loading = $loading.data('loading') || false;
 
         if (isViewportVisible($loading[0]) && !loading) { // 进入视口且不在加载中
           // console.log('进入视口');
