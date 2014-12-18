@@ -20,32 +20,33 @@ include 'header.html';
         </ul>
       </div>
 
+      <h2 class="name">Flex LED Strip Light - MR16</h2>
       <div class="info">
-        <h2 class="name">Flex LED Strip Light - MR16</h2>
-        <div class="intro">
+        <div class="main">
           <ul>
-            <li>Price / Payment: <strong>TT</strong></li>
-            <li>Min.Order: <strong>100 pcs</strong></li>
-            <li>Standard: <strong>CE, RoHS, UL</strong></li>
-            <li>Production Capacity: <strong>10000 Sets per Month</strong></li>
-            <li>Origin: <strong>China(Mainland)</strong></li>
+            <li><span class="key">Price / Payment:</span> <span class="val">TT</span></li>
+            <li><span class="key">Min.Order:</span> <span class="val">10000 pcs</span></li>
+            <li><span class="key">Standard:</span> <span class="val">CE, RoHS, UL</span></li>
+            <li><span class="key">Production Capacity:</span> <span class="val">10000 Sets per Month</span></li>
+            <li><span class="key">Origin:</span> <span class="val">China(Mainland)</span></li>
           </ul>
           <a href="#" class="get-latest-price">Get Latest Price</a>
         </div>
-        <div class="specifications js-hide">
+        <div class="sub ">
           <h3 class="title">Product Specifications</h3>
           <ul>
-            <li>Price / Payment: <strong>TT</strong></li>
-            <li>Min.Order: <strong>100 pcs</strong></li>
-            <li>Standard: <strong>CE, RoHS, UL</strong></li>
-            <li>Production Capacity: <strong>10000 Sets per Month</strong></li>
-            <li>Origin: <a href="#">China(Mainland)</a></li>
+            <li><span class="key">Price / Payment:</span> <span class="val">TT</span></li>
+            <li><span class="key">Min.Order:</span> <span class="val">10000 pcs</span></li>
+            <li><span class="key">Standard:</span> <span class="val">CE, RoHS, UL</span></li>
+            <li>packing, polybag or box packing for single piece, certain quantity packed</li>
+            <li><span class="key">Production Capacity:</span> <span class="val">10000 Sets per Month</span></li>
+            <li><span class="key">Origin:</span> <span class="val">China(Mainland)</span></li>
           </ul>
-          <a href="#" class="get-latest-price">Get Latest Price</a>
         </div>
+
         <a class="learn-more">Learn more</a>
 
-        <div class="supplier-intro">
+        <div class="supplier">
           <div class="header">
             <h3 class="title">Supplier Details</h3>
             <a class="btn-contact">Contact Supplier</a>

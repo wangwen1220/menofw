@@ -207,20 +207,20 @@
     });
 
     // Details: 产品图片 Slider
-    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-    new IScroll('#js-scroller', {
-      scrollX: true,
-      scrollY: false,
-      momentum: false,
-      snap: true,
-      scrollerWidth: 200,
-      snapSpeed: 400
-      // keyBindings: true,
-      // indicators: {
-      //   el: document.getElementById('indicator'),
-      //   resize: false
-      // }
-    });
+    // document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    // new IScroll('#js-scroller', {
+    //   scrollX: true,
+    //   scrollY: false,
+    //   momentum: false,
+    //   snap: true,
+    //   scrollerWidth: 200,
+    //   snapSpeed: 400
+    //   // keyBindings: true,
+    //   // indicators: {
+    //   //   el: document.getElementById('indicator'),
+    //   //   resize: false
+    //   // }
+    // });
     // $main.find('.js-slider-pics').swipe({
     //   // startSlide: 2,
     //   slideWidth: 220,
