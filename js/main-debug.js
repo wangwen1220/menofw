@@ -71,6 +71,106 @@
     return true;
   };
 
+  // 分享到
+  var shareTo = function(site, title, content, imgsrc) {
+    var url = window.location.href.split('#')[0];
+    title = title || document.title;
+    content = content || $('meta[name=description]')[0].content;
+    imgsrc = imgsrc || $(this).data('src') || '';
+
+    url = encodeURIComponent(url);
+    title = encodeURIComponent(title);
+    content = encodeURIComponent(content);
+    imgsrc = encodeURIComponent(imgsrc);
+
+    switch (site) {
+      case 'blogger':
+        url = 'http://www.blogger.com/blog_this.pyra?t=' + title + '&u=' + url;
+        break;
+      case 'linkedin':
+        url = 'http://www.linkedin.com/cws/share?url=' + url + '&title=' + title;
+        break;
+      case 'delicious':
+        url = 'http://www.delicious.com/post?title=' + title + '&url=' + url;
+        break;
+      case 'digg':
+        url = 'http://digg.com/submit?phase=2&url=' + url + '&title=' + title + '&bodytext=' + content + '&topic=tech_deals';
+        break;
+      case 'reddit':
+        url = 'http://reddit.com/submit?url=' + url + '&title=' + title;
+        break;
+      case 'furl':
+        url = 'http://www.furl.net/savedialog.jsp?t=' + title + '&u=' + url;
+        break;
+      case 'rawsugar':
+        url = 'http://www.rawsugar.com/home/extensiontagit/?turl=' + url + '&tttl=' + title;
+        break;
+      case 'stumbleupon':
+        url = 'http://www.stumbleupon.com/submit?url=' + url + '&title=' + title;
+        break;
+      case 'blogmarks':
+        break;
+      case 'facebook':
+        url = 'http://www.facebook.com/share.php?src=bm&v=4&u=' + url + '&t=' + title;
+        break;
+      case 'technorati':
+        url = 'http://technorati.com/faves?sub=favthis&add=' + url;
+        break;
+      case 'spurl':
+        url = 'http://www.spurl.net/spurl.php?v=3&title=' + title + '&url=' + url;
+        break;
+      case 'simpy':
+        url = 'http://www.simpy.com/simpy/LinkAdd.do?title=' + title + '&href=' + url;
+        break;
+      case 'ask':
+        break;
+      case 'google':
+        url = 'http://www.google.com/bookmarks/mark?op=edit&output=popup&bkmk=' + url + '&title=' + title;
+        break;
+      case 'netscape':
+        url = 'http://www.netscape.com/submit/?U=' + url + '&T=' + title + '&C=' + content;
+        break;
+      case 'slashdot':
+        url = 'http://slashdot.org/bookmark.pl?url=' + url + '&title=' + title;
+        break;
+      case 'backflip':
+        url = 'http://www.backflip.com/add_page_pop.ihtml?title=' + title + '&url=' + url;
+        break;
+      case 'bluedot':
+        url = 'http://bluedot.us/Authoring.aspx?u=' + url + '&t=' + title;
+        break;
+      case 'kaboodle':
+        url = 'http://www.kaboodle.com/za/selectpage?p_pop=false&pa=url&u=' + url;
+        break;
+      case 'squidoo':
+        url = 'http://www.squidoo.com/lensmaster/bookmark?' + url;
+        break;
+      case 'twitter':
+        url = 'http://twitter.com/share?url=' + url + '&text=' + title;
+        break;
+      case 'pinterest':
+        url = 'http://pinterest.com/pin/create/button/?url=' + url + '&media=' + imgsrc + '&description=' + title;
+        break;
+      case 'vk':
+        url = 'http://vk.com/share.php?url=' + url;
+        break;
+      case 'bluedot':
+        url = 'http://blinkbits.com/bookmarklets/save.php?v=1&source_url=' + url + '&title=' + title;
+        break;
+      case 'blinkList':
+        url = 'http://blinkbits.com/bookmarklets/save.php?v=1&source_url=' + url + '&title=' + title;
+        break;
+      case 'googleplus':
+        url = 'https://plus.google.com/share?url=' + url + '&t=' + title;
+        break;
+      default:
+        // alert('This share undefined!');
+        return;
+    }
+
+    window.open(url, 'sharewindow');
+  };
+
   // 文档加载完执行
   $(function() {
     // 通用变量
@@ -199,50 +299,12 @@
       // startSlide: 2,
       // speed: 400,
       auto: 3000
-      // continuous: false,
-      // disableScroll: false,
-      // stopPropagation: false,
-      // callback: function(index, elem) {},
-      // transitionEnd: function(index, elem) {}
+        // continuous: false,
+        // disableScroll: false,
+        // stopPropagation: false,
+        // callback: function(index, elem) {},
+        // transitionEnd: function(index, elem) {}
     });
-
-    // Details: 产品图片 Slider
-    // document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-    // new IScroll('#js-scroller', {
-    //   scrollX: true,
-    //   scrollY: false,
-    //   momentum: false,
-    //   snap: true,
-    //   scrollerWidth: 200,
-    //   snapSpeed: 400
-    //   // keyBindings: true,
-    //   // indicators: {
-    //   //   el: document.getElementById('indicator'),
-    //   //   resize: false
-    //   // }
-    // });
-    // $main.find('.js-slider-pics').swipe({
-    //   // startSlide: 2,
-    //   slideWidth: 220,
-    //   // speed: 400,
-    //   // auto: 3000
-    //   continuous: false,
-    //   // disableScroll: false,
-    //   // stopPropagation: false,
-    //   init: function(index, elem) {
-    //     var $elem = $(elem);
-    //     $elem.addClass('inview').siblings().removeClass('inview');
-    //     $elem.next().addClass('inview');
-    //     $elem.prev().addClass('inview');
-    //   },
-    //   callback: function(index, elem) {
-    //     var $elem = $(elem);
-    //     $elem.addClass('inview').siblings().removeClass('inview');
-    //     $elem.next().addClass('inview');
-    //     $elem.prev().addClass('inview');
-    //   }
-    //   // transitionEnd: function(index, elem) {}
-    // });
 
     // Search result: 展开/折叠联系信息
     $main.on('click', '.search-result .actions .fold', function() {
@@ -257,14 +319,18 @@
       var counter = parseInt($counter.text(), 10);
 
       if ($this.hasClass('added')) {
-        $.getJSON(url, {action: 'del'}, function(data) {
+        $.getJSON(url, {
+          action: 'del'
+        }, function(data) {
           if (data.status === 'success') {
             $counter.text(--counter);
             $this.removeClass('added');
           }
         });
       } else {
-        $.getJSON(url, {action: 'add'}, function(data) {
+        $.getJSON(url, {
+          action: 'add'
+        }, function(data) {
           if (data.status === 'success') {
             $counter.text(++counter);
             $this.addClass('added');
@@ -312,7 +378,9 @@
           // console.log('进入视口');
           $loading.data('loading', true);
 
-          $.getJSON(url, {page: page}, function(data) {
+          $.getJSON(url, {
+            page: page
+          }, function(data) {
             // console.log(data);
             // 给关键字添加标识
             // $.each(data.list, function(i, v) {
@@ -364,6 +432,122 @@
       //   console.log('离开视口');
       // });
     }
+
+    // Details: 产品图片 Slider
+    (function() {
+      var $scroller = $('#js-scroller');
+
+      if (!$scroller.length) return;
+
+      var $list = $scroller.children('.list');
+      var len = $list.children('.item').length;
+      var width = $list.children('.item').width();
+      var hammerScroller = new Hammer($list[0]);
+
+      $list.width(width * len);
+
+      hammerScroller.on('swipeleft', function(e) {
+        var left = $list.position().left;
+        // console.log(left / width);
+
+        if (Math.abs(left / width) < len - 1) {
+          $list.animate({
+            translateX: left - width + 'px'
+          }, 200, 'ease-in-out');
+        }
+      });
+
+      hammerScroller.on('swiperight', function(e) {
+        var left = $list.position().left;
+        // console.log(left / width);
+
+        if (Math.abs(left / width) > 0) {
+          $list.animate({
+            translateX: left + width + 'px'
+          }, 200, 'ease-in-out');
+        }
+      });
+    })();
+
+    // document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    // new IScroll('#js-scroller', {
+    //   scrollX: true,
+    //   scrollY: false,
+    //   momentum: false,
+    //   snap: true,
+    //   scrollerWidth: 200,
+    //   snapSpeed: 400
+    //   // keyBindings: true,
+    //   // indicators: {
+    //   //   el: document.getElementById('indicator'),
+    //   //   resize: false
+    //   // }
+    // });
+    // $main.find('.js-slider-pics').swipe({
+    //   // startSlide: 2,
+    //   slideWidth: 220,
+    //   // speed: 400,
+    //   // auto: 3000
+    //   continuous: false,
+    //   // disableScroll: false,
+    //   // stopPropagation: false,
+    //   init: function(index, elem) {
+    //     var $elem = $(elem);
+    //     $elem.addClass('inview').siblings().removeClass('inview');
+    //     $elem.next().addClass('inview');
+    //     $elem.prev().addClass('inview');
+    //   },
+    //   callback: function(index, elem) {
+    //     var $elem = $(elem);
+    //     $elem.addClass('inview').siblings().removeClass('inview');
+    //     $elem.next().addClass('inview');
+    //     $elem.prev().addClass('inview');
+    //   }
+    //   // transitionEnd: function(index, elem) {}
+    // });
+
+    // Details: learn more
+    $main.on('click', '.proshow .learn-more', function() {
+      $(this).toggleClass('unfold').prev().toggleClass('js-hide');
+
+      if (this.classList.contains('unfold')) {
+        this.innerHTML = 'Hide up';
+      } else {
+        this.innerHTML = 'Learn More';
+      }
+    });
+
+    // Details: 分享到
+    $('#js-share').on('click', 'a', function() {
+      shareTo(this.className);
+    });
+
+    // Details: Add to cart
+    $('#contact-bar').on('click', '.cart', function() {
+      var $this = $(this);
+      var $counter = $cart.find('.counter');
+      var counter = parseInt($counter.text(), 10);
+
+      if ($this.hasClass('added')) {
+        $counter.text(--counter);
+        $this.removeClass('added');
+      } else {
+        $counter.text(++counter);
+        $this.addClass('added');
+      }
+    }).on('click', '.addto-products', function() {
+      var $this = $(this);
+      var url = $this.data('url');
+
+      if (!$this.hasClass('added')) {
+        $.getJSON(url, {action: 'add'}, function(data) {
+          if (data.status === 'success') {
+            $this.addClass('added').text('In My Products');
+          }
+        });
+        return false;
+      }
+    });
 
     // 设置文章字体大小
     // $('#js-setfont').on('tap', function(event) {

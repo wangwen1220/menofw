@@ -228,25 +228,26 @@ hr
   overflow hidden
 
   > .list
-    // box-sizing content-box
+    box-sizing content-box
     position absolute
-    // z-index 1
+    z-index 1 // 操！手机上必须设置此属性才能滑动
     padding-left 48px
     // width 880px
-    width 928px
-    height 200px
+    width 100%
+    height 100%
     overflow hidden
     transform translateZ(0)
+    // transition 300ms
     // touch-callout none
     // user-select none
-    background-color #444
+    // background-color #444
 
     > .item
       position relative
       float left
       padding 0 10px
       width 220px
-      height 200px
+      height 100%
       overflow hidden
 
       > img
@@ -1159,13 +1160,13 @@ hr
       > ul > li
         margin 7px 0
         color #959595
-        font-size 1.1rem
+        font-size 1.3rem
         -webkit-text-size-adjust none
 
         > .key
           margin-right 5px
           display inline-block
-          width 120px
+          width 130px
           color #959595
 
         .val
@@ -1174,10 +1175,12 @@ hr
       > .get-latest-price
         position absolute
         right 0
-        top 0
-        padding 4px 6px
-        border 2px #CCC solid
-        font-size 1.2rem
+        top -5px
+        padding 0 6px
+        height 28px
+        line-height 28px
+        border 1px #CCC solid
+        font-size 1.3rem
         color #000
 
     > .learn-more
@@ -1204,12 +1207,15 @@ hr
 
     > .supplier
       > .header
-        padding 10px
+        padding 0 10px 10px
         border-bottom 1px #ddd solid
         overflow hidden
 
         > .title
           float left
+          height 30px
+          line-height 30px
+          font-size 1.4rem
           color: #999
 
         > .btn-contact
@@ -1219,6 +1225,7 @@ hr
           line-height 30px
           color #fff
           border-radius 15px
+          font-size 1.4rem
           background linear-gradient(top, #FE9F03, #FC8B01)
 
           &:before
@@ -1231,6 +1238,124 @@ hr
             background-size contain
             vertical-align top
             // background-color #444
+
+      > .body
+        padding 10px
+        font-size 1.3rem
+
+        > .title
+          margin-bottom 5px
+          // font-weight bold
+          color dblue
+
+        > address
+          color #797979
+
+        > summary
+          color #000
+
+        > .contacts
+          margin-top 10px
+
+          > li
+            margin 5px 0
+            color dblue
+            padding-left 22px
+            background-repeat no-repeat
+            background-position 0 1px
+            background-size 15px
+
+            &.tel
+              background-image url(../img/icon-tel.png)
+
+            &.phone
+              background-image url(../img/icon-phone.png)
+
+            &.room
+              background-image url(../img/icon-room.png)
+
+            > small
+              display block
+              font-size .95rem
+              color #666
+
+      > .footer
+        padding 15px 0
+        border-top 1px #ddd solid
+
+        > .share
+          text-align center
+          font-size 0
+
+          > a
+            display inline-block
+            margin 0 5px
+            width 24px
+            height 24px
+            background url(../img/icon-shares.png) no-repeat
+            background-size 24px
+
+            &.facebook
+              background-position 0 0
+
+            &.twitter
+              background-position 0 -24px
+
+            &.googleplus
+              background-position 0 -48px
+
+            &.linkedin
+              background-position 0 -72px
+
+            &.delicious
+              background-position 0 -96px
+
+            &.reddit
+              background-position 0 -120px
+
+            &.pinterest
+              background-position 0 -144px
+
+            &.stumbleupon
+              background-position 0 -168px
+
+            &.email
+              background-position 0 -192px
+
+// Contact bar
+#contact-bar
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+  position fixed
+  z-index 1
+  bottom 0
+  width 100%
+  height 40px
+  line-height 40px
+  text-align center
+  color #fff
+  background rgba(251, 180, 60, .9)
+
+  > a
+    flex 1
+    padding 0 10px
+    border-right 1px solid rgba(255, 255, 255, .5)
+    font-size 14px
+
+    &:nth-child(2)
+      flex 1 115px
+
+    &.cart
+      border none
+      background url(../img/icon-cart.png) 50% 50% no-repeat
+      background-size 30px
+
+      &.added
+        background-image url(../img/btn-cart-added-white.png)
+
+html.details #cart
+  bottom 55px
 
 // 注册页
 .form-login

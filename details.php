@@ -32,7 +32,7 @@ include 'header.html';
           </ul>
           <a href="#" class="get-latest-price">Get Latest Price</a>
         </div>
-        <div class="sub ">
+        <div class="sub js-hide">
           <h3 class="title">Product Specifications</h3>
           <ul>
             <li><span class="key">Price / Payment:</span> <span class="val">TT</span></li>
@@ -56,17 +56,25 @@ include 'header.html';
             <address>[Guangdong, China (Mainland)]</address>
             <summary>stand collar packing, polybag or box packing for single piece, certain quantity packed in one standard carton, stand collar packing, polybag or box packing for single piece, certain quantity packed in one standard carton.</summary>
             <ul class="contacts">
-              <li><a>+86-760-55555555</a></li>
-              <li>
+              <li class="tel"><a>+86-760-55555555</a></li>
+              <li class="phone">
                 <a>13560857888</a> / <a>13588998888</a>
-                <span>(supplier's local time is 14:40)</span>
+                <small>(supplier's local time is 14:40)</small>
               </li>
-              <li><a href="#">Go to Showroom</a></li>
+              <li class="room"><a href="#">Go to Showroom</a></li>
             </ul>
           </div>
           <div class="footer">
-            <div class="share">
-              shares
+            <div id="js-share" class="share">
+              <a class="facebook"></a>
+              <a class="twitter"></a>
+              <a class="googleplus"></a>
+              <a class="linkedin"></a>
+              <a class="delicious"></a>
+              <a class="reddit"></a>
+              <a class="pinterest"></a>
+              <a class="stumbleupon"></a>
+              <a class="email" href="email.php"></a>
             </div>
           </div>
         </div>

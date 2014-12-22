@@ -56,14 +56,21 @@
   </a>
   <!-- </div> -->
 
+  <?php if (preg_match('/\bdetails\b/', $class)) : ?>
+  <div id="contact-bar">
+    <a href="#">Contact</a>
+    <a href="goto-products-page.php" class="addto-products" data-url="addto-products.php">Add to My Products</a>
+    <a class="cart"></a>
+  </div>
+  <?php endif ?>
+
   <div id="mask" class="w-mask"></div>
 
   <!-- // <script src="js/jquery.js"></script> -->
-  <!-- // <script src="js/jquery-inviewport.js"></script> -->
   <script src="js/zepto.js"></script>
   <script src="js/fastclick.js"></script>
+  <script src="js/hammer.js"></script>
   <script src="js/swipe.js"></script>
-  <!-- // <script src="js/iscroll.js"></script> -->
   <script src="js/template.js"></script>
   <script src="js/spin.js"></script>
   <script src="js/main.js"></script>
