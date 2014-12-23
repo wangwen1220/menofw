@@ -8,7 +8,7 @@
   <meta name="keywords" content="<?php echo $keywords ?>">
   <meta name="description" content="<?php echo $description ?>">
   <link rel="stylesheet" href="css/main.css">
-  <!-- // <script src="js/cssrefresh.js"></script> -->
+  <script src="js/cssrefresh.js"></script>
   <!-- <script src="http://192.168.2.213:8080/target/target-script-min.js#anonymous"></script> -->
   <meta name="format-detection" content="telephone=no">
   <meta name="apple-touch-fullscreen" content="yes">
@@ -27,6 +27,7 @@
     </menu>
   </header>
 
+  <?php if (!preg_match('/\bcontact-supplier\b/', $class)) : ?>
   <div id="search">
     <a class="search-cancel js-hide js-cancel">Cancel</a>
     <form action="suggestion.php" class="search-form" autocomplete="off">
@@ -56,3 +57,4 @@
       <!-- <div class="keylist-close"><a class="js-keylist-close">Close</a></div> -->
     </div>
   </div>
+  <?php endif ?>

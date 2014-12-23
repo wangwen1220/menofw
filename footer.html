@@ -1,5 +1,5 @@
   <!-- 这是要判断一下，哪些页面需要加载这个底部搜索 -->
-  <?php if (!preg_match('/\bhome\b/', $class)) : ?>
+  <?php if (!preg_match('/\bhome\b/', $class) && !preg_match('/\bcontact-supplier\b/', $class)) : ?>
   <div id="search-footer">
     <div class="search-keywords">
       <h4 class="w-title-linethrough"><span class="inner">Popular Searches</span></h4>

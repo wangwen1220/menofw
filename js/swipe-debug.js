@@ -55,7 +55,8 @@ function Swipe(container, options) {
     slidePos = new Array(slides.length);
 
     // determine width of each slide
-    width = options.slideWidth || container.getBoundingClientRect().width || container.offsetWidth;
+    // width = options.slideWidth || container.getBoundingClientRect().width || container.offsetWidth;
+    width = container.getBoundingClientRect().width || container.offsetWidth;
 
     element.style.width = (slides.length * width) + 'px';
 
@@ -86,7 +87,7 @@ function Swipe(container, options) {
     // 标识当前 slide
     // slides[index].classList.add('current');
 
-    offloadFn(options.callback && options.callback(index, slides[index]));
+    // offloadFn(options.callback && options.callback(index, slides[index]));
   }
 
   function prev() {
