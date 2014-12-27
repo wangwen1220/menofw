@@ -549,6 +549,35 @@
       }
     });
 
+    // 询盘页面: 显示/隐藏 templates
+    var $sendInquiry = $('#js-send-inquiry');
+    $sendInquiry.on('click', '.tpls > .switcher', function() {
+      $(this).toggleClass('unfold').next().toggleClass('js-hide');
+
+      if (this.classList.contains('unfold')) {
+        this.innerHTML = 'Hide';
+      } else {
+        this.innerHTML = 'Show';
+      }
+    }).on('click', '.tpls-wrap > label', function(event) { // 选择 templates
+      var $this = $(this);
+      var i = $this.parent().data('index') || 3;
+      var tpl = inquiryTpls[$this.data('tpl')];
+
+      if (!$this.hasClass('selected')) {
+        inquiryTpls.base.splice(i, 0, tpl);
+        $this.data('index', i).parent().data('index', ++i);
+      } else {
+        inquiryTpls.base.splice($this.data('index'), 1);
+        $this.parent().data('index', --i);
+      }
+
+      $this.toggleClass('selected');
+
+      // 填充模板内容到文本域
+      $sendInquiry.find('.msg > textarea').val(inquiryTpls.base.join(''));
+    }).find('.msg > textarea').val(inquiryTpls.base.join(''));
+
     // 设置文章字体大小
     // $('#js-setfont').on('tap', function(event) {
     //   event.preventDefault();
