@@ -406,6 +406,31 @@ hr
       font-size 1.2rem
       font-family Arial
 
+// 通用表单错误提示框
+.w-tips
+  display block
+  margin-top 2px
+  border 1px #fcd2d4 solid
+  font-style normal
+  font-size 1.3rem
+  line-height 1.5
+  color #666
+
+  &.error
+    padding 4px 5px 4px 31px
+    background #ffefef url(../img/icon-error.png) 5px 5px no-repeat
+    background-size 15px
+
+  // &:before
+  //   content ''
+  //   display inline-block
+  //   margin-right .5em
+  //   width 16px
+  //   height 16px
+  //   background url(../img/icon-error.png) 50% 50% no-repeat
+  //   background-size contain
+  //   vertical-align middle
+
 // 通用加载中模块
 .w-loading
   margin-top 15px
@@ -710,8 +735,8 @@ hr
     line-height 30px
     overflow hidden
     color #000
-    font-size 1.4rem
-    font-weight bold
+    font-size 1.6rem
+    // font-weight bold
     background #eee
 
 // Cart
@@ -1394,9 +1419,10 @@ html.details #cart
 #main > .send-success
   padding 10px
   text-align center
+  font-size 1.4rem
 
   > .msg
-    margin 10px 0 30px
+    margin 15px 0 30px
     color #959595
 
     &:before
@@ -1435,7 +1461,7 @@ html.details #cart
     min-height 168px
     border 1px #ccc solid
     color #444
-    font-size 1.2rem
+    font-size 1.4rem
     line-height 1.5
 
   &.tpls
@@ -1444,6 +1470,7 @@ html.details #cart
     > .tips
       float left
       color #959595
+      // font-size 1.4rem
 
     > .switcher
       float right
@@ -1481,13 +1508,13 @@ html.details #cart
       > label
         display inline-block
         margin-top 10px
-        width 145px
+        width 49%
         height 32px
         line-height 32px
         overflow hidden
         border 1px #ccc solid
         text-align center
-        font-size 1.2rem
+        font-size 1.3rem
         color #A2A2A2
         background #fff
 
@@ -1497,6 +1524,7 @@ html.details #cart
 
         > input
           display none
+          // pointer-events none
 
   &.submit button
     display block
@@ -1506,8 +1534,8 @@ html.details #cart
     line-height 32px
     text-align center
     color #fff
-    font-size 1.5rem
-    // font-weight bold
+    font-size 1.6rem
+    font-weight bold
     background lorange
 
     &:before
@@ -1520,6 +1548,12 @@ html.details #cart
       background-size contain
       vertical-align top
       // background #444
+
+    &:disabled
+      border 1px #d4d4d4 solid
+      color #cbcbcb
+      background #fff
+      cursor default
 
   &.opts label
     position relative

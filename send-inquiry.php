@@ -5,6 +5,7 @@ $class = 'contact-supplier';
 $title = 'Contact Supplier';
 $keywords = 'Contact Supplier';
 $description = 'Contact Supplier';
+$islogin = 1;
 $username = 'Steven Wang';
 
 include 'header.html';
@@ -12,17 +13,17 @@ include 'header.html';
 
   <div id="main">
     <div class="pagetitle">Contact Supplier</div>
-    <form action="#" class="send-inquiry" id="js-send-inquiry">
+    <form action="login.php" class="send-inquiry" id="js-inquiry-form">
       <section class="msg"><textarea name="inquiry"></textarea></section>
 
       <section class="tpls">
         <p class="tips">Select templates for a quick inquiry</p>
         <a class="switcher">Show</a>
         <div class="tpls-wrap js-hide">
-          <label data-tpl="price"><input type="checkbox" name="template">Request Price</label>
-          <label data-tpl="request"><input type="checkbox" name="template">Request Sample</label>
-          <label data-tpl="product"><input type="checkbox" name="template">More Product deatils</label>
-          <label data-tpl="order"><input type="checkbox" name="template">Min. order quantity</label>
+          <label data-tpl="price"><input type="checkbox" name="template" value="price">Product price</label>
+          <label data-tpl="request"><input type="checkbox" name="template" value="request">Request a sample</label>
+          <label data-tpl="product"><input type="checkbox" name="template" value="product">More product details</label>
+          <label data-tpl="order"><input type="checkbox" name="template" value="order">Min. order quantity</label>
         </div>
       </section>
 
@@ -35,6 +36,7 @@ include 'header.html';
   </div>
 
 <script>
+  var islogin = <?php echo $islogin ?>;
   var inquiryTpls = {
     base: [
       'Hi,\n',

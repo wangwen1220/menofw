@@ -182,12 +182,13 @@
     var $cats = $('#categories');
     var $cart = $('#cart');
     var $loading = $('#js-loading');
+    var $inquiryForm = $('#js-inquiry-form');
 
     // use fastclick
-    // FastClick.attach(document.body);
-    if (typeof FastClick !== 'undefined' && typeof document.body !== 'undefined') {
-      FastClick.attach(document.body);
-    }
+    FastClick.attach(document.body);
+    // if (typeof FastClick !== 'undefined' && typeof document.body !== 'undefined') {
+    //   FastClick.attach(document.body);
+    // }
 
     // Global: 搜索
     $search.data('$hidden', $search.find('.js-hide'))
@@ -550,8 +551,7 @@
     });
 
     // 询盘页面: 显示/隐藏 templates
-    var $sendInquiry = $('#js-send-inquiry');
-    $sendInquiry.on('click', '.tpls > .switcher', function() {
+    $inquiryForm.on('click', '.tpls > .switcher', function() {
       $(this).toggleClass('unfold').next().toggleClass('js-hide');
 
       if (this.classList.contains('unfold')) {
@@ -563,20 +563,57 @@
       var $this = $(this);
       var i = $this.parent().data('index') || 3;
       var tpl = inquiryTpls[$this.data('tpl')];
+      var baseTplArr = inquiryTpls.base;
 
       if (!$this.hasClass('selected')) {
-        inquiryTpls.base.splice(i, 0, tpl);
-        $this.data('index', i).parent().data('index', ++i);
+        baseTplArr.splice(i, 0, tpl);
+        i++;
       } else {
-        inquiryTpls.base.splice($this.data('index'), 1);
-        $this.parent().data('index', --i);
+        // baseTplArr.splice($.inArray(tpl, baseTplArr), 1);
+        baseTplArr.splice(baseTplArr.indexOf(tpl), 1);
+        // console.log($.inArray(baseTplArr, tpl));
+        i--;
       }
 
-      $this.toggleClass('selected');
+      $this.toggleClass('selected').parent().data('index', i);
 
       // 填充模板内容到文本域
-      $sendInquiry.find('.msg > textarea').val(inquiryTpls.base.join(''));
+      $inquiryForm.find('.msg > textarea').val(baseTplArr.join(''));
+
+      // 修复在手机上会触发两次的问题
+      event.preventDefault();
+      $this.children('input').prop('checked', true);
     }).find('.msg > textarea').val(inquiryTpls.base.join(''));
+
+    // 表单提交
+    $inquiryForm.on('submit', function() {
+      // alert($inquiryForm.serialize());
+      var $error = $inquiryForm.find('.w-tips.error');
+
+      if (!islogin) {
+        window.location.href = this.action;
+        return false;
+      } else if ($error.length) {
+        $error.prev().focus();
+        return false;
+      }
+    }).on('keyup blur', '.msg > textarea', function(event) {
+      var $this = $(this);
+      var len = $.trim($this.val()).length;
+      var $tips = $this.next('.w-tips');
+      var $submit = $inquiryForm.find('.submit > button');
+
+      if (len < 5 || len > 8000) {
+        // $inquiryForm.addClass('invalid');
+        $tips = $tips.length ? $tips : $('<i class="w-tips"/>').insertAfter($this);
+        $tips.addClass('error').html('Your message must be between 5 and 8000 characters');
+        $submit.prop('disabled', len === 0);
+      } else {
+        // $inquiryForm.removeClass('invalid');
+        $tips.remove();
+        $submit.prop('disabled', false);
+      }
+    });
 
     // 设置文章字体大小
     // $('#js-setfont').on('tap', function(event) {
