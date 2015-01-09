@@ -1,5 +1,5 @@
   <!-- 这是要判断一下，哪些页面需要加载这个底部搜索 -->
-  <?php if (!preg_match('/\bhome\b/', $class) && !preg_match('/\bcontact-supplier\b/', $class)) : ?>
+  <?php if (!preg_match('/\bhome\b/', $class) && !preg_match('/\bnosearch\b/', $class)) : ?>
   <div id="search-footer">
     <div class="search-keywords">
       <h4 class="w-title-linethrough"><span class="inner">Popular Searches</span></h4>
@@ -49,12 +49,14 @@
     <p class="copyright">&copy; 2015 en.OFweek.com</p>
   </footer>
 
+  <?php if (!preg_match('/\bnocart\b/', $class)) : ?>
   <!-- <div class="cart-wrap"> -->
   <a id="cart" class="fold" href="#">
     <i class="closer js-close"></i>
     <span class="content"><strong class="counter">2</strong>Inquiries</span>
   </a>
   <!-- </div> -->
+  <?php endif ?>
 
   <?php if (preg_match('/\bdetails\b/', $class)) : ?>
   <div id="contact-bar">

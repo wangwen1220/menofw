@@ -408,17 +408,20 @@ hr
 
 // 通用表单错误提示框
 .w-tips
+  clear both
   display block
-  margin-top 2px
-  border 1px #fcd2d4 solid
+  position relative
+  top 2px
+  // margin-top 2px
   font-style normal
   font-size 1.3rem
   line-height 1.5
-  color #666
+  color #959595
 
   &.error
     padding 4px 5px 4px 31px
-    background #ffefef url(../img/icon-error.png) 5px 5px no-repeat
+    border 1px #fcd2d4 solid
+    background #ffefef url(../img/icon-error.png) 5px 6px no-repeat
     background-size 15px
 
   // &:before
@@ -1444,8 +1447,6 @@ html.details #cart
       color dblue
       text-decoration underline
 
-// 询盘登录/注册页
-
 // 询盘页
 #main > .send-inquiry > section
   margin 10px
@@ -1569,10 +1570,259 @@ html.details #cart
       width 12px
       height 12px
 
+// 通用登录/注册页
+#main > .signinbox
+  // padding 10px 10px 0
+  padding 10px 0 0
 
+  > nav
+    // margin 5px auto 15px
+    margin 5px auto
+    text-align center
+    font-size 0
 
+    > a
+      display inline-block
+      padding 0 28px
+      height 28px
+      line-height 26px
+      border 1px #ccc solid
+      color #000
+      font-size 1.2rem
+      font-weight bold
+      background #fff
 
-// 所有登录/注册页
+      &:first-child
+        border-right none
+
+      &:last-child
+        border-left none
+
+      &.on
+        border-color dred
+        color #fff
+        background dred
+
+  > form
+    display none
+    position absolute
+    padding 0 10px
+    width 100%
+    background #fff
+    // transition .6s
+    // animation .6s ease-in-out
+
+    > section
+      margin 15px 0
+      // clearfix()
+
+      > .title
+        margin-bottom 1px
+        // line-height 1.2
+        font-size 1.3rem
+        font-weight bold
+        color #777
+
+      > .text
+        // display flex
+        position relative
+        padding 5px
+        height 32px
+        line-height 20px
+        border 1px #ccc solid
+        font-size 1.4rem
+
+        &.user
+        &.password
+          padding-left 30px
+
+          &:after
+            content ''
+            position absolute
+            left 0
+            top 0
+            width 30px
+            height 100%
+            background url(../img/icon-user.png) 50% 50% no-repeat
+            background-size auto 16px
+
+        &.password:after
+          background-image url(../img/icon-password.png)
+
+        > input
+          // flex 1
+          border 0
+          outline 0
+          width 100%
+          height 100%
+          // background #ccc
+
+        &:focus
+          border-color #55A0E3
+
+      > .button
+        display block
+        width 100%
+        height 32px
+        line-height 32px
+        border 0
+        text-align center
+        color #fff
+        font-size 1.5rem
+        // font-weight bold
+        background lorange
+
+      // > .tips
+      //   @extend .w-tips
+
+      a
+        color dblue
+        text-decoration underline
+        font-size 1.1rem
+
+      &.links
+        text-align center
+
+        > a
+          margin-right 3em
+
+          &:last-child
+            margin-right 0
+
+      &.accounttype
+        margin-bottom -7px
+
+        label
+          margin 0 1em
+          font-weight normal
+          color #000
+
+          input
+            vertical-align -2px
+
+      &.country > .text
+        position relative
+        margin-right 30px
+        padding 0
+        text-align right
+
+        &:after
+          content ''
+          display inline-block
+          transform translateY(-100%)
+          width 30px
+          height 100%
+          border-left 1px #ddd solid
+          background #F8F8F8 url(../img/icon-select.png) 50% 50% no-repeat
+          background-size 12px
+
+        > select
+          position relative
+          z-index 1
+          width 100%
+          height 100%
+          border 0
+          outline 0
+          background transparent
+          appearance none
+
+        > img
+          position absolute
+          right -30px
+          top 50%
+          transform translateY(-50%)
+          width 20px
+          height 13px
+
+      &.username
+        clearfix()
+
+        > .text
+          float right
+          width 48%
+
+          &:nth-child(2)
+            float left
+
+      &.code > .text
+        position relative
+        margin-right 85px
+
+        > img
+          position absolute
+          right -85px
+          top 50%
+          transform translateY(-50%)
+          width 75px
+          height 100%
+          // border 1px #ccc solid
+
+      &.policy > p
+        margin 7px 0
+        color #959595
+
+    // &.login
+    //   transform translateX(-100%)
+    //   animation-name slideouttoleft
+
+    // &.join
+    //   transform translateX(100%)
+    //   animation-name slideouttoright
+
+    &.on
+      display block
+
+    &:only-child
+      display block
+
+    // &.login.on
+    //   transform translateX(0)
+    //   animation-name slideinfromleft
+
+    // &.join.on
+    //   transform translateX(0)
+    //   animation-name slideinfromright
+
+@keyframes slidein
+  to
+    transform translateX(0)
+
+@keyframes slideinfromright
+  from
+    transform translateX(100%)
+  to
+    transform translateX(0)
+
+@keyframes slideinfromleft
+  from
+    transform translateX(-100%)
+  to
+    transform translateX(0)
+
+@keyframes slideouttoleft
+  from
+    transform translateX(0)
+  to
+    transform translateX(-100%)
+
+@keyframes slideouttoright
+  from
+    transform translateX(0)
+  to
+    transform translateX(100%)
+
+// 登录/注册页页脚样式
+html.inquiry.signin #main > .signinbox > form > section
+  &.links
+    text-align left
+
+    > a.joinfree
+      display none
+
+  &.accounttype
+    display none
+
+// 登录/注册页页脚样式
 html.signin #footer
   padding-top 10px
 
@@ -1580,36 +1830,6 @@ html.signin #footer
   nav .mainlinks
   nav hr
     display none
-
-// 注册页
-.form-login
-  margin-bottom 5rem
-  .forget-password
-    margin-top 10px
-    text-align right
-    a
-      color blue
-  .reg-now
-    margin-top 2rem
-    text-align center
-    color #999
-    font-size .95rem
-    a
-      color green
-
-// 404
-.cnt-404
-  margin 5rem 10px
-  p
-    margin 1.5rem 0
-    text-align center
-    strong
-      font-size .9rem
-      color red
-    a
-      font-size .95rem
-      color blue
-      text-decoration underline
 
 // Media Queries
 // @media only screen and (min-width: 800px)

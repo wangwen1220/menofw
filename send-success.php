@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
 
-$class = 'contact-supplier';
+$class = 'inquiry nosearch';
 $title = 'Contact Supplier';
 $keywords = 'Contact Supplier';
 $description = 'Contact Supplier';

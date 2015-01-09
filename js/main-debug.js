@@ -8,7 +8,11 @@
 // Main
 (function($) {
   // Helpers
-  var isIE6 = !!window.ActiveXObject && !window.XMLHttpRequest;
+  // var isIE6 = navigator.userAgent.indexOf('MSIE 6.0') !== -1;
+  // var isIE6 = !!window.ActiveXObject && !window.XMLHttpRequest;
+  // var isIE10 = navigator.userAgent.indexOf('MSIE 10.0') !== -1;
+  // var isIE11 = /\btrident\/[0-9].*rv[ :]11\.0/.test(navigator.userAgent);
+  // var isIE678 = /\bMSIE [678]\.0\b/.test(navigator.userAgent);
 
   var isString = function(val) {
     return Object.prototype.toString.call(val) === '[object String]';
@@ -183,6 +187,7 @@
     var $cart = $('#cart');
     var $loading = $('#js-loading');
     var $inquiryForm = $('#js-inquiry-form');
+    var $inquirySign = $('#js-signinbox');
 
     // use fastclick
     FastClick.attach(document.body);
@@ -551,108 +556,186 @@
     });
 
     // 询盘页面: 显示/隐藏 templates
-    $inquiryForm.on('click', '.tpls > .switcher', function() {
-      $(this).toggleClass('unfold').next().toggleClass('js-hide');
+    if (window.inquiryTpls) {
+      $inquiryForm.on('click', '.tpls > .switcher', function() {
+        $(this).toggleClass('unfold').next().toggleClass('js-hide');
 
-      if (this.classList.contains('unfold')) {
-        this.innerHTML = 'Hide';
-      } else {
-        this.innerHTML = 'Show';
-      }
-    }).on('click', '.tpls-wrap > label', function(event) { // 选择 templates
-      var $this = $(this);
-      var i = $this.parent().data('index') || 3;
-      var tpl = inquiryTpls[$this.data('tpl')];
-      var baseTplArr = inquiryTpls.base;
+        if (this.classList.contains('unfold')) {
+          this.innerHTML = 'Hide';
+        } else {
+          this.innerHTML = 'Show';
+        }
+      }).on('click', '.tpls-wrap > label', function(event) { // 选择 templates
+        var $this = $(this);
+        var i = $this.parent().data('index') || 3;
+        var tpl = inquiryTpls[$this.data('tpl')];
+        var baseTplArr = inquiryTpls.base;
 
-      if (!$this.hasClass('selected')) {
-        baseTplArr.splice(i, 0, tpl);
-        i++;
-      } else {
-        // baseTplArr.splice($.inArray(tpl, baseTplArr), 1);
-        baseTplArr.splice(baseTplArr.indexOf(tpl), 1);
-        // console.log($.inArray(baseTplArr, tpl));
-        i--;
-      }
+        if (!$this.hasClass('selected')) {
+          baseTplArr.splice(i, 0, tpl);
+          i++;
+        } else {
+          // baseTplArr.splice($.inArray(tpl, baseTplArr), 1);
+          baseTplArr.splice(baseTplArr.indexOf(tpl), 1);
+          // console.log($.inArray(baseTplArr, tpl));
+          i--;
+        }
 
-      $this.toggleClass('selected').parent().data('index', i);
+        $this.toggleClass('selected').parent().data('index', i);
 
-      // 填充模板内容到文本域
-      $inquiryForm.find('.msg > textarea').val(baseTplArr.join(''));
+        // 填充模板内容到文本域
+        $inquiryForm.find('.msg > textarea').val(baseTplArr.join(''));
 
-      // 修复在手机上会触发两次的问题
-      event.preventDefault();
-      $this.children('input').prop('checked', true);
-    }).find('.msg > textarea').val(inquiryTpls.base.join(''));
+        // 修复在手机上会触发两次的问题
+        event.preventDefault();
+        $this.children('input').prop('checked', true);
+      }).find('.msg > textarea').val(inquiryTpls.base.join(''));
 
-    // 表单提交
-    $inquiryForm.on('submit', function() {
-      // alert($inquiryForm.serialize());
-      var $error = $inquiryForm.find('.w-tips.error');
+      // 表单提交
+      $inquiryForm.on('submit', function() {
+        // alert($inquiryForm.serialize());
+        var $error = $inquiryForm.find('.w-tips.error');
 
-      if (!islogin) {
-        window.location.href = this.action;
-        return false;
-      } else if ($error.length) {
-        $error.prev().focus();
-        return false;
-      }
-    }).on('keyup blur', '.msg > textarea', function(event) {
-      var $this = $(this);
-      var len = $.trim($this.val()).length;
-      var $tips = $this.next('.w-tips');
-      var $submit = $inquiryForm.find('.submit > button');
+        if (!islogin) {
+          window.location.href = this.action;
+          return false;
+        } else if ($error.length) {
+          $error.prev().focus();
+          return false;
+        }
+      }).on('keyup blur', '.msg > textarea', function(event) {
+        var $this = $(this);
+        var len = $.trim($this.val()).length;
+        var $tips = $this.next('.w-tips');
+        var $submit = $inquiryForm.find('.submit > button');
 
-      if (len < 5 || len > 8000) {
-        // $inquiryForm.addClass('invalid');
-        $tips = $tips.length ? $tips : $('<i class="w-tips"/>').insertAfter($this);
-        $tips.addClass('error').html('Your message must be between 5 and 8000 characters');
-        $submit.prop('disabled', len === 0);
-      } else {
-        // $inquiryForm.removeClass('invalid');
-        $tips.remove();
-        $submit.prop('disabled', false);
-      }
+        if (len < 5 || len > 8000) {
+          // $inquiryForm.addClass('invalid');
+          $tips = $tips.length ? $tips : $('<i class="w-tips"/>').insertAfter($this);
+          $tips.addClass('error').html('Your message must be between 5 and 8000 characters');
+          $submit.prop('disabled', len === 0);
+        } else {
+          // $inquiryForm.removeClass('invalid');
+          $tips.remove();
+          $submit.prop('disabled', false);
+        }
+      });
+    }
+
+    // 通用：刷新验证码
+    $('#js-codeimg').on('click', function() {
+      this.src = this.src.split('?')[0] + '?' + new Date();
     });
 
-    // 设置文章字体大小
-    // $('#js-setfont').on('tap', function(event) {
-    //   event.preventDefault();
-    //   var $ths = $(this);
-    //   var $art = $('#js-art');
-    //   var txt = $ths.text();
+    // 询盘登录注册页：切换登录注册表单
+    $inquirySign.children('nav').on('click', 'a', function() {
+      var $this = $(this);
+      var $form = $this.parent().siblings('form');
+      var i = $this.index();
 
-    //   if (txt === 'T小') {
-    //     $art.css('font-size', '18px');
-    //     $ths.text('T中');
-    //   } else if (txt === 'T中') {
-    //     $art.css('font-size', '20px');
-    //     $ths.text('T大');
-    //   } else if (txt === 'T大') {
-    //     $art.css('font-size', '16px');
-    //     $ths.text('T小');
-    //   }
+      $this.addClass('on').siblings('a').removeClass('on');
+      $form.eq(i).addClass('on').siblings('form').removeClass('on');
+      // $inquirySign.css('padding-bottom', $form[i].clientHeight + 'px');
+      // setTimeout(function() {
+      //   $form.eq(i).removeClass('js-hide').siblings('form').addClass('js-hide');
+      // }, 600);
+    }).find('a').first().trigger('click');
+
+    // 动画结束时隐藏表单
+    // $inquirySign.children('form').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    //   // console.log($inquirySign.children('form').not('.on').index());
+    //   // console.log($inquirySign.children('form.on').siblings('form').length);
+    //   $inquirySign.children('form.on').removeClass('js-hide').siblings('form').addClass('js-hide');
+    //   // $inquirySign.css('padding-bottom', $inquirySign.children('form.on')[0].clientHeight + 'px');
     // });
 
-    // 返回顶部
-    // $gotop.on('click', function(event) {
-    //   window.scrollTo(0, 0);
-    //   return false;
-    //   // $('html, body').scrollTop(0);
-    //   // $('html, body').animate({
-    //   //   scrollTop: 0
-    //   // }, 600);
-    // });
+    // 询盘登录注册页：表单验证
+    $inquirySign.children('form').on('change', 'input', function(e) {
+      var $this = $(this);
+      var $form = $this.closest('form');
+      var $formitem = $this.closest('section');
+      var $error = $formitem.find('.w-tips.error');
+      // var $submit = $formitem.find('[type=submit]');
+      var isvalid = this.checkValidity();
+      var val = $.trim($this.val());
+      var len = val.length;
+      var msg = len === 0 ? $this.data('msg-req') : $this.data('msg-err');
+      var ajaxurl = $this.data('ajaxurl');
+      var ajaxchecking = $this.data('ajaxchecking') || false;
+      // console.log(isvalid);
+      // console.log(this.required);
+      // this.setCustomValidity('test tips');
+      // console.log(ajaxchecking);
 
-    // 转到
-    // $('.goto').click(function() {
-    //   $('html, body').animate({
-    //     scrollTop: $($(this).attr('href')).offset().top
-    //   }, {
-    //     duration: 500,
-    //     easing: 'swing'
-    //   });
-    //   return false;
-    // });
+      if (ajaxchecking) return;
+
+      // 如果有多个错误提示
+      if ($formitem.hasClass('username')) {
+        // $error.filter(':contains("' + $this.attr('placeholder').toLowerCase() + '"")').remove();
+        $error.filter(function() {
+          return $(this).text().indexOf($this.attr('placeholder').toLowerCase()) !== -1;
+        }).remove();
+      } else {
+        $error.remove();
+      }
+
+      if (!isvalid) {
+        $form.addClass('invalid');
+        // $tips = $tips.length ? $tips : $('<i class="w-tips"/>').appendTo($formitem);
+        $formitem.append('<i class="w-tips error">' + msg + '</i>');
+        // $submit.prop('disabled', !isvalid);
+      } else if (ajaxurl) {
+        $this.data('ajaxchecking', true);
+        $.getJSON(ajaxurl, function(data) {
+          if (data.status === 'error') {
+            // msg = data.msg;
+            $form.addClass('invalid');
+            $formitem.append('<i class="w-tips error">' + data.msg + '</i>');
+            // $submit.prop('disabled', !isvalid);
+          } else {
+            $form.removeClass('invalid');
+            // $error.remove();
+            // $submit.prop('disabled', false);
+          }
+        });
+      } else {
+        $form.removeClass('invalid');
+        // $error.remove();
+        // $submit.prop('disabled', false);
+      }
+    }).on('change', '#js-country', function() {
+      var $img = $(this).next('img');
+      var src = $img.attr('src');
+      var ext = src.slice(-4);
+      var name = this.value.toLowerCase();
+
+      $img.attr('src', src.slice(0, src.lastIndexOf('/') + 1) + name + ext);
+    }).on('focus', 'input, select', function() {
+      $(this).parent().trigger('focus');
+    }).on('submit', function() {
+      var $this = $(this);
+      var url = $this.attr('action');
+      var $error = $this.children('.w-tips.error');
+
+      if ($this.hasClass('invalid')) return false;
+      $('input', this).trigger('change');
+      if ($this.hasClass('invalid')) return false;
+
+      // AJAX 提交
+      // $error.remove();
+      $.getJSON(url, function(data) {
+        // console.log(data);
+        if (data.status === 'error') {
+          $error = $error.length ? $error : $('<i class="w-tips error"/>').prependTo($this);
+          // $this.prepend('<i class="w-tips error">' + data.msg + '</i>');
+          $error.html(data.msg);
+          // $submit.prop('disabled', true);
+        } else {
+          window.location = data.msg;
+        }
+      });
+
+      return false;
+    }).attr('novalidate', 'novalidate');
   });
 })(window.Zepto || window.jQuery);
