@@ -686,7 +686,7 @@
         // $submit.prop('disabled', !isvalid);
       } else if (ajaxurl) {
         $this.data('ajaxchecking', true);
-        $.getJSON(ajaxurl, function(data) {
+        $.getJSON(ajaxurl, {name: val}, function(data) {
           if (data.status === 'error') {
             // msg = data.msg;
             $form.addClass('invalid');
@@ -714,7 +714,6 @@
       $(this).parent().trigger('focus');
     }).on('submit', function() {
       var $this = $(this);
-      var url = $this.attr('action');
       var $error = $this.children('.w-tips.error');
 
       if ($this.hasClass('invalid')) return false;
@@ -723,15 +722,21 @@
 
       // AJAX 提交
       // $error.remove();
-      $.getJSON(url, function(data) {
-        // console.log(data);
-        if (data.status === 'error') {
-          $error = $error.length ? $error : $('<i class="w-tips error"/>').prependTo($this);
-          // $this.prepend('<i class="w-tips error">' + data.msg + '</i>');
-          $error.html(data.msg);
-          // $submit.prop('disabled', true);
-        } else {
-          window.location = data.msg;
+      $.ajax({
+        type: 'POST',
+        url: $this.attr('action'),
+        data: $this.serializeArray(),
+        dataType: 'json',
+        success: function(data) {
+          // console.log(data);
+          if (data.status === 'error') {
+            $error = $error.length ? $error : $('<i class="w-tips error"/>').prependTo($this);
+            // $this.prepend('<i class="w-tips error">' + data.msg + '</i>');
+            $error.html(data.msg);
+            // $submit.prop('disabled', true);
+          } else {
+            window.location = data.msg;
+          }
         }
       });
 

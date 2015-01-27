@@ -155,10 +155,10 @@ hr
   word-wrap break-word !important
 
 .fn-lowercase
-  fn-transform lowercase !important
+  text-transform lowercase !important
 
 .fn-uppercase
-  fn-transform uppercase !important
+  text-transform uppercase !important
 
 .fn-capitalize
   text-transform capitalize !important
@@ -1782,6 +1782,37 @@ html.details #cart
     // &.join.on
     //   transform translateX(0)
     //   animation-name slideinfromright
+
+  > .resetpsw
+    padding 0 10px
+    color #888
+
+    > p
+      margin 20px 0
+      line-height 1.5
+
+      > strong
+        font-weight normal
+        color dred
+
+    > .check-email
+      margin 35px 0
+      text-align center
+
+      > a
+        display inline-block
+        padding 0 25px
+        height 26px
+        line-height 24px
+        border 1px #ccc solid
+        border-radius 3px
+        color #000
+        // font-size 1.2rem
+        background linear-gradient(top, #FEFEFE, #ECECEC)
+
+    > section > .title
+      font-weight normal
+      font-size 1.2rem
 
 @keyframes slidein
   to
