@@ -742,5 +742,15 @@
 
       return false;
     }).attr('novalidate', 'novalidate');
+
+    // 询盘篮
+    $('#js-basket').on('click', 'ul > li > i', function(event) {
+      event.preventDefault();
+      $(this).parent().fadeOut().remove();
+    });
+
+
+
+
   });
 })(window.Zepto || window.jQuery);

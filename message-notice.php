@@ -14,7 +14,7 @@ include 'header.html';
     <div class="msgnotice">
       <section>
         <time>Date: 23 Mar 2011 14:54</time>
-        <p class="tips">Please do not reply to this email as it is unmonitored.</p>
+        <p class="tips">Please don't reply to this email as it is unmonitored.</p>
       </section>
 
       <section><p>Dear Ms. Lucy(ID: 1234234)</p></section>
@@ -25,8 +25,7 @@ include 'header.html';
       </section>
       <section>
         <p>Supplier's message:</p>
-        <p>To see the inquiry detail and reply to this buyer, please click on the Check Inquiry button below.</p>
-        <p>Please do not reply to this email as it is unmonitored.</p>
+        <!-- 询盘内容 -->
       </section>
       <section>
         <p>To view the inquiry detail and reply to the supplier, please sign in:</p>

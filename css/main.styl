@@ -1831,9 +1831,9 @@ html.signin #footer
   > ol > li
     // margin .5rem 0 .5rem 2rem
     margin .5rem 0
-    color #959595
+    color #888
 
-// 会员通知信
+// DEL: 会员通知信
 #main > .msgnotice
   padding 10px
 
@@ -1841,7 +1841,7 @@ html.signin #footer
     margin-bottom 15px
     font-size 1.4rem
     line-height 1.3
-    color #959595
+    color #444
 
     a
       color dblue
@@ -1862,9 +1862,12 @@ html.signin #footer
       margin-top 8px
       color dred
       text-align center
+      font-size 1.1rem
+      // transform scale(.9)
+
 
       &::before
-        content ''
+        // content ''
         display inline-block
         margin-right 3px
         height 6px
@@ -1875,12 +1878,70 @@ html.signin #footer
 
     time
       display block
+      font-size 1.2rem
+
       text-align right
+
+    &:last-child
+      margin-bottom 0
 
   > .contacts
     padding-top 30px
     border-top 1px #D5D5D5 solid
     font-size 1.2rem
+
+    > section
+      font-size 1.2rem
+      color #999
+
+html.msgnotice #footer
+  > nav > .actions
+  > nav > .mainlinks
+  hr
+  .copyright
+    display none
+
+// 询盘篮
+#main > .basket
+  > ul > li
+    position relative
+    padding 0 10px
+    border-bottom 1px #E8E8E8 solid
+    line-height 30px
+
+    > a
+      display block
+      margin-right 20px
+      height 30px
+      white-space nowrap
+      overflow hidden
+      text-overflow ellipsis
+      font-size 1.4rem
+      color dblue
+
+    > i
+      position absolute
+      right 0
+      top 0
+      padding-right 10px
+      width 30px
+      height 30px
+      overflow hidden
+      font-style normal
+      font-size 1.2rem
+      font-weight bold
+      color dred
+      text-align right
+      // font-size 0
+      background url(../img/x.png) 50% 50% no-repeat
+      background-size 12px
+
+  > .btn-send
+    button(email, 32px, 0, 1.6rem)
+    display block
+    margin 15px 10px
+
+
 
 
 

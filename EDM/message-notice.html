@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <title>Message Subject or Title</title>
+  <meta name="author" content="Steven">
+  <style>
+    /* Based on The MailChimp Reset INLINE: Yes. */
+    /* Client-specific Styles */
+    #outlook a {padding:0;} /* Force Outlook to provide a "view in browser" menu link. */
+    body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;}
+    /* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/
+    .ExternalClass {width:100%;} /* Force Hotmail to display emails at full width */
+    .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+    /* Forces Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */
+    #backgroundTable {margin:0; padding:0; width:100% !important; line-height: 100% !important;}
+    /* End reset */
+
+    /* Some sensible defaults for images
+    Bring inline: Yes. */
+    img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;}
+    a img {border:none;}
+    .image_fix {display:block;}
+
+    /* Yahoo paragraph fix
+    Bring inline: Yes. */
+    p {margin: 1em 0;}
+
+    /* Hotmail header color reset
+    Bring inline: Yes. */
+    h1, h2, h3, h4, h5, h6 {color: black !important;}
+
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: blue !important;}
+
+    h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {
+    color: red !important; /* Preferably not the same color as the normal header link color.  There is limited support for psuedo classes in email clients, this was added just for good measure. */
+    }
+
+    h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
+    color: purple !important; /* Preferably not the same color as the normal header link color. There is limited support for psuedo classes in email clients, this was added just for good measure. */
+    }
+
+    /* Outlook 07, 10 Padding issue fix
+    Bring inline: No.*/
+    table td {border-collapse: collapse;}
+
+    /* Remove spacing around Outlook 07, 10 tables
+    Bring inline: Yes */
+    table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; font: 14px/1.4 'Microsoft Yahei','Helvetica Neue',Helvetica,Arial,sans-serif; color: #444; }
+
+    /* Styling your links has become much simpler with the new Yahoo.  In fact, it falls in line with the main credo of styling in email and make sure to bring your styles inline.  Your link colors will be uniform across clients when brought inline.
+    Bring inline: Yes. */
+    a {color: orange;}
+
+
+    /* --------------------------------------------------
+      MOBILE TARGETING
+    -------------------------------------------------- */
+    @media only screen and (max-device-width: 480px) {
+      /* Part one of controlling phone number linking for mobile. */
+      a[href^="tel"], a[href^="sms"] {
+        text-decoration: none;
+        color: blue; /* or whatever your want */
+        pointer-events: none;
+        cursor: default;
+      }
+
+      .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+        text-decoration: default;
+        color: orange !important;
+        pointer-events: auto;
+        cursor: default;
+      }
+    }
+
+    /* More Specific Targeting */
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      /* You guessed it, ipad (tablets, smaller screens, etc) */
+      /* repeating for the ipad */
+      a[href^="tel"], a[href^="sms"] {
+        text-decoration: none;
+        color: blue; /* or whatever your want */
+        pointer-events: none;
+        cursor: default;
+      }
+
+      .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+        text-decoration: default;
+        color: orange !important;
+        pointer-events: auto;
+        cursor: default;
+      }
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+      /* Put your iPhone 4g styles in here */
+    }
+
+    /* Android targeting */
+    @media only screen and (-webkit-device-pixel-ratio:.75){
+      /* Put CSS for low density (ldpi) Android layouts in here */
+    }
+    @media only screen and (-webkit-device-pixel-ratio:1){
+      /* Put CSS for medium density (mdpi) Android layouts in here */
+    }
+    @media only screen and (-webkit-device-pixel-ratio:1.5){
+      /* Put CSS for high density (hdpi) Android layouts in here */
+    }
+    /* end Android targeting */
+
+
+    /* Custom
+    -------------------------------------------------- */
+    #contentTable {
+      width:100% !important;
+    }
+    #contentTable td {
+      padding-left: 10px;
+      padding-right: 10px;
+      line-height: 1.3;
+    }
+    #contentTable td a {
+      text-decoration: none;
+      color: #16447e;
+    }
+    #contentTable td strong {
+      font-weight: normal;
+      color: #c00;
+    }
+    #contentTable thead td {
+      height: 55px;
+      border-bottom: 1px #D54646 solid;
+      background: #c00;
+    }
+    #contentTable tbody td {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+    #contentTable tbody td .signin {
+      display: block;
+      margin-top: 5px;
+      max-width: 600px;
+      height: 32px;
+      line-height: 32px;
+      color: #fff;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      background: #f93;
+    }
+    #contentTable tfoot td {
+      padding-top: 15px;
+      text-align: center;
+      font-size: 12px;
+      background: #eee;
+    }
+    #contentTable tfoot td a {
+      margin: 0 4px;
+      color: #999;
+    }
+    #contentTable tfoot td p {
+      margin: 8px 0;
+      color: #666;
+    }
+  </style>
+
+  <!-- Targeting Windows Mobile -->
+  <!--[if IEMobile 7]>
+  <style>
+  </style>
+  <![endif]-->
+
+  <!-- ***********************************************
+  ****************************************************
+  END MOBILE TARGETING
+  ****************************************************
+  ************************************************ -->
+
+  <!--[if gte mso 9]>
+    <style>
+    /* Target Outlook 2007 and 2010 */
+    </style>
+  <![endif]-->
+</head>
+
+<body>
+<!-- Wrapper Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
+<table cellpadding="0" cellspacing="0" border="0" id="backgroundTable">
+  <tr>
+    <td valign="top">
+      <!-- Content Tables: The most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
+      <table cellpadding="0" cellspacing="0" border="0" align="center" id="contentTable">
+        <thead>
+          <tr>
+            <td style="padding-right: 0; background: #c00;"><a href="#" target ="_blank" title="OFweek Industrial B2B"><img src="http://menofw.wenwang.org/img/logo.png" alt="OFweek Industrial B2B" height="22"></a></td>
+            <td style="padding-left: 0; white-space: nowrap; text-align: right; background: #c00;">
+              <a href="#" target ="_blank" title="Login"><img src="http://menofw.wenwang.org/img/icon-login.png" alt="Login" width="32" height="32"></a>
+              <a href="#" target ="_blank" title="Search" style="margin-left: 8px;"><img src="http://menofw.wenwang.org/img/icon-search.png" alt="Search" width="32" height="32"></a>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="2" style="padding: 0 10px; height: 30px; font-size: 16px; color: #000; background: #eee;">Message Notice</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="font-size: 12px; color: #666; text-align: right;">Date:  23 Mar 2011 14: 54</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="font-size: 12px; color: #c00;">Please don't reply to this email as it is unmonitored.</td>
+          </tr>
+          <tr>
+            <td colspan="2">Dear Ms. Lucy(ID: 1234234)</td>
+          </tr>
+          <tr>
+            <td colspan="2">You have received a new quotation from Mr. David on <a href="#" target="_blank">OFweek.com</a>.</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              Quotation about: <a href="#" target="_blank">MP3 Player</a><br>
+              Supplier Location: United States
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">Supplier's message:</td>
+          </tr>
+          <tr>
+            <td colspan="2">To view the inquiry detail and reply to the supplier, please sign in:</td>
+          </tr>
+          <tr>
+            <td colspan="2"><a href="#" class="signin">Sign in</a></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              Your can login by your member <strong>ID: 1468508042</strong>.<br>
+              <a href="#" target="_blank">Forgot password?</a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">For any question, please <a href="#" target="_blank">contact us</a>.</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="padding-bottom: 15px;">
+              Best Regards,<br>
+              OFweek Service Team<br>
+              <a href="#" target="_blank">en.ofweek.com</a>
+            </td>
+          </tr>
+        </tbody>
+        <tbody style="border-top: 1px #D5D5D5 solid; font-size: 12px; color: #999;">
+          <tr>
+            <td colspan="2" style="padding-top: 20px;">
+              This email was sent to <a href="mailto:1468508042@qq.com">1468508042@qq.com</a>.<br>
+              You are receiving this email because you are a registered member of en.ofweek.com.<br>
+              If you don't wish to receive this kind of email, please click <a href="#">unsubscribe</a>.
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="padding-bottom: 15px;">
+              OFweek Member Service Center: <a href="mailto:b2bservice@ofweek.com">b2bservice@ofweek.com</a><br>
+              Tel: (86) 755 83279360, 83279361
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">
+              <a href="#">Terms of Service</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Contact Us</a>
+              <p>&copy; 2015 en.OFweek.com</p>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+      <!-- /Content table -->
+    </td>
+  </tr>
+</table>
+<!-- /Wrapper table -->
+</body>
+</html>
