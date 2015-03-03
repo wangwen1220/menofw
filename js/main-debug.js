@@ -325,18 +325,14 @@
       var counter = parseInt($counter.text(), 10);
 
       if ($this.hasClass('added')) {
-        $.getJSON(url, {
-          action: 'del'
-        }, function(data) {
+        $.getJSON(url, {action: 'del'}, function(data) {
           if (data.status === 'success') {
             $counter.text(--counter);
             $this.removeClass('added');
           }
         });
       } else {
-        $.getJSON(url, {
-          action: 'add'
-        }, function(data) {
+        $.getJSON(url, {action: 'add'}, function(data) {
           if (data.status === 'success') {
             $counter.text(++counter);
             $this.addClass('added');
@@ -744,13 +740,19 @@
     }).attr('novalidate', 'novalidate');
 
     // 询盘篮
-    $('#js-basket').on('click', 'ul > li > i', function(event) {
-      event.preventDefault();
-      $(this).parent().fadeOut().remove();
+    $('#js-basket').on('click', 'ul > li > i', function(e) {
+      var $this = $(this);
+      var $sendbtn = $('#js-basket').find('.btn-send');
+      var url = $this.data('url');
+
+      $.getJSON(url, {action: 'del'}, function(d) {
+        if (d.status === 'success') {
+          $this.parent().fadeOut().remove();
+          if (d.data) $sendbtn.attr('href', d.data);
+        } else {
+          alert('Delete failed!');
+        }
+      });
     });
-
-
-
-
   });
 })(window.Zepto || window.jQuery);

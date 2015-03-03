@@ -21,7 +21,9 @@
     "type": "git",
     "url": "git://github.com/wangwen1220/menofw.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "rider": "^0.4.4"
+  },
   "devDependencies": {
     "bootstrap-stylus": "^0.2.1",
     "del": "^1.1.0",

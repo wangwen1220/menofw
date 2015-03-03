@@ -1,22 +1,37 @@
 /*! Main Style by Steven 2014-8-1 */
 
+// 代码风格
+
+// 变量以 $ 开头，字母全部 小写，多个单词用中线 - 连接
+// 如果是全局变量，以 $- 开头，作为区分
+
+// Mixin 字母全小写，多个单词用 - 连接
+// 当 Mixin 为空时，加括号执行
+// 当 Mixin 应用于 CSS root 时，加括号执行
+// 说明：Mixin 的命名规则，是为了与 CSS 风格保持一致，以便对 CSS 进行增强
+
+// 使用 Function 时，加括号传递参数
+
+// @require 多次引入同一文件时只会执行一次，@import 每次都会执行
+
 support-for-ie = false
 
-@import 'nib'
+@require 'nib'
+// @require 'rider'
 @import 'wcss'
 
 /* Var
 ============================================================================= */
-fonts = 'Microsoft Yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif
-dred = #c00
-dblue = #16447E
-lgray = #eee
-dgray = #ebebeb
-dorange = #FC8C01
-lorange = #FF9933
+$fonts = 'Microsoft Yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif
+$dred = #c00
+$dblue = #16447E
+$lgray = #eee
+$dgray = #ebebeb
+$dorange = #FC8C01
+$lorange = #FF9933
 
 // 有点复杂暂时不用
-button(icon = email, height = 30px, radius = height / 2, fsize = 1.4rem, color = #fff, background = lorange)
+button(icon = email, height = 30px, radius = height / 2, fsize = 1.4rem, color = #fff, background = $lorange)
   height height
   line-height height
   border 0
@@ -47,10 +62,10 @@ button(icon = email, height = 30px, radius = height / 2, fsize = 1.4rem, color =
 html
   font-size 10px
   -webkit-tap-highlight-color rgba(0, 0, 0, .1)
-  background dgray
+  background $dgray
 
 body
-  font-family fonts
+  font-family $fonts
   font-size 1.2rem
   line-height 1.428571429
   color #333
@@ -322,7 +337,7 @@ hr
   border-bottom 1px #ddd solid
   font-size 1.6rem
   font-weight bold
-  color dred
+  color $dred
 
   &:after
     content ''
@@ -337,7 +352,7 @@ hr
     background #fff
 
   & > a
-    color dblue
+    color $dblue
     font-size 90%
 
 // 通用横线穿过的标题样式
@@ -530,7 +545,7 @@ hr
   position relative
   height 56px
   border-bottom 1px #D54646 solid
-  background dred
+  background $dred
 
   .logo
     display inline-block
@@ -567,13 +582,13 @@ hr
 #search-footer
   // margin-top 56px
   padding 10px 10px 5px
-  background dgray
+  background $dgray
 
   .search-cancel
     float right
     margin-left .8rem
     line-height 34px
-    color dred
+    color $dred
     font-size 1.3rem
 
   .search-form
@@ -649,7 +664,7 @@ hr
 
       strong
         font-weight normal
-        color dred
+        color $dred
 
 #search-footer
   padding 0 10px
@@ -665,7 +680,7 @@ hr
         display inline-block
         margin-right 10px
         line-height 20px
-        color dblue
+        color $dblue
 
     > .w-title-linethrough
       margin 10px 0 5px
@@ -674,7 +689,7 @@ hr
     display block
     margin-top 8px
     height 38px
-    border 1px dred solid
+    border 1px $dred solid
     text-align right
     background #fff
 
@@ -683,7 +698,7 @@ hr
       display inline-block
       width 44px
       height 100%
-      background dred url(../img/btn-search.png) 50% 50% no-repeat
+      background $dred url(../img/btn-search.png) 50% 50% no-repeat
       background-size 25px
 
 // Footer
@@ -692,7 +707,7 @@ hr
   padding 15px 0 30px
   // padding 15px 0 70px
   text-align center
-  background lgray
+  background $lgray
 
   nav ul
     height 14px
@@ -704,7 +719,7 @@ hr
       padding 0 10px
       border-left 1px #ccc solid
       font-size 1.2rem
-      color: dred
+      color: $dred
 
     li:first-child
       border-left none
@@ -816,7 +831,7 @@ hr
     width 50px
     height 50px
     line-height 50px
-    background dorange
+    background $dorange
     border-radius 25px
     box-shadow 0 0 0 2px rgba(160, 160, 160, .2)
     // box-shadow 0 0 1px 3px #E5E5E5
@@ -842,7 +857,7 @@ hr
       > .counter
         top 15px
         left 38px
-        color dred
+        color $dred
         background #fff
 
 // 首页
@@ -861,7 +876,7 @@ hr
       float left
       width 82px
       margin-right 10px
-      color dred
+      color $dred
 
       > span
         display block
@@ -918,7 +933,7 @@ hr
                 background #838383
 
             &:last-child > a:last-child
-              color dred
+              color $dred
 
               &:after
                 content '>>'
@@ -960,7 +975,7 @@ hr
       > h2
         margin-bottom 5px
         font-size 1.3rem
-        color dred
+        color $dred
 
       > ul a
         display block
@@ -974,7 +989,7 @@ hr
     height 38px
     border-radius 5px
     color #fff
-    font 1.6rem/38px fonts
+    font 1.6rem/38px $fonts
     text-align center
     background linear-gradient(top, #D70303, #CC0000)
     box-shadow 1px 1px rgba(0, 0, 0, .38)
@@ -1024,7 +1039,7 @@ hr
         overflow hidden
         white-space nowrap
         text-overflow ellipsis
-        color dblue
+        color $dblue
 
         > span
           font-size 1rem
@@ -1088,14 +1103,14 @@ hr
 
         strong
           // font-weight normal
-          color dred
+          color $dred
 
         em
           color #000
 
         dt > a
           display block
-          color dblue
+          color $dblue
           font-size 1.6rem
           font-weight bold
 
@@ -1141,7 +1156,7 @@ hr
       > h5 > a
         display block
         margin-bottom .3rem
-        color dblue
+        color $dblue
         font-size 1.4rem
         font-weight bold
 
@@ -1175,7 +1190,7 @@ hr
     border-bottom 1px #ddd solid
     text-align center
     font-size 1.3rem
-    color dred
+    color $dred
     background #FFF4E5
 
 // 详情页
@@ -1276,7 +1291,7 @@ hr
         > .title
           margin-bottom 5px
           // font-weight bold
-          color dblue
+          color $dblue
 
         > address
           color #797979
@@ -1289,7 +1304,7 @@ hr
 
           > li
             margin 5px 0
-            color dblue
+            color $dblue
             padding-left 22px
             background-repeat no-repeat
             background-position 0 1px
@@ -1409,11 +1424,11 @@ html.details #cart
   > .links a
     display inline-block
     margin 10px 0
-    color dred
+    color $dred
     font-weight bold
 
     &.goback
-      color dblue
+      color $dblue
       text-decoration underline
 
 // 询盘页
@@ -1444,7 +1459,7 @@ html.details #cart
 
     > .switcher
       float right
-      color dblue
+      color $dblue
 
       &:after
         content ''
@@ -1489,7 +1504,7 @@ html.details #cart
         background #fff
 
         &.selected
-          color lorange
+          color $lorange
           border-color currentColor
 
         > input
@@ -1554,9 +1569,9 @@ html.details #cart
         border-left none
 
       &.on
-        border-color dred
+        border-color $dred
         color #fff
-        background dred
+        background $dred
 
   > form
     display none
@@ -1625,13 +1640,13 @@ html.details #cart
         color #fff
         font-size 1.5rem
         // font-weight bold
-        background lorange
+        background $lorange
 
       // > .tips
       //   @extend .w-tips
 
       a
-        color dblue
+        color $dblue
         text-decoration underline
         font-size 1.1rem
 
@@ -1748,7 +1763,7 @@ html.details #cart
 
       > strong
         font-weight normal
-        color dred
+        color $dred
 
     > .check-email
       margin 35px 0
@@ -1844,14 +1859,14 @@ html.signin #footer
     color #444
 
     a
-      color dblue
+      color $dblue
 
     em
       color #000
 
     strong
       font-weight normal
-      color dred
+      color $dred
 
     .signin
       button(null, 32px, 0, 1.6rem)
@@ -1860,7 +1875,7 @@ html.signin #footer
 
     > .tips
       margin-top 8px
-      color dred
+      color $dred
       text-align center
       font-size 1.1rem
       // transform scale(.9)
@@ -1873,7 +1888,7 @@ html.signin #footer
         height 6px
         width 6px
         border-radius 3px
-        background dred
+        background $dred
         vertical-align middle
 
     time
@@ -1917,7 +1932,7 @@ html.msgnotice #footer
       overflow hidden
       text-overflow ellipsis
       font-size 1.4rem
-      color dblue
+      color $dblue
 
     > i
       position absolute
@@ -1930,7 +1945,7 @@ html.msgnotice #footer
       font-style normal
       font-size 1.2rem
       font-weight bold
-      color dred
+      color $dred
       text-align right
       // font-size 0
       background url(../img/x.png) 50% 50% no-repeat

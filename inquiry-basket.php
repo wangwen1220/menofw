@@ -13,10 +13,10 @@ include 'header.html';
     <div class="pagetitle">Inquiried Items</div>
     <div id="js-basket" class="basket">
       <ul>
-        <li><a href="#">Mix Laser 588</a> <i></i></li>
-        <li><a href="#">JI-02-1X36wrgbpar stage Light</a> <i></i></li>
-        <li><a href="#">145W LED Promise Beam Light145W LED Promise Beam Light Mt series LED Magic Balls</a> <i></i></li>
-        <li><a href="#">Mt series LED Magic Balls</a> <i></i></li>
+        <li><a href="#">Mix Laser 588</a> <i data-url="addto-cart.php"></i></li>
+        <li><a href="#">JI-02-1X36wrgbpar stage Light</a> <i data-url="addto-cart.php"></i></li>
+        <li><a href="#">145W LED Promise Beam Light145W LED Promise Beam Light Mt series LED Magic Balls</a> <i data-url="addto-cart.php"></i></li>
+        <li><a href="#">Mt series LED Magic Balls</a> <i data-url="addto-cart.php"></i></li>
       </ul>
       <a href="#" class="btn-send">Send</a>
     </div>
