@@ -9,7 +9,7 @@ $key = $_GET['key'];
 
 for ($i = 0; $i < 10; $i++) {
   $data[] = array(
-    'suggestion' => '<li><a href="/search?key='.$key.'"><strong>'.$key.'</strong> keyword suggestion '.($i+1).'</a></li>'
+    'suggestion' => '<li><a href="/search?key='.$key.'"><strong>'.$key.'</strong> keyword suggestion '.($i+1).'</a> <span>(9658345)</span></li>'
   );
 }
 

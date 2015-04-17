@@ -195,6 +195,11 @@
     //   FastClick.attach(document.body);
     // }
 
+    // 头部搜索按钮
+    $header.on('focusin click', '.search', function() {
+      $search.find('.js-key').trigger('focusin');
+    });
+
     // Global: 搜索
     $search.data('$hidden', $search.find('.js-hide'))
       .on('focusin click', '.js-key', function() {
@@ -203,7 +208,8 @@
           return;
         }
 
-        this.focus();
+        // $(this).trigger('focusin');
+        this.focus(); // 在手机浏览器下无效
         this.value = '';
         $search.siblings().addClass('js-hide');
         $search.data('$hidden').removeClass('js-hide');
@@ -211,12 +217,14 @@
       })
       .on('click', '.js-cancel', function() {
         $search.find('.js-key').val('');
+        $search.find('.js-clear').removeClass('fn-db');
         $search.find('.js-keylist').empty();
         $search.siblings().removeClass('js-hide');
         $search.data('$hidden').addClass('js-hide');
         $search.find('.search-hot').show();
       })
       .on('click', '.js-clear', function() {
+        $(this).removeClass('fn-db');
         $search.find('.js-key').val('').focus();
         $search.find('.js-keylist').empty();
       })
@@ -224,10 +232,14 @@
         var url = $search.children('form').attr('action');
         var key = $.trim($search.find('.js-key').val());
         var $keylist = $search.find('.js-keylist');
+        var $clear = $search.find('.js-clear');
 
         if (!key) {
+          $clear.removeClass('fn-db');
           $search.find('.js-keylist').empty();
           return;
+        } else {
+          $clear.addClass('fn-db');
         }
 
         $.get(url, {
@@ -328,6 +340,9 @@
         $.getJSON(url, {action: 'del'}, function(data) {
           if (data.status === 'success') {
             $counter.text(--counter);
+            if (counter <= 0) {
+              $cart.addClass('js-hide');
+            }
             $this.removeClass('added');
           }
         });
@@ -335,6 +350,9 @@
         $.getJSON(url, {action: 'add'}, function(data) {
           if (data.status === 'success') {
             $counter.text(++counter);
+            if (counter > 0) {
+              $cart.removeClass('js-hide');
+            }
             $this.addClass('added');
           }
         });
@@ -380,9 +398,7 @@
           // console.log('进入视口');
           $loading.data('loading', true);
 
-          $.getJSON(url, {
-            page: page
-          }, function(data) {
+          $.getJSON(url, {page: page}, function(data) {
             // console.log(data);
             // 给关键字添加标识
             // $.each(data.list, function(i, v) {
@@ -532,9 +548,15 @@
 
       if ($this.hasClass('added')) {
         $counter.text(--counter);
+        if (counter <= 0) {
+          $cart.addClass('js-hide');
+        }
         $this.removeClass('added');
       } else {
         $counter.text(++counter);
+        if (counter > 0) {
+          $cart.removeClass('js-hide');
+        }
         $this.addClass('added');
       }
     }).on('click', '.addto-products', function() {
@@ -553,6 +575,48 @@
 
     // 询盘页面: 显示/隐藏 templates
     if (window.inquiryTpls) {
+      // 选择 templates handler
+      var labelHandler = function(event) {
+        // console.log('test');
+        var $this = $(this);
+        var $textarea = $inquiryForm.find('.msg > textarea');
+        var tpl = inquiryTpls[$this.data('tpl')];
+        var baseTplArr = $.trim($textarea.val()).split('\n') || inquiryTpls.base;
+        var i = $this.parent().data('index') || baseTplArr.indexOf('I would like some more details:') + 1;
+
+        if (!$this.hasClass('selected')) {
+          // 如果存在，先删除
+          if (baseTplArr.indexOf(tpl) > -1) {
+            baseTplArr.splice(baseTplArr.indexOf(tpl), 1);
+          }
+          // 添加模板
+          baseTplArr.splice(i, 0, tpl);
+          i++;
+        } else {
+          if (baseTplArr.indexOf(tpl) > -1) {
+            // baseTplArr.splice($.inArray(tpl, baseTplArr), 1);
+            baseTplArr.splice(baseTplArr.indexOf(tpl), 1);
+            // console.log($.inArray(baseTplArr, tpl));
+          }
+          i--;
+        }
+
+        $this.toggleClass('selected').parent().data('index', i);
+
+        // 填充模板内容到文本域
+        $textarea.val(baseTplArr.join('\n'));
+        // $textarea.val(1);
+
+        // 修复在手机上会触发两次的问题
+        if (event) event.preventDefault();
+        // $this.children('input').prop('checked', true);
+      };
+
+      // 文本框添加默认值
+      if (!$inquiryForm.find('.msg > textarea').val()) {
+        $inquiryForm.find('.msg > textarea').val(inquiryTpls.base.join('\n'));
+      }
+
       $inquiryForm.on('click', '.tpls > .switcher', function() {
         $(this).toggleClass('unfold').next().toggleClass('js-hide');
 
@@ -561,31 +625,10 @@
         } else {
           this.innerHTML = 'Show';
         }
-      }).on('click', '.tpls-wrap > label', function(event) { // 选择 templates
-        var $this = $(this);
-        var i = $this.parent().data('index') || 3;
-        var tpl = inquiryTpls[$this.data('tpl')];
-        var baseTplArr = inquiryTpls.base;
+      }).on('click', '.tpls-wrap > label', labelHandler);
 
-        if (!$this.hasClass('selected')) {
-          baseTplArr.splice(i, 0, tpl);
-          i++;
-        } else {
-          // baseTplArr.splice($.inArray(tpl, baseTplArr), 1);
-          baseTplArr.splice(baseTplArr.indexOf(tpl), 1);
-          // console.log($.inArray(baseTplArr, tpl));
-          i--;
-        }
-
-        $this.toggleClass('selected').parent().data('index', i);
-
-        // 填充模板内容到文本域
-        $inquiryForm.find('.msg > textarea').val(baseTplArr.join(''));
-
-        // 修复在手机上会触发两次的问题
-        event.preventDefault();
-        $this.children('input').prop('checked', true);
-      }).find('.msg > textarea').val(inquiryTpls.base.join(''));
+      // 触发选中的标签点击
+      $inquiryForm.find('.tpls-wrap > label[data-status=selected]').each(labelHandler);
 
       // 表单提交
       $inquiryForm.on('submit', function() {
@@ -645,7 +688,54 @@
     //   // $inquirySign.css('padding-bottom', $inquirySign.children('form.on')[0].clientHeight + 'px');
     // });
 
-    // 询盘登录注册页：表单验证
+    // 通用表单验证函数
+    var formValidHandler = function(e) {
+      var $this = $(this).filter('[required]');
+      var $form = $this.closest('form');
+      var $formitem = $this.closest('section');
+      var $error = $formitem.find('.w-tips.error');
+      // var $submit = $formitem.find('[type=submit]');
+      // 调用系统的验证结果
+      var isvalid = this.checkValidity();
+      var val = $.trim($this.val());
+      var len = val.length;
+      var msg = len === 0 ? $this.data('msg-req') : $this.data('msg-err');
+      var ajaxurl = $this.data('ajaxurl');
+      var ajaxchecking = $this.data('ajaxchecking') || false;
+      // console.log(isvalid);
+      // console.log(this.required);
+      // this.setCustomValidity('test tips');
+      // console.log(ajaxchecking);
+
+      // 如果 ajax 验证中则不作处理
+      if (ajaxchecking) return;
+
+      if (!isvalid) {
+        $this.addClass('invalid').focus();
+        // $tips = $tips.length ? $tips : $('<i class="w-tips"/>').appendTo($formitem);
+        $formitem.append('<i class="w-tips error">' + msg + '</i>');
+        // $submit.prop('disabled', !isvalid);
+      } else if (ajaxurl) {
+        $this.data('ajaxchecking', true);
+        $.getJSON(ajaxurl, {name: val}, function(data) {
+          if (data.status === 'error') {
+            $this.addClass('invalid').focus();
+            $formitem.append('<i class="w-tips error">' + data.msg + '</i>');
+            // $submit.prop('disabled', !isvalid);
+          } else {
+            $this.removeClass('invalid');
+            $error.remove();
+            // $submit.prop('disabled', false);
+          }
+        });
+      } else {
+        $this.removeClass('invalid');
+        $error.remove();
+        // $submit.prop('disabled', false);
+      }
+    };
+
+    // 询盘登录注册页：表单验证 TODO: 使用通用表单验证函数
     $inquirySign.children('form').on('change', 'input', function(e) {
       var $this = $(this);
       var $form = $this.closest('form');
@@ -676,7 +766,7 @@
       }
 
       if (!isvalid) {
-        $form.addClass('invalid');
+        $this.addClass('invalid');
         // $tips = $tips.length ? $tips : $('<i class="w-tips"/>').appendTo($formitem);
         $formitem.append('<i class="w-tips error">' + msg + '</i>');
         // $submit.prop('disabled', !isvalid);
@@ -685,17 +775,17 @@
         $.getJSON(ajaxurl, {name: val}, function(data) {
           if (data.status === 'error') {
             // msg = data.msg;
-            $form.addClass('invalid');
+            $this.addClass('invalid');
             $formitem.append('<i class="w-tips error">' + data.msg + '</i>');
             // $submit.prop('disabled', !isvalid);
           } else {
-            $form.removeClass('invalid');
+            $this.removeClass('invalid');
             // $error.remove();
             // $submit.prop('disabled', false);
           }
         });
       } else {
-        $form.removeClass('invalid');
+        $this.removeClass('invalid');
         // $error.remove();
         // $submit.prop('disabled', false);
       }
@@ -703,7 +793,8 @@
       var $img = $(this).next('img');
       var src = $img.attr('src');
       var ext = src.slice(-4);
-      var name = this.value.toLowerCase();
+      // var name = this.value.toLowerCase();
+      var name = this.options[this.selectedIndex].getAttribute('data-id').toLowerCase();
 
       $img.attr('src', src.slice(0, src.lastIndexOf('/') + 1) + name + ext);
     }).on('focus', 'input, select', function() {
@@ -712,9 +803,9 @@
       var $this = $(this);
       var $error = $this.children('.w-tips.error');
 
-      if ($this.hasClass('invalid')) return false;
+      if ($this.find('.invalid').length) return false;
       $('input', this).trigger('change');
-      if ($this.hasClass('invalid')) return false;
+      if ($this.find('.invalid').length) return false;
 
       // AJAX 提交
       // $error.remove();
@@ -738,6 +829,35 @@
 
       return false;
     }).attr('novalidate', 'novalidate');
+
+    // 店铺－Call Me
+    $('#js-callme').on('change', 'input', formValidHandler).on('submit', function() {
+      var $this = $(this);
+
+      if ($this.find('.invalid').length) return false;
+      $('input', this).each(function() {
+        $(this).trigger('change');
+        if ($this.find('.invalid').length) {
+          return false;
+        }
+      });
+      if ($this.find('.invalid').length) return false;
+    }).attr('novalidate', 'novalidate');
+
+    // 倒计时回首页
+    (function() {
+      var $countdown = $('#js-countdown');
+      var i = 5, timer;
+      if ($countdown.length) {
+        timer = setInterval(function() {
+          $countdown.text(i--);
+          if (i < 1) {
+            clearInterval(timer);
+            window.location.href = '/';
+          }
+        }, 1000);
+      }
+    })();
 
     // 询盘篮
     $('#js-basket').on('click', 'ul > li > i', function(e) {

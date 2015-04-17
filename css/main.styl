@@ -30,7 +30,7 @@ $dgray = #ebebeb
 $dorange = #FC8C01
 $lorange = #FF9933
 
-// 有点复杂暂时不用
+// TODO: 有点复杂暂时不用?
 button(icon = email, height = 30px, radius = height / 2, fsize = 1.4rem, color = #fff, background = $lorange)
   height height
   line-height height
@@ -604,10 +604,12 @@ hr
 
       input
         flex 1
-        // width 100%
+        display block
+        padding-right 30px
+        width 100%
         min-width 50%
         height 20px
-        line-height 20px
+        // line-height 20px
         border 0
         font-size 1.4rem
         color #000
@@ -618,6 +620,7 @@ hr
         outline none
 
       .clear
+        display none
         absolute right 7px top 50%
         transform translateY(-50%)
         size 16px
@@ -647,7 +650,7 @@ hr
 
     li
       float left
-      margin-left 1.5rem
+      margin-left 10px
       color #a4a4a4
 
     li:first-child
@@ -658,13 +661,32 @@ hr
     background #fff
 
     .keylist li
-      padding 10px 14px
+      position relative
       border-bottom 1px #F0F0F0 solid
-      color #000
+      height 37px
+      line-height 37px
+      overflow hidden
 
-      strong
-        font-weight normal
-        color $dred
+      > a
+        display block
+        padding-right 60px
+        height 100%
+        overflow hidden
+        // font-size 1.4rem
+        text-indent 11px
+        color #000
+
+        strong
+          font-weight normal
+          color $dred
+
+      > span
+        position absolute
+        right 10px
+        top 0
+        color: #999
+        background #fff
+        pointer-events none
 
 #search-footer
   padding 0 10px
@@ -1088,35 +1110,38 @@ hr
     > .product
       position relative
 
-      > .pic
-        float left
-        width 75px
-        margin 5px 10px 0 0
-        // outline 1px solid #c00
+      > a
+        display block
+        clearfix()
 
-        > img
-          width 100%
+        > .pic
+          float left
+          width 75px
+          margin 5px 10px 0 0
+          // outline 1px solid #c00
 
-      > .info
-        overflow hidden
-        margin-right 29px
+          > img
+            width 100%
 
-        strong
-          // font-weight normal
-          color $dred
+        > .info
+          overflow hidden
+          margin-right 29px
 
-        em
-          color #000
+          strong
+            // font-weight normal
+            color $dred
 
-        dt > a
-          display block
-          color $dblue
-          font-size 1.6rem
-          font-weight bold
+          em
+            color #000
 
-        dd
-          margin-top .3rem
-          color #666
+          dt
+            color $dblue
+            font-size 1.6rem
+            font-weight bold
+
+          dd
+            margin-top .3rem
+            color #666
 
       > .actions
         position absolute
@@ -1219,7 +1244,7 @@ hr
 
       > ul > li
         margin 7px 0
-        color #959595
+        color #000
         font-size 1.3rem
         -webkit-text-size-adjust none
 
@@ -1239,15 +1264,15 @@ hr
         padding 0 6px
         height 28px
         line-height 28px
-        border 1px #CCC solid
+        border 1px #f60 solid
         font-size 1.3rem
         color #000
 
     > .learn-more
       display block
       margin 10px 0
-      border-top 1px #DDD solid
-      border-bottom 1px #DDD solid
+      border-top 1px #ddd solid
+      border-bottom 1px #ddd solid
       padding 8px 0
       text-align center
       color #666
@@ -1402,25 +1427,32 @@ hr
 html.details #cart
   bottom 55px
 
-// 询盘发送成功页
+// 通用消息通知页（询盘发送成功页）
 #main > .send-success
   padding 10px
   text-align center
   font-size 1.4rem
 
   > .msg
-    margin 15px 0 30px
+    position relative
+    margin 15px auto 30px
+    padding-left 32px
+    width 98%
     color #959595
+    text-align left
 
     &:before
       content ''
-      display inline-block
-      margin-right 1em
+      position absolute
+      left 0
+      top .5rem
+      // margin-right 1em
       width 23px
       height 23px
       background url(../img/icon-send-success.png) 50% 50% no-repeat
       background-size contain
       vertical-align middle
+
   > .links a
     display inline-block
     margin 10px 0
@@ -1430,6 +1462,13 @@ html.details #cart
     &.goback
       color $dblue
       text-decoration underline
+
+  > .tips
+    margin 15px 0
+    color #959595
+
+    > strong
+      color $dred
 
 // 询盘页
 #main > .send-inquiry > section
@@ -1956,30 +1995,173 @@ html.msgnotice #footer
     display block
     margin 15px 10px
 
+// 店铺页面
+#main .cnt-callme
+  margin 15px 10px 50px
 
+  > section
+    margin-top 10px
 
+    > .tips
+      margin-bottom 5px
+      color #999
+      font-size 1.2rem
 
+    > .title
+      display block
+      margin-bottom 2px
+      color #444
 
+    > .text
+      text-align justify
+      text-align-last justify
+      font-size 0
 
+      &::after
+        content ''
+        display inline-block
+        width 100%
+        height 0
+        overflow hidden
+        vertical-align top
 
+      > input
+        display inline-block
+        padding 5px
+        // min-width 30%
+        height 30px
+        line-height 20px
+        border 1px #ccc solid
+        font-size 1.2rem
 
+        // &:focus
+        //   outline-color $lorange
 
+        &[name=country]
+        &[name=city]
+          width 23.5%
 
+        &[name=phone]
+        &[name=firstname]
+        &[name=lastname]
+          width 49%
 
+    > button
+      @extend #main > .signinbox > form > section > .button
 
+    &.links
+      @extend #main > .signinbox > form > section.links
+      margin-top 20px
 
+      > a
+        @extend #main > .signinbox > form > section a
 
+#main .cnt-shop
+  > header
+    padding 15px 10px
+    min-height 50px
+    background #F0F0F0
 
+    > .logo
+      float left
+      margin-right 10px
 
+      > img
+        max-width 50px
+        max-height 50px
 
+    > h2
+      margin-top 5px
+      max-height 40px
+      overflow hidden
+      font bold 18px/20px sans-senrif, serif
+      color #7E7E7E
 
+  > nav
+    padding 0 10px
+    background #E3E3E3
+    overflow auto
 
+    li
+      float left
+      width 25%
+      height 40px
+      border-right 1px #A6A6A6 solid
+      text-align center
+      font 500 14px/40px Helvetica
+      // background #E3E3E3
+
+      &:last-of-type
+        border-right none
+
+      &.on
+        // position relative
+        background-color #fff
+        border-top 2px solid #A6A6A6
+        border-right none
+        border-left 1px #E3E3E3 solid
+        margin-left -1px
+        line-height 38px
+
+      a
+        display block
+        // width 100%
+        height 100%
+        // color #666
+
+  > .content
+    > .contact-overview
+      padding 15px 10px
+      overflow hidden
+
+      > .avatar
+        float left
+        margin-right 10px
+
+        > img
+          display block
+          max-width 50px
+          max-height 50px
+
+      > .info
+        overflow hidden
+
+        > .name
+          font-size 1.4rem
+          font-weight bold
+          color #000
+
+        > .job
+          font-size 1.4rem
+          color #000
+
+        > .actions a
+          button(noicon, 23px, 11px, 1.2rem)
+          // display inline-block
+          float left
+          margin-right 10px
+          margin-top 5px
+          padding 0 10px
+          background linear-gradient(top, #FE9F03, #FC8B01)
+
+          &.contact
+            button(email, 23px, 11px, 1.2rem)
+
+            &:before
+              width 15px
+
+    > .contact-details
+      margin 10px 0
+      padding 10px 0
+      border-top 1px #ddd solid
+      border-bottom 1px #ddd solid
+      background #F9F9F9
 
 
 
 
 
 // Media Queries
-// @media only screen and (min-width: 800px)
+// @media only screen and (min-width 800px)
 
-// @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)
+// @media only screen and (-webkit-min-device-pixel-ratio 1.5), only screen and (min-resolution 144dpi)

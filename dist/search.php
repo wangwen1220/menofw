@@ -15,13 +15,15 @@ include 'header.html';
 
       <section>
         <div class="product">
-          <a class="pic" href="details.php"><img src="/upload/pic/pic-cat1.png" alt=""></a>
-          <dl class="info">
-            <dt><a href="#">%10 Base <strong>led panel light</strong> Car</a></dt>
-            <dd>Usd 100.00 / piece</dd>
-            <dd>Min.Order: <em>1000 pcs</em></dd>
-            <dd>Turbocharger,Throttle Body, Throttle Position turbo</dd>
-          </dl>
+          <a href="details.php">
+            <span class="pic" href="details.php"><img src="/upload/pic/pic-cat1.png"></span>
+            <dl class="info">
+              <dt>%10 Base <strong>led panel light</strong> Car</dt>
+              <dd>Usd 100.00 / piece</dd>
+              <dd>Min.Order: <em>1000 pcs</em></dd>
+              <dd>Turbocharger,Throttle Body, Throttle Position turbo</dd>
+            </dl>
+          </a>
           <div class="actions">
             <a class="cart" data-url="addto-cart.php"></a>
             <a class="fold"></a>
@@ -36,13 +38,15 @@ include 'header.html';
 
       <section>
         <div class="product">
-          <a class="pic" href="details.php"><img src="/upload/pic/pic-cat2.png" alt=""></a>
-          <dl class="info">
-            <dt><a href="#">100W Hid 240mm Internal Ball ast <strong>led panel light</strong></a></dt>
-            <dd>Usd 1.00 / piece</dd>
-            <dd>Min.Order: <em>100 pcs</em></dd>
-            <dd>Protect against mositure/contamin Light OUTPUT: 110 000 candela</dd>
-          </dl>
+          <a href="details.php">
+            <span class="pic" href="details.php"><img src="/upload/pic/pic-cat2.png"></span>
+            <dl class="info">
+              <dt>100W Hid 240mm Internal Ball ast <strong>led panel light</strong></dt>
+              <dd>Usd 1.00 / piece</dd>
+              <dd>Min.Order: <em>100 pcs</em></dd>
+              <dd>Protect against mositure/contamin Light OUTPUT: 110 000 candela</dd>
+            </dl>
+          </a>
           <div class="actions">
             <a class="cart" data-url="addto-cart.php"></a>
             <a class="fold"></a>
@@ -57,13 +61,15 @@ include 'header.html';
 
       <section>
         <div class="product">
-          <a class="pic" href="details.php"><img src="/upload/pic/pic-cat1.png" alt=""></a>
-          <dl class="info">
-            <dt><a href="#">%10 Base <strong>led panel light</strong> Car</a></dt>
-            <dd>Usd 100.00 / piece</dd>
-            <dd>Min.Order: <em>1000 pcs</em></dd>
-            <dd>Turbocharger,Turbo,Throttle Body,Throttle Position Sensor,Electric turbo</dd>
-          </dl>
+          <a href="details.php">
+            <span class="pic" href="details.php"><img src="/upload/pic/pic-cat1.png"></span>
+            <dl class="info">
+              <dt>%10 Base <strong>led panel light</strong> Car</dt>
+              <dd>Usd 100.00 / piece</dd>
+              <dd>Min.Order: <em>1000 pcs</em></dd>
+              <dd>Turbocharger,Turbo,Throttle Body,Throttle Position Sensor,Electric turbo</dd>
+            </dl>
+          </a>
           <div class="actions">
             <a class="cart" data-url="addto-cart.php"></a>
             <a class="fold"></a>
@@ -78,13 +84,15 @@ include 'header.html';
 
       <section>
         <div class="product">
-          <a class="pic" href="details.php"><img src="/upload/pic/pic-cat1.png" alt=""></a>
-          <dl class="info">
-            <dt><a href="#">%10 Base <strong>led panel light</strong> Car</a></dt>
-            <dd>Usd 100.00 / piece</dd>
-            <dd>Min.Order: <em>1000 pcs</em></dd>
-            <dd>Turbocharger,Turbo,Throttle Body,Throttle Position Sensor,Electric turbo</dd>
-          </dl>
+          <a href="details.php">
+            <span class="pic" href="details.php"><img src="/upload/pic/pic-cat1.png"></span>
+            <dl class="info">
+              <dt>%10 Base <strong>led panel light</strong> Car</dt>
+              <dd>Usd 100.00 / piece</dd>
+              <dd>Min.Order: <em>1000 pcs</em></dd>
+              <dd>Turbocharger,Turbo,Throttle Body,Throttle Position Sensor,Electric turbo</dd>
+            </dl>
+          </a>
           <div class="actions">
             <a class="cart" data-url="addto-cart.php"></a>
             <a class="fold"></a>
@@ -99,13 +107,15 @@ include 'header.html';
 
       <section>
         <div class="product">
-          <a class="pic" href="details.php"><img src="/upload/pic/pic-cat2.png" alt=""></a>
-          <dl class="info">
-            <dt><a href="#">100W Hid 240mm Internal Ball ast <strong>led panel light</strong></a></dt>
-            <dd>Usd 1.00 / piece</dd>
-            <dd>Min.Order: <em>100 pcs</em></dd>
-            <dd>Protect against mositure/contamin Light OUTPUT: 110 000 candela</dd>
-          </dl>
+          <a href="details.php">
+            <span class="pic" href="details.php"><img src="/upload/pic/pic-cat2.png"></span>
+            <dl class="info">
+              <dt>100W Hid 240mm Internal Ball ast <strong>led panel light</strong></dt>
+              <dd>Usd 1.00 / piece</dd>
+              <dd>Min.Order: <em>100 pcs</em></dd>
+              <dd>Protect against mositure/contamin Light OUTPUT: 110 000 candela</dd>
+            </dl>
+          </a>
           <div class="actions">
             <a class="cart" data-url="addto-cart.php"></a>
             <a class="fold"></a>
@@ -120,13 +130,15 @@ include 'header.html';
 
       <section>
         <div class="product">
-          <a class="pic" href="details.php"><img src="/upload/pic/pic-cat1.png" alt=""></a>
-          <dl class="info">
-            <dt><a href="#">%10 Base <strong>led panel light</strong> Car</a></dt>
-            <dd>Usd 100.00 / piece</dd>
-            <dd>Min.Order: <em>1000 pcs</em></dd>
-            <dd>Turbocharger,Turbo,Throttle Body,Throttle Position Sensor,Electric turbo</dd>
-          </dl>
+          <a href="details.php">
+            <span class="pic" href="details.php"><img src="/upload/pic/pic-cat1.png"></span>
+            <dl class="info">
+              <dt>%10 Base <strong>led panel light</strong> Car</dt>
+              <dd>Usd 100.00 / piece</dd>
+              <dd>Min.Order: <em>1000 pcs</em></dd>
+              <dd>Turbocharger,Turbo,Throttle Body,Throttle Position Sensor,Electric turbo</dd>
+            </dl>
+          </a>
           <div class="actions">
             <a class="cart" data-url="addto-cart.php"></a>
             <a class="fold"></a>
@@ -141,13 +153,15 @@ include 'header.html';
 
       <section>
         <div class="product">
-          <a class="pic" href="details.php"><img src="/upload/pic/pic-cat1.png" alt=""></a>
-          <dl class="info">
-            <dt><a href="#">%10 Base <strong>led panel light</strong> Car</a></dt>
-            <dd>Usd 100.00 / piece</dd>
-            <dd>Min.Order: <em>1000 pcs</em></dd>
-            <dd>Turbocharger,Turbo,Throttle Body,Throttle Position Sensor,Electric turbo</dd>
-          </dl>
+          <a href="details.php">
+            <span class="pic" href="details.php"><img src="/upload/pic/pic-cat1.png"></span>
+            <dl class="info">
+              <dt>%10 Base <strong>led panel light</strong> Car</dt>
+              <dd>Usd 100.00 / piece</dd>
+              <dd>Min.Order: <em>1000 pcs</em></dd>
+              <dd>Turbocharger,Turbo,Throttle Body,Throttle Position Sensor,Electric turbo</dd>
+            </dl>
+          </a>
           <div class="actions">
             <a class="cart" data-url="addto-cart.php"></a>
             <a class="fold"></a>
@@ -162,13 +176,15 @@ include 'header.html';
 
       <section>
         <div class="product">
-          <a class="pic" href="details.php"><img src="/upload/pic/pic-cat2.png" alt=""></a>
-          <dl class="info">
-            <dt><a href="#">100W Hid 240mm Internal Ball ast <strong>led panel light</strong></a></dt>
-            <dd>Usd 1.00 / piece</dd>
-            <dd>Min.Order: <em>100 pcs</em></dd>
-            <dd>Protect against mositure/contamin Light OUTPUT: 110 000 candela</dd>
-          </dl>
+          <a href="details.php">
+            <span class="pic" href="details.php"><img src="/upload/pic/pic-cat2.png"></span>
+            <dl class="info">
+              <dt>100W Hid 240mm Internal Ball ast <strong>led panel light</strong></dt>
+              <dd>Usd 1.00 / piece</dd>
+              <dd>Min.Order: <em>100 pcs</em></dd>
+              <dd>Protect against mositure/contamin Light OUTPUT: 110 000 candela</dd>
+            </dl>
+          </a>
           <div class="actions">
             <a class="cart" data-url="addto-cart.php"></a>
             <a class="fold"></a>
@@ -183,13 +199,15 @@ include 'header.html';
 
       <section>
         <div class="product">
-          <a class="pic" href="details.php"><img src="/upload/pic/pic-cat1.png" alt=""></a>
-          <dl class="info">
-            <dt><a href="#">%10 Base <strong>led panel light</strong> Car</a></dt>
-            <dd>Usd 100.00 / piece</dd>
-            <dd>Min.Order: <em>1000 pcs</em></dd>
-            <dd>Turbocharger,Turbo,Throttle Body,Throttle Position Sensor,Electric turbo</dd>
-          </dl>
+          <a href="details.php">
+            <span class="pic" href="details.php"><img src="/upload/pic/pic-cat1.png"></span>
+            <dl class="info">
+              <dt>%10 Base <strong>led panel light</strong> Car</dt>
+              <dd>Usd 100.00 / piece</dd>
+              <dd>Min.Order: <em>1000 pcs</em></dd>
+              <dd>Turbocharger,Turbo,Throttle Body,Throttle Position Sensor,Electric turbo</dd>
+            </dl>
+          </a>
           <div class="actions">
             <a class="cart" data-url="addto-cart.php"></a>
             <a class="fold"></a>
@@ -209,7 +227,7 @@ include 'header.html';
       {{each list}}
       <section>
         <div class="product">
-          <a class="pic" href="{{$value.url}}"><img src="{{$value.pic}}" alt="{{$value.title}}"></a>
+          <a class="pic" hre href="#"f="{{$value.url}}"><img src="{{$value.pic}}" alt="{{$value.title}}"></a>
           <dl class="info">
             <dt><a href="{{$value.url}}">{{$value.title}}</a></dt>
             <dd>{{$value.price}}</dd>
