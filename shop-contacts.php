@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
 
-$class = 'shop nosearch';
+$class = 'shop shop-contact nosearch';
 $title = 'Shop Contact';
 $keywords = 'Shop Contact';
 $description = 'Shop Contact';
@@ -24,15 +24,15 @@ include 'header.html';
         </ul>
       </nav>
       <div class="content">
-        <div class="contact-overview">
-          <a class="avatar"><img src="http://img.alibaba.com/img/portrait/20/03/71/44/200371441/1322640927660/120x120.jpg" alt="" width="50" height="50"></a>
+        <div class="overview">
+          <a class="avatar"><img src="http://img.alibaba.com/img/portrait/20/03/71/44/200371441/1322640927660/120x120.jpg" alt="" width="56" height="56"></a>
           <div class="info">
             <h4 class="name">Ms. Kat Wang</h4>
             <div class="job">Job Title: Sales Manager</div>
             <div class="actions"><a class="btn contact">Contact Supplier</a> <a class="btn callme">Call Me</a></div>
           </div>
         </div>
-        <dl class="list-info contact-details">
+        <dl class="details">
           <dt>Address:</dt>
           <dd>Building 2-3, No. 78 Hao Yun Road, YuHang District.</dd>
           <dt>City:</dt>
@@ -44,12 +44,11 @@ include 'header.html';
           <dt>Zip:</dt>
           <dd>242300</dd>
           <dt>Phone Number:</dt>
-          <dd>0355-4455555</dd>
+          <dd><!-- 0355-4455555 --></dd>
           <dt>Mobile:</dt>
-          <dd>1354454555</dd>
+          <dd><!-- 1354454555 --><span class="sign-tips">Please <a href="#">Sign in</a> to view details.</span></dd>
           <dt>Fax Number:</dt>
-          <dd>08-55665554</dd>
-          <dd class="sign-link">Please <a href="#">Sign in</a> to view details.</dd>
+          <dd><!-- 08-55665554 --></dd>
         </dl>
       </div>
     </div>

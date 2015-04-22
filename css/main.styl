@@ -1424,8 +1424,13 @@ hr
       &.added
         background-image url(../img/btn-cart-added-white.png)
 
-html.details #cart
-  bottom 55px
+html.details
+html.shop
+  #cart
+    bottom 55px
+
+  #footer
+    padding-bottom 50px
 
 // 通用消息通知页（询盘发送成功页）
 #main > .send-success
@@ -2110,7 +2115,7 @@ html.msgnotice #footer
         // color #666
 
   > .content
-    > .contact-overview
+    > .overview
       padding 15px 10px
       overflow hidden
 
@@ -2120,42 +2125,129 @@ html.msgnotice #footer
 
         > img
           display block
-          max-width 50px
-          max-height 50px
+          max-width 56px
+          max-height 56px
 
       > .info
         overflow hidden
 
         > .name
-          font-size 1.4rem
+          margin-top -4px
           font-weight bold
           color #000
 
         > .job
-          font-size 1.4rem
+          font-size .95rem
           color #000
 
         > .actions a
-          button(noicon, 23px, 11px, 1.2rem)
+          button(noicon, 22px, 11px, 1.2rem)
           // display inline-block
           float left
-          margin-right 10px
-          margin-top 5px
+          margin-right 5px
+          margin-top 3px
           padding 0 10px
           background linear-gradient(top, #FE9F03, #FC8B01)
 
           &.contact
-            button(email, 23px, 11px, 1.2rem)
+            button(email, 22px, 11px, 1.2rem)
 
             &:before
               width 15px
 
-    > .contact-details
+    > .details
       margin 10px 0
-      padding 10px 0
+      padding 10px
       border-top 1px #ddd solid
       border-bottom 1px #ddd solid
       background #F9F9F9
+
+      > dt
+      > dd
+        margin 3px 0
+        display inline-block
+        vertical-align top
+        // line-height 1.5
+
+      > dt
+        width 35%
+        color #959595
+
+        &.title
+          margin-bottom 10px
+          width 100%
+          color #777
+          font-size 1.3rem
+
+      > dd
+        width 60%
+        color #000
+
+        > em
+          color #FC8C01
+
+        .sign-tips
+          color $dblue
+
+          a
+            text-decoration underline
+
+    > .description
+      margin 10px
+      color #000
+      line-height 1.6
+
+      > p
+        margin 15px 0 0
+
+    > .datalist
+      margin 10px 0
+      padding 10px
+      border-bottom 1px #ddd solid
+
+      > .title
+        margin-bottom 10px
+        color #777
+        font-size 1.3rem
+
+      > ul > li
+        margin-left 8px
+        margin-top 5px
+
+        &:before
+          content ''
+          display inline-block
+          margin 0 5px 0 -8px
+          width 3px
+          height 3px
+          background #838383
+          vertical-align 3px
+
+        > a
+          color $dblue
+          // font-weight bold
+
+        > span
+          color #888
+
+html.shop-profile
+  #main .cnt-shop > .content
+    > .details
+      background none
+
+      &.contacts
+        margin-top 0
+        padding-top 0
+        border-top none
+
+      .sign-tips
+        display block
+        transform translateY(50%)
+        position relative
+        bottom -10px
+
+    > .datalist
+      padding-top 0
 
 
 
