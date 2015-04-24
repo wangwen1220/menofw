@@ -22,7 +22,7 @@ support-for-ie = false
 
 /* Var
 ============================================================================= */
-$fonts = 'Microsoft Yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif
+$fonts = 'Helvetica Neue', 'Droid Sans Fallback', Helvetica, Arial, sans-serif
 $dred = #c00
 $dblue = #16447E
 $lgray = #eee
@@ -533,6 +533,47 @@ hr
   .w-list-item
     // width 50%
     flex 1 50%
+
+// w-art 通用图文模块
+.w-share
+  white-space nowrap
+  text-align center
+  font-size 0
+
+  > a
+    display inline-block
+    margin 0 5px
+    width 24px
+    height 24px
+    background url(../img/icon-shares.png) no-repeat
+    background-size 24px
+
+    &.facebook
+      background-position 0 0
+
+    &.twitter
+      background-position 0 -24px
+
+    &.googleplus
+      background-position 0 -48px
+
+    &.linkedin
+      background-position 0 -72px
+
+    &.delicious
+      background-position 0 -96px
+
+    &.reddit
+      background-position 0 -120px
+
+    &.pinterest
+      background-position 0 -144px
+
+    &.stumbleupon
+      background-position 0 -168px
+
+    &.email
+      background-position 0 -192px
 
 /* Layout
 ========================================================================== */
@@ -1354,49 +1395,13 @@ hr
         border-top 1px #ddd solid
 
         > .share
-          text-align center
-          font-size 0
-
-          > a
-            display inline-block
-            margin 0 5px
-            width 24px
-            height 24px
-            background url(../img/icon-shares.png) no-repeat
-            background-size 24px
-
-            &.facebook
-              background-position 0 0
-
-            &.twitter
-              background-position 0 -24px
-
-            &.googleplus
-              background-position 0 -48px
-
-            &.linkedin
-              background-position 0 -72px
-
-            &.delicious
-              background-position 0 -96px
-
-            &.reddit
-              background-position 0 -120px
-
-            &.pinterest
-              background-position 0 -144px
-
-            &.stumbleupon
-              background-position 0 -168px
-
-            &.email
-              background-position 0 -192px
+          @extend .w-share
 
 // Contact bar
 #contact-bar
-  display flex
-  flex-wrap wrap
-  justify-content space-between
+  // display flex
+  // flex-wrap wrap
+  // justify-content space-between
   position fixed
   z-index 1
   bottom 0
@@ -1404,22 +1409,29 @@ hr
   height 40px
   line-height 40px
   text-align center
+  white-space nowrap
   color #fff
   background rgba(251, 180, 60, .9)
 
   > a
-    flex 1
+    // flex 1
     padding 0 10px
     border-right 1px solid rgba(255, 255, 255, .5)
     font-size 14px
+    display inline-block // for UC...
+    min-width 60px
+    width 25%
+    vertical-align middle
 
     &:nth-child(2)
-      flex 1 115px
+      // flex 1 115px
+      width 50% // for UC...
 
     &.cart
       border none
       background url(../img/icon-cart.png) 50% 50% no-repeat
       background-size 30px
+      height 100% // for UC...
 
       &.added
         background-image url(../img/btn-cart-added-white.png)
@@ -2035,12 +2047,13 @@ html.msgnotice #footer
         padding 5px
         // min-width 30%
         height 30px
-        line-height 20px
+        // line-height 20px
         border 1px #ccc solid
         font-size 1.2rem
 
-        // &:focus
-        //   outline-color $lorange
+        &:focus
+          border-color $lorange
+          outline-color $lorange
 
         &[name=country]
         &[name=city]
@@ -2079,7 +2092,7 @@ html.msgnotice #footer
       margin-top 5px
       max-height 40px
       overflow hidden
-      font bold 18px/20px sans-senrif, serif
+      font bold 16px/20px serif
       color #7E7E7E
 
   > nav
@@ -2114,124 +2127,301 @@ html.msgnotice #footer
         height 100%
         // color #666
 
-  > .content
-    > .overview
-      padding 15px 10px
-      overflow hidden
-
-      > .avatar
-        float left
-        margin-right 10px
-
-        > img
-          display block
-          max-width 56px
-          max-height 56px
-
-      > .info
-        overflow hidden
-
-        > .name
-          margin-top -4px
-          font-weight bold
-          color #000
-
-        > .job
-          font-size .95rem
-          color #000
-
-        > .actions a
-          button(noicon, 22px, 11px, 1.2rem)
-          // display inline-block
-          float left
-          margin-right 5px
-          margin-top 3px
-          padding 0 10px
-          background linear-gradient(top, #FE9F03, #FC8B01)
-
-          &.contact
-            button(email, 22px, 11px, 1.2rem)
-
-            &:before
-              width 15px
-
-    > .details
-      margin 10px 0
-      padding 10px
-      border-top 1px #ddd solid
-      border-bottom 1px #ddd solid
-      background #F9F9F9
-
-      > dt
-      > dd
-        margin 3px 0
-        display inline-block
-        vertical-align top
-        // line-height 1.5
-
-      > dt
-        width 35%
-        color #959595
-
-        &.title
-          margin-bottom 10px
-          width 100%
-          color #777
-          font-size 1.3rem
-
-      > dd
-        width 60%
-        color #000
-
-        > em
-          color #FC8C01
-
-        .sign-tips
-          color $dblue
-
-          a
-            text-decoration underline
-
-    > .description
-      margin 10px
-      color #000
-      line-height 1.6
-
-      > p
-        margin 15px 0 0
-
-    > .datalist
-      margin 10px 0
-      padding 10px
-      border-bottom 1px #ddd solid
-
+  > article
+    font-size 1.3rem
+    > section
       > .title
         margin-bottom 10px
         color #777
-        font-size 1.3rem
+        font-size 1.4rem
 
-      > ul > li
-        margin-left 8px
-        margin-top 5px
+      &.overview
+        padding 15px 10px
+        overflow hidden
 
-        &:before
-          content ''
+        > .avatar
+          float left
+          margin-right 10px
+
+          > img
+            display block
+            max-width 50px
+            max-height 50px
+
+        > .info
+          overflow hidden
+
+          > .name
+            margin-top -4px
+            font-weight bold
+            color #000
+
+          > .job
+            font-size .96rem
+            color #000
+
+          > .actions a
+            button(noicon, 22px, 11px, 1.3rem)
+            // display inline-block
+            float left
+            margin-right 5px
+            margin-top 2px
+            padding 0 10px
+            background linear-gradient(top, #FE9F03, #FC8B01)
+
+            &.contact
+              button(email, 22px, 11px, 1.3rem)
+
+              &:before
+                width 16px
+
+      &.details
+        margin 10px 0
+        padding 10px
+        border-top 1px #ddd solid
+        border-bottom 1px #ddd solid
+        background #F9F9F9
+
+        dt
+        dd
+          margin 3px 0
           display inline-block
-          margin 0 5px 0 -8px
-          width 3px
-          height 3px
-          background #838383
-          vertical-align 3px
+          vertical-align top
+          // line-height 1.5
 
-        > a
-          color $dblue
-          // font-weight bold
+        dt
+          width 35%
+          color #959595
 
-        > span
-          color #888
+        dd
+          width 60%
+          color #000
+
+          > em
+            color #FC8C01
+
+          .sign-tips
+            color $dblue
+
+            a
+              text-decoration underline
+
+      &.description
+        margin 10px
+        color #000
+        line-height 1.6
+
+        > p
+          margin 12px 0 0
+
+      &.datalist
+        margin 10px 0
+        padding 10px
+        border-bottom 1px #ddd solid
+
+        li
+          margin-left 8px
+          margin-top 5px
+
+          &:before
+            content ''
+            display inline-block
+            margin 0 5px 0 -8px
+            width 3px
+            height 3px
+            background #838383
+            vertical-align 3px
+
+          > a
+            color $dblue
+            // font-weight bold
+
+          > span
+            color #888
+
+      &.prolist
+        margin 10px 0
+
+        > .title
+          margin-left 10px
+          margin-right 10px
+
+        > .product
+          position relative
+          padding 10px
+          border-bottom 1px #ddd solid
+          line-height 1.2
+          font-size 1.3rem
+
+          > a
+            display block
+            clearfix()
+
+            > .pic
+              float left
+              width 75px
+              margin 5px 10px 0 0
+
+              > img
+                display block
+                width 100%
+                height auto
+
+            > .info
+              overflow hidden
+              margin-right 29px
+              // word-wrap break-word
+
+              strong
+                font-weight normal
+                color $dred
+
+              em
+                color #000
+
+              dt
+                color $dblue
+                font-size 1.6rem
+                // font-weight bold
+
+              dd
+                margin-top .3rem
+                color #666
+
+          > .cart
+            position absolute
+            z-index 1
+            right 0
+            top 0
+            display block
+            width 39px
+            height 100%
+            background url(../img/btn-cart.png) 0 50% no-repeat
+            background-size 29px
+            // outline 1px #0f0 solid
+
+            &.added
+              background-image url(../img/btn-cart-added.png)
+
+      &.hotpro
+        margin 10px 0
+
+        > .title
+          margin-left 10px
+          margin-right 10px
+
+        > ul
+          // display flex
+          // flex-wrap wrap
+          // justify-content space-between
+          margin 0 12px
+          text-align justify
+          text-align-last justify
+          font-size 0
+
+          &:after
+            content ''
+            display inline-block
+            width 100%
+            height 0
+            overflow hidden
+
+          > li
+            // flex 1 123px
+            display inline-block
+            margin 0 12px 12px
+            width 123px
+            text-align left
+            vertical-align top
+
+            > .pic
+              display block
+              position relative
+              height 123px
+              line-height 123px
+              overflow hidden
+              border 1px #ddd solid
+              text-align center
+
+              // &:after
+              //   content ''
+              //   display inline-block
+              //   height 100%
+              //   vertical-align middle
+
+              > img
+                display block
+                position relative
+                left 50%
+                top 50%
+                max-width 100%
+                height auto
+                transform translate(-50%, -50%)
+                // outline 1px #00f solid
+
+            > .name
+              margin-top 5px
+              height 26px
+              line-height 13px
+              overflow hidden
+              color #50739E
+              font-size 1.2rem
+              font-family Arial
+
+        > .viewall
+          display block
+          margin 15px 10px 12px
+          height 40px
+          line-height 40px
+          border-radius 5px
+          text-align center
+          color #fff
+          font-size 1.6rem
+          font-weight bold
+          box-shadow 0 1px 2px 1px rgba(0, 0, 0, .21)
+          background linear-gradient(top, #D70303, #CC0000)
+
+          // &:after
+          //   content '>'
+          //   display inline-block
+          //   margin-left 8px
+          //   font-family Serif
+          //   font-weight normal
+
+          &:after
+            content ''
+            display inline-block
+            margin -4px 0 0 4px
+            width 8px
+            height 8px
+            border 1px #fff solid
+            border-width 1px 1px 0 0
+            transform rotate(45deg)
+            vertical-align middle
+
+      &.contactbtn
+        white-space nowrap
+        margin 10px
+
+        > .title
+          display inline-block
+          margin-right 3px
+
+        > .btn
+          button(noicon, 30px, 15px, 1.3rem)
+          display inline-block
+          // margin-left 3px
+          padding 0 10px
+          background linear-gradient(top, #FE9F03, #FC8C01)
+
+          &.contact
+            button(email, 30px, 15px, 1.3rem)
+
+      // &.w-share
+      //   margin 15px 0 -15px
 
 html.shop-profile
-  #main .cnt-shop > .content
+  #main .cnt-shop > article
     > .details
       background none
 
@@ -2244,14 +2434,30 @@ html.shop-profile
         display block
         transform translateY(50%)
         position relative
-        bottom -10px
+        bottom -5px
 
     > .datalist
       padding-top 0
 
+html.shop-products
+  #main .cnt-shop > article
+    > .details
+      @extend html.shop-profile #main .cnt-shop > article > .details
 
+      &.contacts
+        padding-bottom 0
+        border-bottom none
 
+html.shop-home
+  #main .cnt-shop > article
+    > .details
+      &:first-child
+        padding-top 0
+        border-top none
+        background none
 
+      .sign-tips
+        @extend html.shop-profile #main .cnt-shop > article > .details .sign-tips
 
 // Media Queries
 // @media only screen and (min-width 800px)

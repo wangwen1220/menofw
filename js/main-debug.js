@@ -330,7 +330,7 @@
     });
 
     // Search result: 加入购物车
-    $main.on('click', '.search-result .actions .cart', function() {
+    $main.on('click', '.search-result .actions .cart, .js-addto-cart', function() {
       var $this = $(this);
       var url = $this.data('url');
       var $counter = $cart.find('.counter');
